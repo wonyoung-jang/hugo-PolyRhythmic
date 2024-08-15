@@ -1,0 +1,28 @@
+{{/* Top App Bar */}}
+<nav
+  class="component app-bar top center small"
+  aria-label="Top App Bar">
+  {{/* Site Headline */}}
+  <section class="start">
+    {{/* Site ID */}} 
+    {{- partialCached "siteid-button.html" . -}}
+  </section>
+
+  {{/* Buttons */}}
+  <section class="end">
+    {{/* Language switch */}} 
+    {{- partialCached "translation_list.html" . -}} 
+    
+    {{/* Random page */}} 
+    {{- partialCached "random-button.html" . -}} 
+    
+    {{/* Theme toggle */}} 
+    {{- partialCached "theme-button.html" . -}} 
+    
+    {{/* Theme selector */}}
+    {{- partialCached "theme-controls.html" . -}}
+  </section>
+</nav>
+
+{{/* Tabs */}} 
+{{ partial "tab_menu.html" (dict "menuID" "main" "page" .) }} 

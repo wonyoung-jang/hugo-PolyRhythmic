@@ -1,0 +1,45 @@
+.set.navigation.drawer {  
+  --set-padding: var(--size-3);
+  --set-flex-flow: column nowrap;
+  min-width: var(--size-90);
+
+  &.standard {
+    --container-color: inherit;
+    --container-elevation: var(--elevation0);
+  }
+  
+  &.modal {
+    --container-color: var(--color-surface-container-low);
+    --container-shape: var(--shape-corner-l-end);
+    --container-elevation: var(--elevation1);
+  }
+  
+  .headline,
+  .section-header {
+    color: var(--color-on-surface-variant);
+    font-size: var(--typescale-title-small-size);
+    line-height: var(--typescale-title-small-line-height);
+    font-weight: var(--typescale-title-small-weight);
+    font-family: var(--typescale-title-small-font);
+  }
+
+  .headline {
+    display: flex;
+    height: var(--size-14);
+    padding: var(--size-2) var(--size-2) var(--size-2) var(--size-4);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+  .section-header {
+    padding: 18px var(--size-4);
+  }
+
+  .divider {
+    color: var(--color-outline);
+  }
+}

@@ -1,0 +1,68 @@
+.typeface-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--size-2);
+
+  & h2 {
+    margin-bottom: 1rem;
+    margin-inline: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .typeface-weights {
+    flex: 1 1 0;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: 1rem;
+
+    color: var(--color-on-surface);
+    background-color: var(--color-surface-container-lowest);
+
+    & div {
+      flex: 1 1 0;
+      margin-block: 1rem;
+      margin-inline: 2rem;
+    }
+
+    :first-child {
+      display: flex;
+      flex-flow: column nowrap;
+      align-self: stretch;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      min-height: var(--size-16);
+      margin: unset;
+      background-color: var(--color-surface-container-high);
+    }
+  }
+}
+
+.typescale-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--size-2);
+
+  & h2 {
+    margin-bottom: 1rem;
+    margin-inline: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  [class*="typescale-"] {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    padding: 1em;
+    border-radius: var(--shape-corner-m);
+    color: var(--color-on-surface);
+    background-color: var(--color-surface-container-lowest);
+  }
+}
+
+.typeface-container,
+.typescale-container {
+  margin: var(--spacing-panes);
+}

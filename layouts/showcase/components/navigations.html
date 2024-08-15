@@ -1,0 +1,624 @@
+{{ define "main" }}
+<article 
+  class="layout panes basic-single-pane" 
+  id="components-showcase">
+  <section 
+    class="layout pane" 
+    id="post-content">  
+
+    {{ with .Content }}
+      {{ . }}
+    {{ end }}
+    
+    {{/*  || App bars  */}}
+
+    {{/*  Bottom app bars  */}}
+    <div class="showcase-components-header">App bars</div>
+    <div class="layout showcase-components">
+      <div class="display-medium">Bottom app bars</div>
+      <div class="sub-showcase-components-header">No FAB</div>
+      {{ partial "components/navigations/app-bar-bottom.html" (dict
+        "icon_1"  "home"
+        "icon_2"  "add"
+        "icon_3"  "settings"
+        "icon_4"  "token") }}
+      
+      <div class="sub-showcase-components-header">With FAB</div>
+      {{ partial "components/navigations/app-bar-bottom.html" (dict
+        "icon_1"  "home"
+        "icon_2"  "add"
+        "icon_3"  "settings"
+        "icon_4"  "token"
+        "fab"     "add") }}
+    
+      {{/*  Top app bars  */}}
+      <div class="display-medium">Top app bars</div>
+      <div class="sub-showcase-components-header">Center-aligned</div>
+      {{ partial "components/navigations/app-bar-top.html" (dict
+        "center" "center"
+        "size" "small"
+        "headline" "Title"
+        "icon_1"  "home"
+        "icon_2" "account_circle") }}
+
+      <div class="sub-showcase-components-header">Small</div>
+      {{ partial "components/navigations/app-bar-top.html" (dict
+        "size" "small"
+        "headline" "Title"
+        "icon_1"  "arrow_back"
+        "icon_2" "attach_file"
+        "icon_3" "today"
+        "icon_4" "more_vert") }}
+
+      <div class="sub-showcase-components-header">Medium</div>
+      {{ partial "components/navigations/app-bar-top.html" (dict
+        "size" "medium"
+        "headline" "Title"
+        "icon_1"  "arrow_back"
+        "icon_2" "attach_file"
+        "icon_3" "today"
+        "icon_4" "more_vert") }}
+
+      <div class="sub-showcase-components-header">Large</div>
+      {{ partial "components/navigations/app-bar-top.html" (dict
+        "size" "large"
+        "headline" "Title"
+        "icon_1"  "arrow_back"
+        "icon_2" "attach_file"
+        "icon_3" "today"
+        "icon_4" "more_vert") }}
+    </div>
+
+    {{/*  || Navigations  */}}
+
+    <div class="showcase-components-header">Navigations</div>
+    <div class="layout showcase-components">
+      {{/*  Navigation bars  */}}
+      <div class="display-medium">Navigation bars</div>
+      {{ partial "components/navigations/navigation-bar.html" (dict
+        "center" "center"
+        "size" "small"
+        "headline" "Small + center"
+        "icon_1" "home"
+        "icon_2" "folder"
+        "icon_3" "note"
+        "icon_4" "token"
+        "icon_5" "settings"
+        "label_1" "Home"
+        "label_2" "Folder"
+        "label_3" "Note"
+        "label_4" "Token"
+        "label_5" "Settings"
+        )
+      }}
+      
+      {{/*  Subcomponents  */}}
+      <div class="display-medium">Subcomponents</div>
+      <section>
+        <div class="component navigation bar item active">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+          </div>
+          <div class="label">Label</div>
+        </div>
+        <div class="component navigation bar item">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+          </div>
+          <div class="label">Label</div>
+        </div>
+      </section>
+      
+      <section>
+        <div class="component navigation bar item active">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge"></div>
+          </div>
+          <div class="label">Label</div>
+        </div>
+        <div class="component navigation bar item">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge"></div>
+          </div>
+          <div class="label">Label</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="component navigation bar item active">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge large">
+              <span>8</span>
+            </div>
+          </div>
+          <div class="label">Label</div>
+        </div>
+        <div class="component navigation bar item">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge large">
+              <span>8</span>
+            </div>
+          </div>
+          <div class="label">Label</div>
+        </div>
+      </section>
+
+      {{/*  Navigation drawers  */}}
+      <div class="display-medium">Navigation drawers</div>
+      <div class="sub-showcase-components-header">Standard</div>
+      {{ partial "components/navigations/navigation-drawer.html" (dict
+        "type" "standard"
+        "headline" "Headline"
+        "nav_item_1" (dict 
+          "icon" "home" 
+          "label" "Home")
+        "nav_item_2" (dict 
+          "icon" "folder" 
+          "label" "Folder")
+        "nav_item_3" (dict 
+          "icon" "note" 
+          "label" "Note")
+        "section_header" "Section header"
+        "nav_item_4" (dict 
+          "icon" "token" 
+          "label" "Token")
+        "nav_item_5" (dict 
+          "icon" "settings" 
+          "label" "Settings")
+        )
+      }}
+      
+      {{ partial "components/navigations/navigation-drawer.html" (dict
+        "type" "standard"
+        "headline" "Headline"
+        "nav_item_1" (dict "label" "Home")
+        "nav_item_2" (dict "label" "Folder")
+        "nav_item_3" (dict "label" "Note")
+        "section_header" "Section header"
+        "nav_item_4" (dict "label" "Token")
+        "nav_item_5" (dict "label" "Settings")
+        )
+      }}
+      
+      <div class="sub-showcase-components-header">Modal</div>
+      {{ partial "components/navigations/navigation-drawer.html" (dict
+        "type" "modal"
+        "headline" "Headline"
+        "nav_item_1" (dict 
+          "icon" "home" 
+          "label" "Home")
+        "nav_item_2" (dict 
+          "icon" "folder" 
+          "label" "Folder")
+        "nav_item_3" (dict 
+          "icon" "note" 
+          "label" "Note")
+        "section_header" "Section header"
+        "nav_item_4" (dict 
+          "icon" "token" 
+          "label" "Token")
+        "nav_item_5" (dict 
+          "icon" "settings" 
+          "label" "Settings")
+        )
+      }}
+      
+      {{ partial "components/navigations/navigation-drawer.html" (dict
+        "type" "modal"
+        "headline" "Headline"
+        "nav_item_1" (dict "label" "Home")
+        "nav_item_2" (dict "label" "Folder")
+        "nav_item_3" (dict "label" "Note")
+        "section_header" "Section header"
+        "nav_item_4" (dict "label" "Token")
+        "nav_item_5" (dict "label" "Settings")
+        )
+      }}
+    
+      {{/*  Subcomponents  */}}
+      <div class="display-medium">Subcomponents</div>
+      <div class="headline">Headline</div>
+      <div class="section-header">Section header</div>
+      <section>
+        <div class="component navigation drawer item active">
+          <i class="icon">stars</i>
+          <div class="label">Label</div>
+          <div class="badge-label">100+</div>
+        </div>
+        <div class="component navigation drawer item">
+          <i class="icon">stars</i>
+          <div class="label">Label</div>
+          <div class="badge-label">100+</div>
+        </div>
+      </section>
+
+      {{/*  Navigation rails  */}}
+      <div class="display-medium">Navigation rails</div>
+      <div class="sub-showcase-components-header">Align - top / middle / bottom</div>
+      {{ partial "components/navigations/navigation-rail.html" (dict
+        "icon_main" "menu"
+        "icon_fab" "add"
+        "nav_item_1" (dict 
+          "icon" "home" 
+          "label" "Home")
+        "nav_item_2" (dict 
+          "icon" "folder" 
+          "label" "Folder")
+        "nav_item_3" (dict 
+          "icon" "note" 
+          "label" "Note")
+        "section_header" "Section header"
+        "nav_item_4" (dict 
+          "icon" "token" 
+          "label" "Token")
+        )
+      }}
+        
+      {{ partial "components/navigations/navigation-rail.html" (dict
+        "align" "middle"
+        "icon_main" "menu"
+        "icon_fab" "add"
+        "nav_item_1" (dict 
+          "icon" "home" 
+          "label" "Home")
+        "nav_item_2" (dict 
+          "icon" "folder" 
+          "label" "Folder")
+        "nav_item_3" (dict 
+          "icon" "note" 
+          "label" "Note")
+        "section_header" "Section header"
+        "nav_item_4" (dict 
+          "icon" "token" 
+          "label" "Token")
+        "nav_item_5" (dict 
+          "icon" "settings" 
+          "label" "Settings")
+        )
+      }}
+        
+      {{ partial "components/navigations/navigation-rail.html" (dict
+        "align" "bottom"
+        "icon_main" "menu"
+        "icon_fab" "add"
+        "nav_item_1" (dict 
+          "icon" "home" 
+          "label" "Home")
+        "nav_item_2" (dict 
+          "icon" "folder" 
+          "label" "Folder")
+        "nav_item_3" (dict 
+          "icon" "note" 
+          "label" "Note")
+        "section_header" "Section header"
+        "nav_item_4" (dict 
+          "icon" "token" 
+          "label" "Token")
+        "nav_item_5" (dict 
+          "icon" "settings" 
+          "label" "Settings")
+        )
+      }}
+
+      {{/*  Subcomponents  */}}
+      <div class="display-medium">Subcomponents</div>
+      <section>
+        {{/*  Label  */}}
+        <div class="component navigation rail item active">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+          </div>
+          <div class="label">Label</div>
+        </div>
+        <div class="component navigation rail item">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+          </div>
+          <div class="label">Label</div>
+        </div>
+        {{/*  Label - Badge  */}}
+        <div class="component navigation rail item active">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge"></div>
+          </div>
+          <div class="label">Label</div>
+        </div>
+        <div class="component navigation rail item">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge"></div>
+          </div>
+          <div class="label">Label</div>
+        </div>
+        {{/*  Label - Badge.large  */}}
+        <div class="component navigation rail item active">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge large">
+              <span>8</span>
+            </div>
+          </div>
+          <div class="label">Label</div>
+        </div>
+        <div class="component navigation rail item">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge large">
+              <span>8</span>
+            </div>
+          </div>
+          <div class="label">Label</div>
+        </div>
+      </section>
+
+      <section>
+        {{/*  Icon only  */}}
+        <div class="component navigation rail item active">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+          </div>
+        </div>
+        <div class="component navigation rail item">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+          </div>
+        </div>
+        {{/*  Icon only - Badge  */}}
+        <div class="component navigation rail item active">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge"></div>
+          </div>
+        </div>
+        <div class="component navigation rail item">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge"></div>
+          </div>
+        </div>
+        {{/*  Icon only - Badge.large  */}}
+        <div class="component navigation rail item active">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge large">
+              <span>8</span>
+            </div>
+          </div>
+        </div>
+        <div class="component navigation rail item">
+          <div class="icon-container">
+            <i class="icon">stars</i>
+            <div class="component badge large">
+              <span>8</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    {{/*  Searches  */}}
+    <div class="showcase-components-header">Searches</div>
+    <div class="layout showcase-components">
+      {{/*  Search bar  */}}
+      <div class="sub-showcase-components-header">Search bar</div>      
+      {{ partial "components/navigations/searches.html" (dict 
+        "type" "bar"
+        ) 
+      }}
+
+      {{ partial "components/navigations/searches.html" (dict 
+        "type" "bar"
+        "avatar" "A"
+        )
+      }}
+
+      {{/*  Search view modal  */}}
+      <div class="sub-showcase-components-header">Search view - modal</div>
+
+      {{ partial "components/navigations/searches.html" (dict 
+        "type" "view"
+        "view" "modal"
+        ) 
+      }}
+
+      {{ partial "components/navigations/searches.html" (dict 
+        "type" "view"
+        "view" "modal"
+        "showList" true
+        ) 
+      }}
+
+      {{/*  Search view full-screen  */}}
+      <div class="sub-showcase-components-header">Search view - full-screen</div>
+
+      {{ partial "components/navigations/searches.html" (dict 
+        "type" "view"
+        "view" "full"
+        ) 
+      }}
+
+      {{ partial "components/navigations/searches.html" (dict 
+        "type" "view"
+        "view" "full"
+        "showList" true
+        )
+      }}
+    </div>
+
+    {{/*  Tabs  */}}
+    <div class="showcase-components-header">Tabs</div>
+    <div class="layout showcase-components">
+      <div class="sub-showcase-components-header">Primary</div>
+      {{ partial "components/navigations/tabs.html" (dict
+        "tabs" (slice
+          (dict 
+            "type" "primary"
+            "label" "Tab 1" 
+            "active" "active")
+          (dict 
+            "type" "primary"
+            "label" "Tab 2")
+          (dict 
+            "type" "primary"
+            "label" "Tab 3")
+          (dict 
+            "type" "primary"
+            "label" "Tab 4")
+          (dict 
+            "type" "primary"
+            "label" "Tab 5")
+          )
+        )
+      }}
+
+      {{ partial "components/navigations/tabs.html" (dict
+        "tabs" (slice
+          (dict 
+            "type" "primary"
+            "icon" "add" 
+            "active" "active")
+          (dict 
+            "type" "primary"
+            "icon" "add")
+          (dict 
+            "type" "primary"
+            "icon" "add")
+          (dict 
+            "type" "primary"
+            "icon" "add")
+          (dict 
+            "type" "primary"
+            "icon" "add")
+          )
+        )
+      }}
+
+      {{ partial "components/navigations/tabs.html" (dict
+        "tabs" (slice
+          (dict 
+            "type" "primary"
+            "icon" "add" 
+            "label" "Tab 1" 
+            "active" "active")
+          (dict 
+            "type" "primary"
+            "icon" "add" 
+            "label" "Tab 2")
+          (dict 
+            "type" "primary"
+            "icon" "add" 
+            "label" "Tab 3")
+          (dict 
+            "type" "primary"
+            "icon" "add" 
+            "label" "Tab 4")
+          (dict 
+            "type" "primary"
+            "icon" "add" 
+            "label" "Tab 5")
+          )
+        )
+      }}
+
+      <div class="sub-showcase-components-header">Secondary</div>
+
+      {{ partial "components/navigations/tabs.html" (dict
+        "tabs" (slice
+          (dict 
+            "type" "secondary"
+            "label" "Tab 1"
+            "active" "active")
+          (dict 
+            "type" "secondary"
+            "label" "Tab 2")
+          (dict 
+            "type" "secondary"
+            "label" "Tab 3")
+          (dict 
+            "type" "secondary"
+            "label" "Tab 4")
+          (dict 
+            "type" "secondary"
+            "label" "Tab 5")
+          )
+        )
+      }}
+
+      {{ partial "components/navigations/tabs.html" (dict
+        "tabs" (slice
+          (dict 
+            "type" "secondary"
+            "icon" "add" 
+            "label" "Tab 1" 
+            "active" "active")
+          (dict 
+            "type" "secondary"
+            "icon" "add" 
+            "label" "Tab 2")
+          (dict 
+            "type" "secondary"
+            "icon" "add" 
+            "label" "Tab 3")
+          (dict 
+            "type" "secondary"
+            "icon" "add" 
+            "label" "Tab 4")
+          (dict 
+            "type" "secondary"
+            "icon" "add" 
+            "label" "Tab 5")
+          )
+        )
+      }}
+      
+      <div class="sub-showcase-components-header">Subcomponents</div>
+      <span class="title-medium">Primary</span>
+      <section>
+        <div class="component tab primary">
+          <div class="label">Primary</div>
+        </div>
+        <div class="component tab active primary">
+          <div class="label">Active</div>
+        </div>
+        <div class="component tab primary">
+          <i class="icon">add</i>
+        </div>
+        <div class="component tab active primary">
+          <i class="icon">add</i>
+        </div>
+        <div class="component tab primary">
+          <i class="icon">add</i>
+          <div class="label">Icon & label</div>
+        </div>
+        <div class="component tab active primary">
+          <i class="icon">add</i>
+          <div class="label">Active</div>
+        </div>
+      </section>
+      <span class="title-medium">Secondary</span>
+      <section>
+        <div class="component tab secondary">
+          <div class="label">Secondary</div>
+        </div>
+        <div class="component tab active secondary">
+          <div class="label">Active</div>
+        </div>
+        <div class="component tab secondary">
+          <i class="icon">add</i>
+          <div class="label">Icon & label</div>
+        </div>
+        <div class="component tab active secondary">
+          <i class="icon">add</i>
+          <div class="label">Active</div>
+        </div>
+      </section>
+    </div>
+  </section>
+</article>
+{{ end }}

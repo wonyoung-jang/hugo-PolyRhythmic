@@ -1,0 +1,22 @@
+.pane {
+  --layout-flex: 1 1 auto;
+  --layout-display: flex;
+  --layout-flex-flow: column nowrap;
+  --layout-align-items: stretch;
+  --layout-align-content: initial;
+  --layout-justify-content: initial;
+  --layout-width: 100%;
+  --layout-height: auto;
+  --layout-min-height: auto;
+  --layout-padding: var(--spacing-panes);
+  --layout-margin: 0;
+  --layout-gap: 0;
+  --layout-border: initial;
+  
+  --layout-bg: inherit;
+  --layout-shape: var(--shape-corner-xl);
+
+  &.fixed {
+    --layout-width: 100%;
+  }
+}

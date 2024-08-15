@@ -1,0 +1,52 @@
+.divider {
+  --container-display: flex;
+  --contaner-flex-flow: row nowrap;
+  --container-height: 1px;
+  --container-width: 100%;
+  color: var(--color-outline-variant);
+
+  &::before {
+    content: "";
+    background-color: currentColor;
+    height: 100%;
+    width: 100%;
+  }
+
+  &.mid {
+    --container-padding: 0 var(--size-4);
+  }
+
+  /* Left */
+  &.start {
+    --container-padding: 0 0 0 var(--size-4);
+  }
+
+  /* Right */
+  &.end {
+    --container-padding: 0 var(--size-4) 0 0;
+  }
+
+  /* Vertical */
+  &.vertical {
+    --container-display: flex;
+    --container-flex-flow: column nowrap;
+    --container-width: 1px;
+    --container-height: 100%;
+    --container-align-items: center;
+    color: var(--color-outline-variant);
+
+    &.mid {
+      --container-padding: var(--size-4) 0;
+    }
+
+    /* Top */
+    &.start {
+      --container-padding: var(--size-4) 0 0 0;
+    }
+
+    /* Bottom */
+    &.end {
+      --container-padding: 0 0 var(--size-4) 0;
+    }
+  }
+}

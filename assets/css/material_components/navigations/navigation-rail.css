@@ -1,0 +1,96 @@
+.component.navigation.rail {
+  flex: 1 1 0;
+  --container-flex-flow: column nowrap;
+  --container-gap: var(--size-1);
+  --container-padding: 22px 0 26px 0;
+
+  --text-color: var(--color-on-surface-variant);
+  --icon-color: var(--color-on-surface-variant);
+
+  &:has(.label) {
+    --container-padding: var(--size-3) 0 var(--size-4) 0;
+  }
+
+  .icon-container {
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: var(--shape-corner-full);
+    width: var(--size-16);
+    height: var(--size-16);
+    padding: var(--size-1) var(--size-5);
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    .badge {
+      position: absolute;
+      top: 30%;
+      right: 30%;
+
+      &.large {
+        top: 30%;
+        right: 20%;
+        max-width: fit-content;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background-color: var(--color-on-surface);
+      opacity: 0;
+      pointer-events: none;
+    }
+  
+    &:hover {
+      &::after {
+        opacity: var(--state-hover-opacity);
+        background-size: 50000%;
+        animation: rippleHover var(--motion-duration-extra-long4) var(--motion-easing-emphasized) both;
+      }
+    }
+  }
+  
+  &:has(.label) .icon-container {
+    width: var(--size-16);
+    height: var(--size-8);
+    border-radius: var(--shape-corner-l);
+
+    .badge {
+      position: absolute;
+      top: var(--size-1);
+      right: 30%;
+
+      &.large {
+        top: 2px;
+        right: 20%;
+        max-width: fit-content;
+      }
+    }
+  }
+
+  .label {
+    color: var(--color-on-surface-variant);
+    font-size: var(--typescale-label-medium-size);
+    line-height: var(--typescale-label-medium-line-height);
+    font-weight: var(--typescale-label-medium-weight);
+    font-family: var(--typescale-label-medium-font);  
+  }
+
+  &.active {
+    .icon-container {
+      color: var(--color-on-secondary-container);
+      background-color: var(--color-secondary-container);
+    }
+
+    .label {
+      color: var(--color-on-surface);
+      font-weight: var(--typeface-weight-bold);
+    }
+  }
+}

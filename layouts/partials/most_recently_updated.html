@@ -1,0 +1,32 @@
+{{ $pages := where .Site.RegularPages ".Title" "ne" "" }}
+{{ $sortedPages := sort $pages ".Lastmod" "desc" }}
+{{ $recent := first 8 $sortedPages }}
+
+<table class="most-recently-updated-pages">
+  <caption>
+    <h3>Most recently updated</h3>
+  </caption>
+
+  <thead>
+    <tr>
+      <th>Page</th>
+      <th>Last updated</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{ range $recent }}
+      <tr>
+        <td>
+          <a 
+            class="page-link" 
+            href="{{ .RelPermalink }}">
+            {{ .Title }}
+          </a>
+        </td>
+        
+        <td class="last-updated">{{ .Lastmod.Format "January 2, 2006" }}</td>
+      </tr>
+    {{ end }}
+  </tbody>
+</table>

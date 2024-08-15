@@ -1,0 +1,36 @@
+<div class="component text-field {{ .type }} {{ .disabled }}">
+  {{ with .leading_icon }}
+    <i class="icon leading-icon">{{ . }}</i>
+  {{ end }}
+
+  {{ with .multiline }}
+    <textarea 
+      type="text" 
+      placeholder=" "></textarea>
+  {{ else }}
+    <input 
+        type="text" 
+        placeholder=" {{ .placeholder }} "
+        {{ .disabled }}>
+  {{ end }}
+
+  {{ with .label }}
+    <label>{{ . }}</label>
+  {{ end }}
+
+  {{ with .trailing_icon }}
+    <i class="icon trailing-icon">{{ . }}</i>
+  {{ end }}
+
+  {{ with .suffix }}
+    <div class="suffix-content">{{ . }}</div>
+  {{ end }}
+
+  {{ if eq .type "filled" }}
+    <hr class="divider">
+  {{ end }}
+
+  {{ with .supporting_text }}
+    <div class="supporting-text">{{ . }}</div>
+  {{ end }}
+</div>

@@ -1,0 +1,115 @@
+#home-page {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: unset;
+  margin: unset;
+
+  #home-header {
+    flex: 0 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--size-5);
+    padding: var(--size-14) var(--spacing-panes);
+    min-height: 18dvh;
+
+    .site-id {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--size-8);
+
+      & img {
+        object-fit: cover;
+        max-width: var(--size-20);
+      }
+    }
+
+    .tagline {
+      color: var(--color-complementary);
+
+      & strong {
+        color: var(--color-add180);
+        margin-inline: var(--size-2);
+      }
+    }
+  }
+
+  #home-blurb {
+    flex: 0 1 0;
+    display: flex;
+    flex-flow: column nowrap;
+    text-wrap: balance;
+    gap: var(--size-5);
+    padding: var(--size-8);
+    margin: var(--spacing-panes);
+    border-radius: var(--shape-corner-m);
+
+    .blurb {
+      display: flex;
+      flex-flow: column nowrap;
+      text-wrap: balance;
+      gap: var(--size-5);
+      padding: var(--size-8);
+      border-radius: var(--shape-corner-xl);
+    }
+  }
+
+  .home-page-content {
+    margin: 0 var(--spacing-panes);
+    padding: 0 var(--spacing-panes);
+    border-radius: var(--shape-corner-m);
+    background-color: var(--color-surface-dim);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    padding-bottom: var(--size-8);
+    
+    & li {
+      display: inline-flex;
+      flex-flow: row wrap;
+      padding-right: var(--spacing-panes);
+      
+      &::before {
+        display: none;
+      }
+    }
+  }
+  
+  .home-buttons-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--size-3);
+    margin: var(--size-8);
+
+    .home-buttons {
+      flex: 1 1 0;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: var(--size-5);
+      padding: var(--size-3);
+      height: max-content;
+
+      & h3 {
+        margin-block: var(--size-3) var(--size-5);
+      }
+
+      .button {
+        margin-inline: var(--size-2);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  #home-page {
+    .site-id svg,
+    .site-id img {
+      display: none;
+    }
+  }
+}

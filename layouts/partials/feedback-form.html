@@ -1,0 +1,56 @@
+<form
+  class="layout feedback-form"
+  action="https://formspree.io/f/xjvnaory"
+  method="POST"
+  accept-charset="UTF-8">
+  <div class="component text-field filled">
+    <input
+      type="text"
+      placeholder=" "
+      name="feedback"
+      required />
+    <label>{{ i18n "contact_name" }}</label>
+    <hr class="divider" />
+    <div class="supporting-text">{{ i18n "contact_name_placeholder" }}</div>
+  </div>
+
+  <div class="component text-field filled">
+    <input
+      type="email"
+      placeholder=" "
+      name="feedback"
+      required />
+    <label>{{ i18n "contact_mail" }}</label>
+    <hr class="divider" />
+    <div class="supporting-text">{{ i18n "contact_mail_placeholder" }}</div>
+  </div>
+
+  <div class="component text-field filled">
+    <input
+      type="text"
+      placeholder=" "
+      name="feedback"
+      required />
+    <label>{{ i18n "contact_subject" }}</label>
+    <hr class="divider" />
+    <div class="supporting-text">{{ i18n "contact_subject_placeholder" }}</div>
+  </div>
+
+  <div class="component text-field filled">
+    <textarea
+      type="text"
+      placeholder=" "
+      name="feedback"
+      required></textarea>
+    <label>{{ i18n "contact_message" }}</label>
+    <hr class="divider" />
+    <div class="supporting-text">{{ i18n "contact_message_placeholder" }}</div>
+  </div>
+
+  <button
+    class="component button common filled"
+    type="submit"
+    name="feedback">
+    {{ i18n "contact_submit_feedback" }}
+  </button>
+</form>

@@ -1,0 +1,40 @@
+#page-sitemap {
+  padding: unset;
+  margin: unset;
+
+  .table-sitemap {
+    display: block;
+    border-spacing: 0px;
+    overflow-x: auto;
+    border-radius: var(--shape-corner-l);
+
+    & tr {
+      white-space: nowrap;
+      border-radius: unset;
+    }
+
+    & td,
+    & th {
+      padding: var(--size-1) var(--size-2);
+      border: 1px solid var(--color-outline-variant);
+    }
+
+    & td {
+      background: var(--color-surface);
+    }
+
+    & th {
+      background: var(--color-surface-container-lowest);
+      border-bottom: var(--color-outline-variant);
+      caption-side: bottom;
+      text-align: left;
+      vertical-align: top;
+
+      color: var(--color-on-surface);
+      font-family: var(--typescale-title-medium-font);
+      font-size: var(--typescale-title-medium-size);
+      line-height: var(--typescale-title-medium-line-height);
+      font-weight: var(--typescale-title-medium-weight);
+    }
+  }
+}

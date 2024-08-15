@@ -1,0 +1,18 @@
+{{ range $k, $v := .buttons }}
+  <div 
+    class="home-buttons" 
+    id="projects">
+    <h3>{{ $k | humanize }}</h3>
+    {{ range $v }}
+      <a  
+        class="component button fab secondary-container extended"
+        id="{{ .name | urlize }}"
+        href="{{ trim .url " " }}" 
+        rel="noopener" 
+        title="{{ .name }}">
+        <i class="icon">{{ .icon }}</i>
+        <span>{{ .name }}</span>
+      </a>
+    {{ end }}
+  </div>
+{{ end }}

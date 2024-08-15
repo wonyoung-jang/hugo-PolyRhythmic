@@ -1,0 +1,87 @@
+:root {
+  /* 1 Label */
+  --typescale-label-small-font:             var(--typeface-plain);
+  --typescale-label-small-size:             calc(var(--typescale-label-medium-size) * var(--scale-back-size));
+  --typescale-label-small-weight:           var(--typeface-weight-medium);
+  --typescale-label-small-line-height:      var(--scale-line-height-label);
+  
+  --typescale-label-medium-font:            var(--typeface-plain);
+  --typescale-label-medium-size:            var(--typescale-body-small-size);
+  --typescale-label-medium-weight:          var(--typeface-weight-medium);
+  --typescale-label-medium-line-height:     var(--scale-line-height-label);
+  
+  --typescale-label-large-font:             var(--typeface-plain);
+  --typescale-label-large-size:             var(--typescale-body-medium-size);
+  --typescale-label-large-weight:           var(--typeface-weight-medium);
+  --typescale-label-large-line-height:      var(--scale-line-height-label);
+    
+  /* 2 Body */  
+  --typescale-body-small-font:              var(--typeface-plain);
+  --typescale-body-small-size:              calc(var(--typescale-body-medium-size) * var(--scale-back-size));
+  --typescale-body-small-weight:            var(--typeface-weight-regular);
+  --typescale-body-small-line-height:       var(--scale-line-height-body);
+  
+  --typescale-body-medium-font:             var(--typeface-plain);
+  --typescale-body-medium-size:             calc(var(--typescale-body-large-size) * var(--scale-back-size));
+  --typescale-body-medium-weight:           var(--typeface-weight-regular);
+  --typescale-body-medium-line-height:      var(--scale-line-height-body);
+  
+  --typescale-body-large-font:              var(--typeface-plain);
+  --typescale-body-large-size:              var(--input-font-size);
+  --typescale-body-large-weight:            var(--typeface-weight-regular);
+  --typescale-body-large-line-height:       var(--scale-line-height-body);
+    
+  /* 3 Title */ 
+  --typescale-title-small-font:             var(--typeface-brand);
+  --typescale-title-small-size:             var(--typescale-body-medium-size);
+  --typescale-title-small-weight:           var(--typeface-weight-medium);
+  --typescale-title-small-line-height:      var(--scale-line-height-title);
+  
+  --typescale-title-medium-font:            var(--typeface-brand);
+  --typescale-title-medium-size:            var(--typescale-body-large-size);
+  --typescale-title-medium-weight:          var(--typeface-weight-medium);
+  --typescale-title-medium-line-height:     var(--scale-line-height-title);
+  
+  --typescale-title-large-font:             var(--typeface-brand);
+  --typescale-title-large-size:             calc(var(--typescale-body-large-size) * var(--scale-up-type));
+  --typescale-title-large-weight:           var(--typeface-weight-medium);
+  --typescale-title-large-line-height:      var(--scale-line-height-title);
+  
+  /* 4 Headline */
+  --typescale-headline-small-font:          var(--typeface-brand);
+  --typescale-headline-small-size:          calc(var(--typescale-headline-medium-size) * var(--scale-back-size));
+  --typescale-headline-small-weight:        var(--typeface-weight-medium);
+  --typescale-headline-small-line-height:   var(--scale-line-height-headline);
+  
+  --typescale-headline-medium-font:         var(--typeface-brand);
+  --typescale-headline-medium-size:         calc(var(--typescale-headline-large-size) * var(--scale-back-size));
+  --typescale-headline-medium-weight:       var(--typeface-weight-medium);
+  --typescale-headline-medium-line-height:  var(--scale-line-height-headline);
+
+  --typescale-headline-large-font:          var(--typeface-brand);
+  --typescale-headline-large-size:          calc(var(--typescale-title-large-size) * var(--scale-up-type));
+  --typescale-headline-large-weight:        var(--typeface-weight-medium);
+  --typescale-headline-large-line-height:   var(--scale-line-height-headline);
+  
+  /* 5 Display */
+  --typescale-display-small-font:           var(--typeface-brand);
+  --typescale-display-small-size:           calc(var(--typescale-display-medium-size) * var(--scale-back-size));
+  --typescale-display-small-weight:         var(--typeface-weight-medium);
+  --typescale-display-small-line-height:    var(--scale-line-height-display);
+  
+  --typescale-display-medium-font:          var(--typeface-brand);
+  --typescale-display-medium-size:          calc(var(--typescale-display-large-size) * var(--scale-back-size));
+  --typescale-display-medium-weight:        var(--typeface-weight-medium);
+  --typescale-display-medium-line-height:   var(--scale-line-height-display);
+  
+  --typescale-display-large-font:           var(--typeface-brand);
+  --typescale-display-large-size:           calc(var(--typescale-headline-large-size) * var(--scale-up-type));
+  --typescale-display-large-weight:         var(--typeface-weight-medium);
+  --typescale-display-large-line-height:    var(--scale-line-height-display);
+
+  /* ^ Code */
+  --typescale-code-large-font:              var(--typeface-mono);
+  --typescale-code-large-size:              calc(var(--typescale-body-large-size));
+  --typescale-code-large-weight:            var(--typeface-weight-regular);
+  --typescale-code-large-line-height:       var(--scale-line-height-body);
+}

@@ -1,0 +1,26 @@
+{{- define "main" -}}
+<article class="layout panes basic-single-pane">
+  <section class="layout pane">
+    <div id="searchbox">
+      {{/* Search bar */}}   
+      <span class="component search bar">
+        <i class="icon">menu</i>
+        <input  
+          id="searchInput"  
+          placeholder="Search"
+          aria-label="search" 
+          type="search"
+          autocomplete="off" 
+          maxlength="64">
+        <i class="icon">search</i>
+      </span>
+
+      {{/* Search results */}}   
+      <div 
+        id="searchResults" 
+        aria-label="search results">
+      </div>
+    </div>
+  </section>
+</article>
+{{- end -}}

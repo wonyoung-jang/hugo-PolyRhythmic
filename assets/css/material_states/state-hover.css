@@ -1,0 +1,52 @@
+.component:is(
+    .button,
+    .card,
+    .carousel.item,
+    .chip,
+    .picker.date.docked,
+    .picker.date.modal,
+    .dialog,
+    .list.item,
+    .menu.item,
+    .drawer.item,
+    .slider
+    .search.bar
+    .search.view,
+    .switch,
+    .snackbar,
+    .tab,
+    .picker.time,
+    .text-field,
+    .tooltip.rich,
+    .year,
+    .calendar-cell.day,
+    .calendar-cell.today,
+    .calendar-cell.selected,
+    .calendar-cell.range
+  ):not(:has(
+      .button,
+      .radio,
+      .checkbox, 
+      .switch)
+  ):not(:disabled):hover {
+
+  &::before {
+    border: var(--container-outline-hover);
+    box-shadow: var(--container-elevation-hover);
+  }
+
+  &::after {
+    opacity: var(--state-hover-opacity);
+    background-size: 50000%;
+    animation: rippleHover var(--motion-duration-extra-long4) var(--motion-easing-emphasized) both;
+  }
+}
+
+@keyframes rippleHover {
+  from {
+    background-size: 0%;
+  }
+  to {
+    background-size: 50000%;
+  }
+}

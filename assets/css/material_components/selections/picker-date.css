@@ -1,0 +1,182 @@
+.picker.date {
+  --container-padding: var(--size-4) var(--size-6);
+
+  min-width: var(--size-82);
+  max-height: var(--size-128);
+  
+  &.docked {
+    --container-width: 328px;
+    --container-height: 428px;
+  }
+
+  &.modal {
+    --container-width: 328px;
+    --container-height: 512px;
+  }
+
+  .header {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 100%;
+    height: 100%;
+    max-width: var(--size-82);
+    max-height: var(--size-30);
+    
+    .supporting-text {
+      color: var(--color-on-surface-variant);
+      font-size: var(--typescale-label-large-size);
+      font-weight: var(--typescale-label-large-weight);
+      font-family: var(--typescale-label-large-family);
+      line-height: var(--typescale-label-large-line-height);
+    }
+
+    .headline-container {
+      flex: 1 1 auto;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      margin-top: var(--size-9);
+
+      .headline {
+        color: var(--color-on-surface-variant);
+        font-size: var(--typescale-headline-large-size);
+        font-weight: var(--typescale-headline-large-weight);
+        font-family: var(--typescale-headline-large-family);
+        line-height: var(--typescale-headline-large-line-height);
+      }
+
+      .button.icon {
+        margin-left: auto;
+        font-size: var(--size-6);
+      }
+    }
+  }
+
+  .divider {
+    margin-top: 10px;
+  }
+
+  .text-field-container {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--size-4);
+    align-self: stretch;
+
+    .text-field {
+      max-width: calc(50% - var(--size-2));
+    }
+  }
+
+  .text-field {
+    margin-top: 10px;
+  }
+
+  .date-picker-actions {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-left: auto;
+    gap: var(--size-4);
+    min-height: var(--size-4);
+    margin-top: var(--size-6);
+  }
+}
+
+.year {
+  --container-display: flex;
+  --container-flex-flow: column nowrap;
+  --container-justify-content: center;
+  --container-align-items: center;
+  --container-gap: 10px;
+  --container-height: var(--size-8);
+  --container-width: var(--size-18);
+  --container-padding: var(--size-4);
+  
+  --container-shape: var(--shape-corner-full);
+  
+  --text-color: var(--color-on-surface-variant);
+  --icon-color: var(--color-on-surface-variant);
+  
+  --state-color: var(--color-on-surface-variant);
+  
+  &.selected {
+    --container-color: var(--color-primary);
+      
+    --text-color: var(--color-on-primary);
+    --icon-color: var(--color-on-primary);
+    
+    --state-color: var(--color-on-primary);
+  }
+}
+
+.calendar-cell {
+  --container-display: flex;
+  --container-flex-flow: column nowrap;
+  --container-justify-content: center;
+  --container-align-items: center;
+  --container-gap: 10px;
+  --container-height: var(--size-12);
+  --container-width: var(--size-12);
+  
+  --container-shape: var(--shape-corner-full);
+  
+  --text-color: var(--color-on-surface);
+  --icon-color: var(--color-on-surface);
+  
+  --state-color: var(--color-on-surface);
+
+  &.today {
+    --container-outline: 1px solid var(--color-primary);
+  }
+
+  &.selected {
+    --container-color: var(--color-primary);
+    
+    --text-color: var(--color-on-primary);
+    --icon-color: var(--color-on-primary);
+    
+    --state-color: var(--color-on-primary);
+  }
+
+  &.prev,
+  &.next {
+    --text-color: var(--color-on-surface-variant);
+    --icon-color: var(--color-on-surface-variant);
+
+    --state-color: var(--color-on-surface-variant);
+  }
+
+  &.range {
+    --text-color: var(--color-on-secondary-container);
+    --icon-color: var(--color-on-secondary-container);
+
+    --state-color: var(--color-on-secondary-container);
+
+    .highlight {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      background-color: var(--color-secondary-container);
+      width: var(--size-12);
+      height: var(--size-12);
+
+      &.middle {
+        left: 0;
+      }
+
+      &.start,
+      &.end {
+        width: var(--size-10);
+      }
+      
+      &.start {
+        left: calc(-1 * var(--size-4));
+      }
+      
+      &.end {
+        right: calc(-1 * var(--size-4));
+      }
+    }
+  }
+}

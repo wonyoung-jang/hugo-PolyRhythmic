@@ -1,0 +1,21 @@
+/* Resting */
+.elevation0 {
+  box-shadow: var(--elevation0);
+}
+.elevation1 {
+  box-shadow: var(--elevation1);
+}
+.elevation2 {
+  box-shadow: var(--elevation2);
+}
+.elevation3 {
+  box-shadow: var(--elevation3);
+}
+
+/* Interactions */
+.elevation4 {
+  box-shadow: var(--elevation4);
+}
+.elevation5 {
+  box-shadow: var(--elevation5);
+}

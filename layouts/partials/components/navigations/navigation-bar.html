@@ -1,0 +1,48 @@
+<div class="set navigation bar">
+  <div class="component navigation bar item active">
+    <div class="icon-container">
+      <i class="icon">{{ .icon_1 }}</i>
+    </div>
+    <div class="label">{{ .label_1 }}</div>
+  </div>
+  
+  <div class="component navigation bar item">
+    <div class="icon-container">
+      <i class="icon">{{ .icon_2 }}</i>
+    </div>
+    {{ if not .icon_only }}
+      <div class="label">{{ .label_2 }}</div>
+    {{ end }}
+  </div>
+  
+  <div class="component navigation bar item">
+    <div class="icon-container">
+      <i class="icon">{{ .icon_3 }}</i>
+    </div>            
+    {{ if not .icon_only }}
+      <div class="label">{{ .label_3 }}</div>
+    {{ end }}
+  </div>
+
+  {{ if .icon_4 }}
+    <div class="component navigation bar item">
+      <div class="icon-container">
+        <i class="icon">{{ .icon_4 }}</i>
+      </div>            
+      {{ if not .icon_only }}
+        <div class="label">{{ .label_4 }}</div>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{ if .icon_5 }}
+    <div class="component navigation bar item">
+      <div class="icon-container">
+        <i class="icon">{{ .icon_5 }}</i>
+      </div>            
+      {{ if not .icon_only }}
+        <div class="label">{{ .label_5 }}</div>
+      {{ end }}
+    </div>
+  {{ end }}
+</div>

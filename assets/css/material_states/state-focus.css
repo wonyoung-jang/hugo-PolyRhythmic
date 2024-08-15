@@ -1,0 +1,42 @@
+.component:is(
+    .button,
+    .card,
+    .carousel.item,
+    .chip,
+    .picker.date.docked,
+    .picker.date.modal,
+    .dialog,
+    .list.item,
+    .menu.item,
+    .drawer.item,
+    .slider
+    .search.bar
+    .search.view,
+    .switch,
+    .snackbar,
+    .tab,
+    .picker.time,
+    .text-field,
+    .tooltip.rich,
+    .year,
+    .calendar-cell.day,
+    .calendar-cell.today,
+    .calendar-cell.selected,
+    .calendar-cell.range
+  ):not(:has(
+      .button,
+      .radio,
+      .checkbox, 
+      .switch)
+  ):not(:disabled):focus {
+    
+  &::before {
+    border: var(--container-outline-focus);
+    box-shadow: var(--container-elevation-focus);
+  }
+
+  &::after {
+    opacity: var(--state-focus-opacity);
+    background-size: 50000%;
+  }
+}

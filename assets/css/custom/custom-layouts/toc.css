@@ -1,0 +1,100 @@
+.toc li, 
+.toc li::before, 
+.toc ul {
+  all: unset;
+}
+
+.toc {
+  --layout-display: flex;
+  --layout-flex-flow: column nowrap;
+  --layout-padding: 0;
+  --layout-margin: 0;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--size-40);
+
+  & li {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: unset;
+  }
+
+  & ul li ul li ul li {
+    margin-left: var(--size-4);
+  }
+
+  & a {
+    font-family: var(--typescale-body-medium-font);
+    font-size: var(--typescale-body-medium-size);
+    font-weight: var(--typescale-body-medium-weight);
+    line-height: var(--typescale-body-medium-line-height);
+    
+    color: var(--color-on-surface-variant);
+    text-decoration: none;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0 var(--size-4);
+    border-radius: var(--shape-corner-l);
+    cursor: pointer;
+
+    position: relative;
+    z-index: 1;
+
+    &:focus-visible {
+      outline: 2px solid var(--color-outline-variant);
+      outline-offset: -2px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      background-color: var(--color-surface-container-lowest);
+      z-index: -1;
+      transition: width var(--motion-duration-short2) var(--motion-easing-emphasized);
+    }
+
+    &:target::before,
+    &:hover::before,
+    &:active::before,
+    &:focus::before {
+      width: max-content;
+    }
+  }
+
+  .headline {
+    font-family: var(--typescale-label-small-font);
+    font-size: var(--typescale-label-small-size);
+    font-weight: var(--typescale-label-small-weight);
+    line-height: var(--typescale-label-small-line-height);
+    padding: 0 var(--size-4) var(--size-2);
+    color: var(--color-on-surface-variant);
+  }
+  
+  .title {
+    display: none;
+    font-family: var(--typescale-headline-small-font);
+    font-size: var(--typescale-headline-small-size);
+    font-weight: var(--typescale-headline-small-weight);
+    line-height: var(--typescale-headline-small-line-height);
+    padding: 0 var(--size-4) var(--size-2);
+    color: var(--color-on-surface);
+  }
+}
+
+/* Large: 1200px-1599px */
+@media screen and (min-width: 1200px) {
+  .toc {
+    .title {
+      display: block;
+    }
+  }
+}

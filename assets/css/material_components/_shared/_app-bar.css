@@ -1,0 +1,8 @@
+.app-bar {
+  --container-display: flex;
+  --container-flex-flow: row nowrap;
+  --container-justify-content: flex-start;
+  --container-align-items: center;
+  --container-shape: var(--shape-corner-none);
+  --container-color: var(--color-surface-container);
+}

@@ -1,0 +1,46 @@
+.elevations-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--size-32), 1fr));
+  grid-auto-rows: minmax(var(--size-32), auto);
+  gap: var(--size-2);
+  margin: var(--spacing-panes);
+
+
+  & h2 {
+    grid-column: 1 / -1;
+  }
+
+  & div {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: var(--spacing-panes);
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.state-opacities-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--size-2);
+  margin: var(--spacing-panes);
+  grid-auto-rows: minmax(var(--size-24), auto);
+}
+
+.state-opacities-container div,
+.state-opacities-container span {
+  padding: var(--spacing-panes);
+}
+
+.state-opacities-container span {
+  text-align: right;
+  border: 2px dotted var(--color-outline-variant);
+  border-radius: var(--shape-corner-xl-end);
+}
+
+.state-opacities-container div {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  border-radius: var(--shape-corner-xl-start);
+}

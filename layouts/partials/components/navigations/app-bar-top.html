@@ -1,0 +1,36 @@
+<div class="component app-bar top {{ .center }} {{ .size }}">
+        
+  <div class="start">
+    <button class="component button icon">
+      <i class="icon">{{ .icon_1 }}</i>
+    </button>
+  </div>
+
+  {{ if eq .size "small" }}
+    <div class="headline">{{ .headline }}</div>
+  {{ end }}
+  
+  <div class="end">
+    {{ with .icon_2 }}
+      <button class="component button icon">
+        <i class="icon">{{ . }}</i>
+      </button>
+    {{ end }}
+
+    {{ with .icon_3 }}
+      <button class="component button icon">
+        <i class="icon">{{ . }}</i>
+      </button>
+    {{ end }}
+
+    {{ with .icon_4 }}
+      <button class="component button icon">
+        <i class="icon">{{ . }}</i>
+      </button>
+    {{ end }}
+  </div>
+
+  {{ if ne .size "small" }}
+    <div class="headline">{{ .headline }}</div>
+  {{ end }}
+</div>

@@ -1,0 +1,19 @@
+.upper {
+  text-transform: uppercase;
+}
+.lower {
+  text-transform: lowercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+.underline {
+  text-decoration: underline;
+}
+.overline {
+  text-decoration: overline;
+}

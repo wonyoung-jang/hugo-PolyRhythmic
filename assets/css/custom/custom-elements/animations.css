@@ -1,0 +1,24 @@
+/* Transitions */
+:root,
+body,
+main,
+#header,
+#footer,
+.layout,
+#top-link {
+  transition: var(--motion-duration-long2) var(--motion-easing-emphasized);
+  transition-property: font-size, font-weight, line-height, font-family, margin, border-radius, height, min-height, max-height,
+    width, min-width, max-width, transform, visibility, opacity, display;
+}
+
+.layout,
+.layout * {
+  transition: background-color var(--motion-duration-medium4) var(--motion-easing-emphasized);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion) {
+  :root {
+    animation: none;
+  }
+}

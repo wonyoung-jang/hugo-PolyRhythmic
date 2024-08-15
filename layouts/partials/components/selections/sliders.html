@@ -1,0 +1,22 @@
+<div class="component slider{{ if .range }} range{{ end }} {{ .disabled }}">
+  {{ if .range }}
+    <input type="range" list="markers-{{ .id }}" class="left">
+    <input type="range" list="markers-{{ .id }}" class="right">
+  {{ else }}
+    <input type="range" 
+      {{ .disabled }}
+      {{ with .value }}value="{{ . }}"{{ end }}
+      {{ with .step }}step="{{ . }}"{{ end }}
+      {{ with .list }}list="{{ . }}"{{ end }}>
+    {{ if .trackingDot }}
+      <span class="tracking-dot"></span>
+    {{ end }}
+  {{ end }}
+  {{ with .datalist }}
+    <datalist id="{{ . }}">
+      {{ range $.markers }}
+        <option value="{{ . }}"></option>
+      {{ end }}
+    </datalist>
+  {{ end }}
+</div>

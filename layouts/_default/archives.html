@@ -1,0 +1,62 @@
+{{- define "main" -}}
+<article class="layout panes basic-single-pane">
+  <section class="layout pane">
+    {{- range site.Pages.GroupByPublishDate "2006" }} 
+      {{- if ne .Key "0001" }}
+        <div class="archive-year">
+          {{- $year := replace .Key "0001" "" }}
+          <span
+            class="archive-year-header"
+            id="{{ $year }}">
+            <a
+              class="archive-header-link"
+              href="#{{ $year }}">
+              <h4>
+                {{- $year -}}
+                <sup class="archive-count"> &nbsp;{{ len .Pages }} </sup>
+              </h4>
+            </a>
+          </span>
+
+          {{- range .Pages.GroupByDate "January" }}
+            <div class="archive-month">
+              <span
+                class="archive-month-header"
+                id="{{ $year }}-{{ .Key }}">
+                <a
+                  class="archive-header-link"
+                  href="#{{ $year }}-{{ .Key }}">
+                  <h5>
+                    {{- .Key -}}
+                    <sup class="archive-count"> &nbsp;{{ len .Pages }} </sup>
+                  </h5>
+                </a>
+              </span>
+
+              <div class="archive-posts">
+                {{- range .Pages }}
+                  {{ if eq .Title "Archives" }}
+                    {{ continue }}
+                  {{ end }}
+                  
+                  <div class="archive-entry">
+                    <a
+                      class="entry-link"
+                      aria-label="post link to {{ .Title | plainify }}"
+                      href="{{ .Permalink }}">
+                      <span class="archive-entry-title entry-hint-parent">
+                        <h6>{{- .Title | markdownify }}</h6>
+                      </span>
+                      <div class="archive-meta">{{- partial "post-meta.html" . -}}</div>
+                    </a>
+                  </div>
+                {{- end }}
+              </div>
+            </div>
+          {{- end }}
+        </div>
+      {{- end }}
+    {{- end }}
+  </section>
+</article>
+{{- end -}}

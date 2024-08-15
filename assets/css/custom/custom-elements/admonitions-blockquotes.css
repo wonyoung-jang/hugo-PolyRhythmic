@@ -1,0 +1,50 @@
+.admonition {
+  position: relative;
+  display: block;
+  margin-block: var(--size-8);
+  padding: var(--spacing-panes);
+  outline: 1px solid var(--color-outline-variant);
+  border-radius: var(--shape-corner-m);
+  box-shadow: var(--elevation1);
+  min-height: var(--size-24);
+  background-color: var(--color-surface-container-low);
+  color: var(--text-color);
+
+  --icon-size: calc(var(--spacing-panes) * 5);
+
+  &[class*="-container"] {
+    outline: unset;
+    padding: var(--size-8) var(--size-4) var(--size-8) var(--icon-size);
+    background-color: var(--container-color);
+  }
+
+  & a {
+    word-break: break-word;
+  }
+
+  .icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: var(--icon-size);
+    height: 100%;
+    font-size: var(--size-12);
+    color: var(--icon-color);
+  }
+
+  &.centered {
+    box-shadow: unset;
+    padding: unset;
+    background-color: unset;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+}

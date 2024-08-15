@@ -1,0 +1,45 @@
+.avatar {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  max-height: var(--size-10);
+  max-width: var(--size-10);
+  border-radius: var(--shape-corner-full);
+  fill: var(--color-primary-container);
+
+  & path {
+    fill: var(--color-on-primary-container);
+  }
+  
+  &.monogram {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: var(--size-10);
+    width: var(--size-10);
+    max-height: var(--size-10);
+    max-width: var(--size-10);
+    border-radius: var(--shape-corner-full);
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    font-family: var(--typescale-title-medium-font);
+    font-size:   var(--typescale-title-medium-size);
+    font-weight: var(--typescale-title-medium-weight);
+    line-height: var(--typescale-title-medium-line-height);  
+  }
+
+  &.check {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: var(--size-10);
+    width: var(--size-10);
+    max-height: var(--size-10);
+    max-width: var(--size-10);
+    border-radius: var(--shape-corner-full);
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+  }
+}

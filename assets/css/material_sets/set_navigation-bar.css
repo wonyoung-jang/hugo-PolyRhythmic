@@ -1,0 +1,7 @@
+.set.navigation.bar {  
+  --set-flex-flow: row nowrap;
+  --set-gap: var(--size-2);
+  --set-width: 100%;
+  --set-padding: 0 var(--size-2);
+  --set-color: var(--color-surface-container);
+}

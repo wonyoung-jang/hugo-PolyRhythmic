@@ -1,0 +1,35 @@
+{{ define "main" }}
+<article class="layout panes basic-single-pane">
+  <section 
+    class="layout pane" 
+    id="post-content">  
+    {{ with .Content }}
+        {{ . }}
+    {{ end }}
+    <details 
+      class="layout showcase-tokens" 
+      open>
+      <summary class="showcase-tokens-title">States</summary>
+      <section class="state-opacities-container">
+        <span>Enabled</span>
+        <div>Enabled</div>
+        
+        <span>Disabled</span>
+        <div class="state-disabled">Disabled</div>
+        
+        <span>Hovered</span>
+        <div class="state-hover">Hovered</div>
+        
+        <span>Focused</span>
+        <div class="state-focus">Focused</div>
+        
+        <span>Pressed</span>
+        <div class="state-press">Pressed</div>
+        
+        <span>Dragged</span>
+        <div class="state-drag">Dragged</div>
+      </section>
+    </details>
+  </section>
+</article>
+{{ end }}

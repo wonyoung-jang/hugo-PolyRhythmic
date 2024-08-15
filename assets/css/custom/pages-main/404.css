@@ -1,0 +1,19 @@
+.page-404 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: var(--spacing-panes);
+  margin-block: var(--spacing-panes);
+
+  & h1 {
+    font-family: var(--typeface-mono);
+    color: var(--color-on-surface);
+  }
+
+  & h2 {
+    color: var(--color-on-surface-variant);
+  }
+}

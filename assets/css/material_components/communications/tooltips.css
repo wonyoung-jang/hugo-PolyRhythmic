@@ -1,0 +1,57 @@
+/* Plain tooltip */
+.tooltip {
+  --container-display: flex;
+  --container-flex-flow: row wrap;
+  --container-padding: 0 var(--size-2);
+  --container-shape: var(--shape-corner-xs);
+  --container-color: var(--color-inverse-surface);
+  --text-color: var(--color-inverse-on-surface);
+  min-height: var(--size-6);
+  
+  .supporting-text {
+    font-size: var(--typescale-body-small-size);
+    line-height: var(--typescale-body-small-line-height);
+    font-weight: var(--typescale-body-small-weight);
+    font-family: var(--typescale-body-small-font);  
+  }
+}
+
+/* Rich tooltip */
+.tooltip.rich {
+  --container-padding: unset;
+  --container-elevation: var(--elevation2);
+  --container-shape: var(--shape-corner-m);
+  --container-color: var(--color-surface-container);
+  --text-color: var(--color-on-surface-variant);
+
+  .subhead {
+    padding: var(--size-3) var(--size-4) var(--size-1) var(--size-4);
+    font-size: var(--typescale-title-small-size);
+    line-height: var(--typescale-title-small-line-height);
+    font-weight: var(--typescale-title-small-weight);
+    font-family: var(--typescale-title-small-font);  
+  }
+
+  .supporting-text {
+    padding: 0 var(--size-4) var(--size-3) var(--size-4);
+    font-size: var(--typescale-body-medium-size);
+    line-height: var(--typescale-body-medium-line-height);
+    font-weight: var(--typescale-body-medium-weight);
+    font-family: var(--typescale-body-medium-font);    
+  }
+  
+  .actions {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--size-2);
+    padding: 0 var(--size-4) var(--size-2) var(--size-1);
+  }
+
+  .button {
+    color: var(--color-primary);
+    font-size: var(--typescale-label-large-size);
+    line-height: var(--typescale-label-large-line-height);
+    font-weight: var(--typescale-label-large-weight);
+    font-family: var(--typescale-label-large-font);  
+  }  
+}

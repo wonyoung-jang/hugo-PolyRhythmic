@@ -1,0 +1,35 @@
+.component {
+  &:focus-visible {
+    animation-name: outward-grow, outward-shrink;
+    animation-delay: 0s, calc(var(--motion-duration-long2) * 0.25);
+    animation-duration: calc(var(--motion-duration-long2) * 0.25), calc(var(--motion-duration-long2) * 0.75);
+    animation-timing-function: var(--motion-easing-emphasized);
+
+    outline: 3px solid var(--color-secondary);
+    outline-offset: -2px;
+    border-radius: var(--container-shape);
+  } 
+
+  &::-moz-focus-inner {
+    outline: none;
+  }
+}
+
+a:not(.component):focus-visible {
+  text-decoration: underline !important;
+} 
+
+@keyframes outward-grow {
+  from {
+    outline-width: 0px;
+  }
+  to {
+    outline-width: var(--size-2);
+  }
+}
+
+@keyframes outward-shrink {
+  from {
+    outline-width: var(--size-2);
+  }
+}

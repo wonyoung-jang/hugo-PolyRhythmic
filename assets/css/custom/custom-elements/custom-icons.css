@@ -1,0 +1,66 @@
+.icon {
+  font-family: var(--font-icon);
+  font-weight: normal;
+  font-style: normal;
+  font-size: var(--size-6);
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+
+  user-select: none;
+
+  height: var(--size-6);
+  width: var(--size-6);
+  min-height: var(--size-6);
+  min-width: var(--size-6);
+}
+
+.github-icon,
+.site-icon {
+  min-width: var(--size-6);
+  min-height: var(--size-6);
+  max-width: var(--size-6);
+  max-height: var(--size-6);
+  padding: 2px;
+}
+
+.site-icon-w {
+  fill: var(--color-primary);
+}
+
+.site-icon-j-left {
+  fill: var(--color-tertiary);
+}
+
+.site-icon-j-right {
+  fill: var(--color-secondary);
+}
+
+#home-page-icon {
+  min-width: var(--size-12);
+  min-height: var(--size-12);
+  max-width: var(--size-12);
+  max-height: var(--size-12);
+  padding: var(--size-2);
+}
+
+.share-icon {
+  min-width: var(--size-12);
+  min-height: var(--size-12);
+  max-width: var(--size-12);
+  max-height: var(--size-12);
+  padding: var(--size-3);
+  fill: var(--color-secondary);
+}

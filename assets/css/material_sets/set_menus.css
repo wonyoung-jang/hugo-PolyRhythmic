@@ -1,0 +1,13 @@
+.set.menus {
+  --set-display: flex;
+  --set-flex-flow: column nowrap;
+  --set-justify-content: center;
+  --set-align-items: flex-start;
+  --set-height: auto;
+  --set-width: auto;
+  --set-color: var(--color-surface-container);
+  
+  .divider {
+    color: var(--color-surface-variant);
+  }
+}

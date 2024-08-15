@@ -1,0 +1,53 @@
+.component {
+  position: relative;
+  z-index: 0;
+
+  * {
+    z-index: 2;
+  }
+}
+
+/* Containers (background, elevation, outline, shape) */
+.component:not(
+    .divider,
+    .tab
+  )::before {
+
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  flex: 0 1 auto;
+  background: var(--container-color);
+  box-shadow: var(--container-elevation);
+  border: var(--container-outline);
+  border-radius: var(--container-shape);
+}
+
+/* State layers */
+.component:not(
+    .app-bar,
+    .badge,
+    .divider,
+    .picker,
+    .progress,
+    .search.view,
+    .sheet,
+    .tooltip
+  )::after {
+
+  --state-color: var(--icon-color, var(--text-color));
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: radial-gradient(circle, var(--state-color) 1%, transparent 1%);
+  background-position: center;
+  border-radius: var(--container-shape);
+  opacity: 0;
+}
+
+/* TODO Dragged
+  .chip
+  .card
+*/

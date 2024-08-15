@@ -1,0 +1,29 @@
+.key-color {
+  background-color: var(--palette-primary-60);
+  height: var(--size-16);
+  width: 100%;
+}
+
+.sys-tokens {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  padding: var(--size-2);
+  
+  .swatch,
+  .color-swatch-cell,
+  & span {
+    flex: 1 1 0;
+  }
+
+  [class*="surface"] {
+    --container-height: var(--size-32);
+    --container-padding: var(--size-3);
+    pointer-events: none;
+  }
+
+  &.other-system-tokens * {
+    height: var(--size-16);
+    padding: var(--size-3);
+  }
+}

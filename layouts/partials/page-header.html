@@ -1,0 +1,32 @@
+{{ if and (not .IsHome) (.Title) (not (eq .Title "404 Page not found")) }}
+  <section class="layout page-header">
+    {{/* Metadata */}} 
+    {{ if (and 
+      (not (or (eq .Kind "taxonomy") (eq .Kind "term"))) 
+      (not .IsHome) 
+      (not (eq .Title "Sitemap"))
+      (not (eq .Title "Search")) 
+      (not (or (eq .Title "404 Page not found") (eq .Title "Now")))) }}
+      <div class="label-medium">{{ partial "post-meta.html" . }}</div>
+    {{ end }} 
+
+    {{/* Title */}}
+    <h1 class="title">{{ .Title }}</h1>
+
+    {{/* Description */}} 
+    {{ if .Description }}
+      <span class="description">{{ .Description | markdownify }}</span>
+    {{ end }} 
+    
+    {{/* Github button */}}
+    {{ with .Params.githubRepo }}
+      {{ partial "github-button.html" (dict "githubRepo" .) }} 
+    {{ end }}
+
+    {{/* Debug */}}
+    {{ if site.Params.debug }}
+      {{ partial "debug.html" .Page }}
+    {{ end }}
+
+  </section>
+{{ end }}

@@ -1,0 +1,108 @@
+.button.icon {
+  min-height: var(--size-10);
+  min-width: var(--size-10);
+  --container-padding: 0;
+  --container-shape: var(--shape-corner-full);
+  --icon-color: var(--color-on-surface-variant);
+  
+
+  & input[type="checkbox"] {
+    display: none;
+
+    &:checked + .button.icon {
+      --icon-color: var(--color-primary);
+
+      .icon,
+      & svg {
+        font-variation-settings: "FILL" 1;
+      }
+    }
+  }
+}
+
+.button.icon.filled {
+  --container-color: var(--color-primary);
+  --icon-color: var(--color-on-primary);
+
+  &:has(input[type="checkbox"]) {
+    --container-color: var(--color-surface-container-highest);
+    --icon-color: var(--color-primary);
+
+    .button.icon {
+      --container-color: var(--color-surface-container-highest);
+      --icon-color: var(--color-primary);
+    }
+  }
+
+  &:has(input[type="checkbox"]:checked) {
+    --container-color: var(--color-primary);
+    --icon-color: var(--color-on-primary);
+
+    .button.icon {
+      --container-color: var(--color-primary);
+      --icon-color: var(--color-on-primary);
+    }
+
+    .icon,
+    & svg {
+      font-variation-settings: "FILL" 1;
+    }
+  }
+}
+
+.button.icon.tonal {
+  --container-color: var(--color-secondary-container);
+  --icon-color: var(--color-on-secondary-container);
+
+  &:has(input[type="checkbox"]) {
+    --container-color: var(--color-surface-container-highest);
+    --icon-color: var(--color-on-surface-variant);
+
+    .button.icon {
+      --container-color: var(--color-surface-container-highest);
+      --icon-color: var(--color-on-surface-variant);
+    }
+  }
+
+  &:has(input[type="checkbox"]:checked) {
+    --container-color: var(--color-secondary-container);
+    --icon-color: var(--color-on-secondary-container);
+
+    .button.icon {
+      --container-color: var(--color-secondary-container);
+      --icon-color: var(--color-on-secondary-container);
+    }
+
+    .icon,
+    & svg {
+      font-variation-settings: "FILL" 1;
+    }
+  }
+}
+
+.button.icon.outlined {
+  --container-outline: 1px solid var(--color-outline);
+  --container-outline-hover: 1px solid var(--color-outline);
+  --container-outline-focus: 1px solid var(--color-outline);
+  --container-outline-press: 1px solid var(--color-outline);
+  --disabled-outline: hsl(
+      from var(--color-on-surface) 
+      l 
+      c 
+      h 
+      / 0.12);
+  --container-outline-disabled: 1px solid var(--disabled-outline);
+
+  & input[type="checkbox"] {
+    &:checked + .button.icon {
+      --container-color: var(--color-inverse-surface);
+      --icon-color: var(--color-inverse-on-surface);
+
+      .icon,
+      & svg {
+        font-variation-settings: "FILL" 1;
+      }
+    }
+  }
+}
+

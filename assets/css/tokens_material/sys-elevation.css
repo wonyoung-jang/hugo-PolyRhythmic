@@ -1,0 +1,21 @@
+:root {
+  /* Shadow colors */
+  --key-shadow:     rgba(0, 0, 0, 0.15);
+  --ambient-shadow: rgba(0, 0, 0, 0.3);
+
+  /* 1 Resting */
+  --elevation0: 0px;
+  --elevation1: 0px 1px 2px var(--ambient-shadow), 0px 1px 3px 1px var(--key-shadow);
+  --elevation2: 0px 1px 2px var(--ambient-shadow), 0px 2px 6px 2px var(--key-shadow);
+
+  /* 2 Interactions */
+  --elevation3: 0px var(--size-1) var(--size-2) 3px var(--key-shadow),  0px 1px 3px var(--ambient-shadow);
+  --elevation4: 0px 6px 10px var(--size-1) var(--key-shadow), 0px 2px 3px var(--ambient-shadow);
+  --elevation5: 0px var(--size-2) var(--size-3) 6px var(--key-shadow), 0px var(--size-1) var(--size-1) var(--ambient-shadow);
+}
+
+.dark {
+  /* 1 Resting */
+  --elevation1: 0px 1px 3px 1px var(--key-shadow), 0px 1px 2px var(--ambient-shadow);
+  --elevation2: 0px 2px 6px 2px var(--key-shadow), 0px 1px 2px var(--ambient-shadow);
+}

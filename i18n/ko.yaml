@@ -1,0 +1,61 @@
+- id: prev_page
+  translation: "이전"
+
+- id: next_page
+  translation: "다음"
+
+- id: read_time
+  translation:
+    one: "1분 읽기"
+    other: "{{ .Count }}분 읽기"
+
+- id: toc
+  translation: "목차"
+
+- id: translations
+  translation: "번역"
+
+- id: home
+  translation: "홈"
+
+- id: code_copy
+  translation: "복사"
+
+- id: code_copied
+  translation: "복사됨!"
+
+- id: js_required
+  translation: "이 양식을 제출하려면 JavaScript가 필요합니다."
+
+- id: contact_submitted
+  translation: "메시지를 보내주셔서 감사합니다. 전송되었습니다."
+
+- id: contact_error
+  translation: "메시지 전송 중 오류가 발생했습니다. 나중에 다시 시도해 주세요."
+
+- id: contact_name
+  translation: "이름"
+
+- id: contact_name_placeholder
+  translation: "이름을 입력하세요"
+
+- id: contact_mail
+  translation: "이메일"
+
+- id: contact_mail_placeholder
+  translation: "이메일 주소를 입력하세요"
+
+- id: contact_subject
+  translation: "제목"
+
+- id: contact_subject_placeholder
+  translation: "메시지 제목을 입력하세요"
+
+- id: contact_message
+  translation: "메시지"
+
+- id: contact_message_placeholder
+  translation: "메시지를 입력하세요"
+
+- id: contact_submit
+  translation: "제출"

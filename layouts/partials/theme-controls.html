@@ -1,0 +1,218 @@
+<button class="theme-controls">
+  <input 
+    type="checkbox" 
+    id="theme-controls"
+    accesskey="c"
+    title="Theme controls (c)"/>
+  <label for="theme-controls" class="component button icon">
+    <i class="icon">
+      palette
+    </i> 
+  </label>
+  
+  <div class="component sheet side modal controls">
+    <span class="theme-controls-title headline-medium">Theme controls</span>
+    
+    {{/*  Colors  */}}
+    <span class="theme-controls-title title-medium">Colors</span>
+    <div id="color-selector-container">
+      <label>Hue</label>
+      <div class="slider">
+        <input type="range" id="hue-selector" min="0" max="360" value="268"/>
+        <span class="tooltip" id="hue-tooltip"></span>
+      </div>
+      <div id="theme-hues"></div>
+          
+      <label>Chroma</label>
+      <div class="slider">
+        <input type="range" id="chroma-selector" min="0" max="100" value="58"/>
+        <span class="tooltip" id="chroma-tooltip"></span>
+      </div>
+      <div id="theme-chromas"></div>
+
+      <label>Lightness</label>
+      <div id="theme-lightness"></div>
+
+      {{/*  Tertiary color temperature */}}
+      <label>Tertiary temperature</label>
+
+      <div class="set segmented-buttons">
+        <label class="component button segmented start">
+          <input type="radio" name="temperature" id="tertiary-selector-cool" value="cool"/>
+          <i class="icon">check</i>
+          Cooler
+        </label>
+        
+        <label class="component button segmented end">
+          <input type="radio" name="temperature" id="tertiary-selector-warm" value="warm" checked/>
+          <i class="icon">check</i>
+          Warmer
+        </label>
+      </div>
+
+      <section class="color-temp-reference">
+        <div id="primary"></div>
+        <div id="tertiary"></div>
+      </section>
+      <section class="color-temp-reference">
+        <div id="primary-container"></div>
+        <div id="tertiary-container"></div>
+      </section>
+
+      {{/*  Contrast  */}}
+      <label>Contrast</label>
+      
+      <div class="set segmented-buttons">
+        <label class="component button segmented start">
+          <input type="radio" name="contrast" id="contrast-selector-regular" value="regular" checked/>
+          <i class="icon">check</i>
+          <i class="icon">brightness_low</i>
+        </label>
+        
+        <label class="component button segmented">
+          <input type="radio" name="contrast" id="contrast-selector-medium" value="medium"/>
+          <i class="icon">check</i>
+          <i class="icon">brightness_medium</i>
+        </label>
+        
+        <label class="component button segmented end">
+          <input type="radio" name="contrast" id="contrast-selector-high" value="high"/>
+          <i class="icon">check</i>
+          <i class="icon">brightness_high</i>
+        </label>
+      </div>
+    </div>
+
+    {{/*  Dim images in dark mode */}}
+    <span class="theme-controls-title title-medium">Images</span>
+    <div id="dim-images-selector-container">
+      <label>Dim dark mode image brightness</label>
+      <label class="component switch both">
+        <input type="checkbox" id="dim-image-selector" checked>
+        <span></span>
+      </label>
+    </div>
+
+    {{/*  Shape  */}}
+    <span class="theme-controls-title title-medium">Shapes</span>
+    <div id="shape-selector-container">
+      <label>Shape corner roundness</label>
+      <div class="slider">
+        <input type="range" id="shape-selector" min="0.0" max="4.0" value="1.7" step="0.05"/>
+        <span class="tooltip" id="shape-tooltip"></span>
+      </div>
+    </div>
+
+    {{/*  Typography  */}}
+    <span class="theme-controls-title title-medium">Typography</span>
+    <div id="typography-selector-container">
+      {{/*  Max char width toggle */}}
+      <div id="max-width-selector">
+        <label>Content text width</label>
+        <div class="set segmented-buttons">
+          <label class="component button segmented start">
+            <input type="radio" name="width" id="width-selector-60" value="60"/>
+            <i class="icon">check</i>
+            60ch
+          </label>
+          
+          <label class="component button segmented">
+            <input type="radio" name="width" id="width-selector-120" value="120"/>
+            <i class="icon">check</i>
+            120ch
+          </label>
+          
+          <label class="component button segmented end">
+            <input type="radio" name="width" id="width-selector-max" value="max" checked/>
+            <i class="icon">check</i>
+            Max
+          </label>
+        </div>
+      </div>
+      
+      {{/*  Font size  */}}
+      <label>Font Size</label>
+      <div class="slider">
+        <input type="range" id="font-size-selector" min="8" max="24" value="14" step="1">
+        <span class="tooltip" id="font-size-tooltip">14px</span>
+      </div>
+
+      {{/*  Line height  */}}
+      <label>Line Height</label>
+      <div class="slider">
+        <input type="range" id="line-height-selector" min="1" max="2.5" value="1.25" step="0.05">
+        <span class="tooltip" id="line-height-tooltip">1.5</span>
+      </div>
+  
+      {{/*  Font families  */}}
+      <div id="typography-selector">
+        {{/*  Brand  */}}
+        <fieldset class="typography-fieldset">
+          <legend><label>Brand font family</label></legend>
+          <label class="component radio">
+            <input type="radio" name="brand-font" id="font-brand-raleway" value="Raleway" checked>
+            <span>Raleway</span>
+          </label>
+          <label class="component radio">
+            <input type="radio"  name="brand-font" id="font-brand-rubik" value="Rubik">
+            <span>Rubik</span>
+          </label>
+          <label class="component radio">
+            <input type="radio" name="brand-font" id="font-brand-bookman" value="Bookman">
+            <span>Bookman</span>
+          </label>
+          <label class="component radio">
+            <input type="radio" name="brand-font" id="font-brand-century-schoolbook" value="Century Schoolbook">
+            <span>Century Schoolbook</span>
+          </label>
+          <div class="example title-small">Example: Brand text</div>
+        </fieldset>
+
+        {{/*  Plain  */}}
+        <fieldset class="typography-fieldset">
+          <legend><label>Plain font family</label></legend>
+          <label class="component radio">
+            <input type="radio" name="plain-font" id="font-plain-rubik" value="Rubik" checked>
+            <span>Rubik</span>
+          </label>
+          <label class="component radio">
+            <input type="radio" name="plain-font" id="font-plain-raleway" value="Raleway">
+            <span>Raleway</span>
+          </label>
+          </label>
+          <label class="component radio">
+            <input type="radio" name="plain-font" id="font-plain-helvetica" value="Helvetica">
+            <span>Helvetica</span>
+          </label>
+          <label class="component radio">
+            <input type="radio" name="plain-font" id="font-plain-verdana" value="Verdana">
+            <span>Verdana</span>
+          </label>
+          <div class="example body-large">Example: Plain text</div>
+        </fieldset>
+
+        {{/*  Code  */}}
+        <fieldset class="typography-fieldset">
+          <legend><label>Code font family</label></legend>
+          <label class="component radio">
+            <input type="radio" name="code-font" id="font-sometype-mono" value="SomeType Mono" checked>
+            <span>SomeType Mono</span>
+          </label>
+          <label class="component radio">
+            <input type="radio" name="code-font" id="font-courier-new" value="Courier New">
+            <span>Courier New</span>
+          </label>
+          <label class="component radio">
+            <input type="radio" name="code-font" id="font-andale-mono" value="Andale Mono">
+            <span>Andale Mono</span>
+          </label>
+          <label class="component radio">
+            <input type="radio" name="code-font" id="font-consolas" value="Consolas">
+            <span>Consolas</span>
+          </label>
+          <div class="example code-typeface">Example: Code text</div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</button>

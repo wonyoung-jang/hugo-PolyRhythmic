@@ -1,0 +1,42 @@
+.most-recently-updated-pages {
+  min-width: 100%;
+  border: 1px solid var(--color-outline-variant);
+  margin-block: var(--size-16) var(--size-1);
+  overflow-x: auto;
+
+  & caption {
+    margin-bottom: var(--spacing-panes);
+  }
+
+  & tbody {
+    & tr {
+      color: var(--color-on-surface-variant);
+
+      &:nth-child(even) {
+        background: var(--color-surface-container-lowest);
+      }
+
+      &:nth-child(odd) {
+        background: var(--color-surface-container-low);
+      }
+    }
+  }
+
+  & td,
+  & th {
+    padding: var(--size-1) var(--size-2);
+    border: 1px solid var(--color-outline-variant);
+  }
+
+  & th {
+    background: var(--color-surface);
+    text-align: left;
+    padding: var(--size-3);
+
+    color: var(--color-on-surface);
+    font-family: var(--typescale-title-large-font);
+    font-size: var(--typescale-title-large-size);
+    line-height: var(--typescale-title-large-line-height);
+    font-weight: var(--typescale-title-large-weight);
+  }
+}

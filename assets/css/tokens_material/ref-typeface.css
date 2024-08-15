@@ -1,0 +1,67 @@
+:root {
+  /* Fonts */
+  --typeface-brand:               var(--typeface-brand);
+  --typeface-plain:               var(--typeface-plain);
+  --typeface-mono:                var(--typeface-mono);
+
+  /* Icons */
+  --typeface-icon-outlined:       'Material Symbols Outlined';
+  --typeface-icon-rounded:        'Material Symbols Rounded';
+  --typeface-icon-sharp:          'Material Symbols Sharp';
+
+  /* Weights */
+  --typeface-weight-regular:      400;
+  --typeface-weight-medium:       500;
+  --typeface-weight-bold:         700;
+
+  /* Brand typeface */
+  &:has(#font-brand-raleway:checked) {
+    --typeface-brand: 'Raleway', system-ui, sans-serif;
+  }
+
+  &:has(#font-brand-rubik:checked) {
+    --typeface-brand: 'Rubik', system-ui, sans-serif;
+  }
+
+  &:has(#font-brand-bookman:checked) {
+    --typeface-brand: 'Bookman', system-ui, serif;
+  }
+
+  &:has(#font-brand-century-schoolbook:checked) {
+    --typeface-brand: 'Century Schoolbook', system-ui, serif;
+  }
+
+  /* Plain typeface */
+  &:has(#font-plain-rubik:checked) {
+    --typeface-plain: 'Rubik', system-ui, sans-serif;
+  }
+
+  &:has(#font-plain-raleway:checked) {
+    --typeface-plain: 'Raleway', system-ui, sans-serif;
+  }
+
+  &:has(#font-plain-helvetica:checked) {
+    --typeface-plain: 'Helvetica', system-ui, sans-serif;
+  }
+
+  &:has(#font-plain-verdana:checked) {
+    --typeface-plain: 'Verdana', system-ui, sans-serif;
+  }
+
+  /* Mono typeface */
+  &:has(#font-sometype-mono:checked) {
+    --typeface-mono: 'SomeType Mono', system-ui, monospace;
+  }
+
+  &:has(#font-courier-new:checked) {
+    --typeface-mono: 'Courier New', system-ui, monospace;
+  }
+
+  &:has(#font-andale-mono:checked) {
+    --typeface-mono: 'Andale Mono', system-ui, monospace;
+  }
+
+  &:has(#font-consolas:checked) {
+    --typeface-mono: 'Consolas', system-ui, monospace;
+  }
+}

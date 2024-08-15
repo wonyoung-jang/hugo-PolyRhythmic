@@ -1,0 +1,11 @@
+.picker {
+  --container-display: flex;
+  --container-flex-flow: column nowrap;
+  --container-justify-content: flex-start;
+  --container-align-items: flex-start;
+  --container-height: auto;
+  --container-width: auto;
+  --container-elevation: var(--elevation3);
+  --container-shape: var(--shape-corner-xl);
+  --container-color: var(--color-surface-container-high);
+}

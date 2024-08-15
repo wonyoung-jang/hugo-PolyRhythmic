@@ -1,0 +1,125 @@
+/* || Easing */
+
+/* Standard */
+.motion-easing-standard {
+  transition-timing-function: var(--motion-easing-standard);
+  animation-timing-function: var(--motion-easing-standard);
+}
+
+.motion-easing-standard-decelerate {
+  transition-timing-function: var(--motion-easing-standard-decelerate);
+  animation-timing-function: var(--motion-easing-standard-decelerate);
+}
+
+.motion-easing-standard-accelerate {
+  transition-timing-function: var(--motion-easing-standard-accelerate);
+  animation-timing-function: var(--motion-easing-standard-accelerate);
+}
+
+/* Emphasized */
+.motion-easing-emphasized {
+  transition-timing-function: var(--motion-easing-emphasized);
+  animation-timing-function: var(--motion-easing-emphasized);
+}
+
+.motion-easing-emphasized-decelerate {
+  transition-timing-function: var(--motion-easing-emphasized-decelerate);
+  animation-timing-function: var(--motion-easing-emphasized-decelerate);
+}
+
+.motion-easing-emphasized-accelerate {
+  transition-timing-function: var(--motion-easing-emphasized-accelerate);
+  animation-timing-function: var(--motion-easing-emphasized-accelerate);
+}
+
+/* Linear */
+.motion-easing-emphasized {
+  transition-timing-function: var(--motion-easing-linear);
+  animation-timing-function: var(--motion-easing-linear);
+}
+
+/* || Durations */
+
+/* Short 50-200 */
+.motion-duration-short1 {
+  transition-duration: var(--motion-duration-short1);
+  animation-duration: var(--motion-duration-short1);
+}
+
+.motion-duration-short2 {
+  transition-duration: var(--motion-duration-short2);
+  animation-duration: var(--motion-duration-short2);
+}
+
+.motion-duration-short3 {
+  transition-duration: var(--motion-duration-short3);
+  animation-duration: var(--motion-duration-short3);
+}
+
+.motion-duration-short4 {
+  transition-duration: var(--motion-duration-short4);
+  animation-duration: var(--motion-duration-short4);
+}
+
+/* Medium 250-400 */
+.motion-duration-medium1 {
+  transition-duration: var(--motion-duration-medium1);
+  animation-duration: var(--motion-duration-medium1);
+}
+
+.motion-duration-medium2 {
+  transition-duration: var(--motion-duration-medium2);
+  animation-duration: var(--motion-duration-medium2);
+}
+
+.motion-duration-medium3 {
+  transition-duration: var(--motion-duration-medium3);
+  animation-duration: var(--motion-duration-medium3);
+}
+
+.motion-duration-medium4 {
+  transition-duration: var(--motion-duration-medium4);
+  animation-duration: var(--motion-duration-medium4);
+}
+
+/* Long 450-600 */
+.motion-duration-long1 {
+  transition-duration: var(--motion-duration-long1);
+  animation-duration: var(--motion-duration-long1);
+}
+
+.motion-duration-long2 {
+  transition-duration: var(--motion-duration-long2);
+  animation-duration: var(--motion-duration-long2);
+}
+
+.motion-duration-long3 {
+  transition-duration: var(--motion-duration-long3);
+  animation-duration: var(--motion-duration-long3);
+}
+
+.motion-duration-long4 {
+  transition-duration: var(--motion-duration-long4);
+  animation-duration: var(--motion-duration-long4);
+}
+
+/* Extra Long 700-1000 */
+.motion-duration-extra-long1 {
+  transition-duration: var(--motion-duration-extra-long1);
+  animation-duration: var(--motion-duration-extra-long1);
+}
+
+.motion-duration-extra-long2 {
+  transition-duration: var(--motion-duration-extra-long2);
+  animation-duration: var(--motion-duration-extra-long2);
+}
+
+.motion-duration-extra-long3 {
+  transition-duration: var(--motion-duration-extra-long3);
+  animation-duration: var(--motion-duration-extra-long3);
+}
+
+.motion-duration-extra-long4 {
+  transition-duration: var(--motion-duration-extra-long4);
+  animation-duration: var(--motion-duration-extra-long4);
+}

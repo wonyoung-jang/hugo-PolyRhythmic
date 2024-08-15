@@ -1,0 +1,123 @@
+.checkbox {
+  --container-display: flex;
+  --container-align-items: center;
+  --container-gap: var(--size-2);
+  --container-height: var(--size-10);
+  --container-width: auto;
+
+  --text-color: var(--color-on-surface-variant);
+  --icon-color: var(--color-on-surface-variant);
+
+  direction: ltr;
+
+  white-space: nowrap;
+  cursor: pointer;
+  
+  &:has(input:checked) {
+    --icon-color: var(--color-primary);
+  }
+  
+  &:has(span:empty) {
+    --container-gap: 0;
+  }
+
+  &.error-check {
+    > input:checked + span::before {
+      color: var(--color-error);
+    }
+
+    > span::before {
+      color: var(--color-error);
+    }
+
+    > input:checked:indeterminate + span::before,
+    > input:checked.indeterminate + span::before {
+      color: var(--color-error);
+    }
+  }
+
+  > input {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
+
+    &:checked + span::before {
+      content: "check_box";
+      color: var(--color-primary);
+      font-variation-settings: "FILL" 1;
+    }
+
+    &:hover + span::after {
+      opacity: var(--state-hover-opacity);
+    }
+
+    &:focus + span::after {
+      opacity: var(--state-focus-opacity);
+    }
+
+    &:active + span::after {
+      opacity: var(--state-press-opacity);
+    }
+
+    &:disabled + span::before {
+      opacity: var(--state-disabled-opacity);
+    }
+
+    &:checked:indeterminate + span::before,
+    &:checked.indeterminate + span::before {
+      content: "indeterminate_check_box";
+      color: var(--color-primary);
+      font-variation-settings: "FILL" 1;
+    }
+  }
+
+  > span {
+    display: flex;
+    align-items: center;
+    color: var(--color-on-surface-variant);
+
+    &::before {
+      content: "check_box_outline_blank";
+      color: var(--color-on-surface-variant);
+      font-variation-settings: "GRAD" 200;
+
+      display: flex;
+      align-items: center;
+
+      font-family: var(--font-icon);
+      font-size: var(--size-6);
+      width: var(--size-6);
+      height: var(--size-6);
+
+      direction: ltr;
+      font-feature-settings: "liga";
+      -webkit-font-smoothing: antialiased;
+      position: absolute;
+      inset: auto auto auto calc(-1 * var(--size-1));
+      border-radius: var(--shape-corner-full);
+      user-select: none;
+      box-shadow: 0 0 0 0 var(--icon-color);
+      transition: all var(--motion-duration-short3);
+    }
+
+    &::after {
+      content: "";
+      color: var(--color-on-surface-variant);
+
+      display: flex;
+      align-items: center;
+
+      width: var(--size-10);
+      height: var(--size-10);
+
+      direction: ltr;
+      position: absolute;
+      inset: auto auto auto -12px;
+      user-select: none;
+      background-color: var(--icon-color);
+      border-radius: var(--shape-corner-full);
+      opacity: 0;
+      transition: all var(--motion-duration-short3);
+    }
+  }
+}

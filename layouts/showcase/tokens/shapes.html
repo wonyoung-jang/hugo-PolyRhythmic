@@ -1,0 +1,37 @@
+{{ define "main" }}
+<article class="layout panes basic-single-pane">
+  <section
+    class="layout pane"
+    id="post-content">
+    {{ with .Content }} 
+      {{ . }} 
+    {{ end }}
+    <details
+      class="layout showcase-tokens"
+      open>
+      <summary class="showcase-tokens-title">Shapes</summary>
+      {{ $sequenceCorners := "none xs s m l xl full" }} 
+      {{ $sequenceMods := "top bottom start end" }} 
+      {{ $shapes := split $sequenceCorners " " }} 
+      {{ $mods := split $sequenceMods " " }}
+      <div id="shapes-container">
+        {{ range $shapes }}
+          <label>
+            {{ upper . }}
+          </label>
+          <div class="shape-{{ . }}">
+            {{ . }}
+          </div>
+          {{ if and (ne . "none") (ne . "full")}} 
+            {{ range $mods }}
+              <div class="shape-{{ . }}-{{ . }}">
+                {{ . }}
+              </div>
+            {{ end }}
+          {{ end }} 
+        {{ end }}
+      </div>
+    </details>
+  </section>
+</article>
+{{ end }}

@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article
+  class="layout panes canon-supporting-pane"
+  id="showcase">
+  <section class="layout pane focus-pane">
+    <h2>Focus pane</h2>
+    {{ with .Content }} 
+        {{ . }} 
+    {{ end }}
+  </section>
+
+  <section class="layout pane supporting-pane">
+    <h2>Supporting pane</h2>
+  </section>
+</article>
+{{ end }}

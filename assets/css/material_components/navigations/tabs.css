@@ -1,0 +1,66 @@
+.tabs:not(.sub-tabs) .tab,
+.component.tab {
+  flex: 1 1 auto;
+  cursor: pointer;
+
+  --container-height: var(--size-12);
+  --container-shape: var(--shape-corner-none);
+  
+  --container-display: flex;
+  --container-flex-flow: column nowrap;
+  --container-justify-content: center;
+  --container-align-items: center;
+  --container-color: var(--color-surface);
+
+  --icon-color: var(--color-on-surface-variant);
+  --text-color: var(--color-on-surface-variant);
+  
+  &.active {
+    --icon-color: var(--color-primary);
+    --text-color: var(--color-primary);
+    
+    font-weight: var(--typeface-weight-bold);
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--color-primary);
+  }
+  
+  &:not(.active)::before {
+    display: none;
+  }
+
+  &.primary {
+    &:has(.icon):not(:has(.label)) {
+      --container-height: var(--size-12);
+    }
+  
+    &:has(.icon + .label) {
+      --container-height: var(--size-16);
+    }
+  
+    &::before {
+      z-index: 1;
+      left: 40%;
+      width: 20%;
+      height: 3px;
+      border-radius: var(--shape-corner-xl-top);
+    }
+  }
+  
+  &.secondary {
+    --container-flex-flow: row nowrap;
+    --container-gap: var(--size-2);
+    
+    &::before {
+      z-index: 1;
+      left: 0%;
+      width: 100%;
+      height: 2px;
+    }
+  }
+}

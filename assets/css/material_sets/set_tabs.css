@@ -1,0 +1,13 @@
+.set.tabs:not(.sub-tabs) {
+  position: relative;
+  --set-flex: 1 1 auto;
+  --set-display: flex;
+  --set-flex-flow: row nowrap;
+  --set-align-items: stretch;
+  --set-align-content: stretch;
+  --set-justify-content: flex-start;
+  --set-width: 100%;
+  --set-gap: 0;
+  --set-overflow: clip;
+  --set-color: var(--color-surface);
+}

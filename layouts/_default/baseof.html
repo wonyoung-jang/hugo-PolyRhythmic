@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html   
+  lang="{{- site.Language.Lang -}}" 
+  dir="{{- site.Language.LanguageDirection | default "auto" -}}">      
+
+  {{/* Head */}}
+  <head>
+    {{- partial "head.html" . -}}
+  </head>
+
+  {{/* Body */}}
+  <body id="top">     
+
+    {{/* Header */}}
+    <header 
+      id="header" 
+      role="banner">
+
+      {{- partialCached "header.html" . .Page -}}
+    </header>
+
+    {{/* Main */}}
+    <main role="main">
+      {{/* Layout: Content Wrapper */}}
+      <div class="layout content-wrapper">
+        {{/* Layout: Page Header */}}
+        {{- partial "page-header.html" . -}}
+
+        {{/* Layout: Main */}}
+        {{- block "main" . -}}
+        {{- end -}}
+      </div>
+
+      {{/* Layout: Page Navigation */}}
+      {{- partial "page-navigation.html" . -}}
+
+      {{/* Layout: Page Links */}}
+      {{- if .IsPage -}}
+        {{- partial "page-links.html" . -}}
+      {{- end -}}
+      
+      {{/* Footer */}}
+      <footer 
+        id="footer" 
+        role="contentinfo">    
+
+        {{/* Links + Copyright */}}
+        {{- partialCached "footer.html" . -}}
+        
+        {{/* Component: Top-Link */}}
+        {{- partialCached "top-link-fab.html" . -}}
+      </footer>
+    </main>
+  </body>
+</html>

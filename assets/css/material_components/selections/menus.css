@@ -1,0 +1,58 @@
+.component.menu {
+  --container-flex-flow: row nowrap;
+  --container-height: var(--size-12);
+  --container-padding: var(--size-2) var(--size-3);
+  --container-gap: var(--size-3);
+
+  --text-color: var(--color-on-surface);
+  --icon-color: var(--color-on-surface-variant);
+}
+
+.leading.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--size-6);
+  width: var(--size-6);
+  height: var(--size-6);
+}
+
+.leading.indent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--size-6);
+  height: var(--size-6);
+}
+
+.trailing.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--size-6);
+  width: var(--size-6);
+  height: var(--size-6);
+}
+
+.trailing.keyboard {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 13px;
+}
+
+.trailing.icon.selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--size-6);
+  width: var(--size-6);
+  height: var(--size-6);
+}
+
+.trailing.keyboard.selected {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 13px;
+}

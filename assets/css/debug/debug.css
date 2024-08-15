@@ -1,0 +1,97 @@
+* {
+  outline: 1px solid rgb(255, 255, 50) !important;
+}
+
+* * {
+  outline: 1px dashed rgba(255, 255, 0, 0.336) !important;
+}
+
+.layout {
+  outline: 1px solid rgb(255, 50, 50) !important;
+}
+
+.layout * {
+  outline: 1px dashed rgb(255, 50, 50) !important;
+}
+
+.set {
+  outline: 1px solid rgb(50, 255, 50) !important;
+}
+
+.set * {
+  outline: 1px dashed rgb(50, 255, 50) !important;
+}
+
+.component {
+  outline: 1px solid rgb(50, 50, 255) !important;
+}
+
+.component * {
+  outline: 1px dashed rgb(50, 50, 255) !important;
+}
+
+.debug-config {
+  flex: 1 1 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  outline: unset !important;
+
+  * {
+    outline: unset !important;
+  }
+
+  & pre {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: var(--size-1) var(--size-4);
+    border-radius: var(--shape-corner-m);
+    background-color: var(--color-surface-container-lowest);
+  }
+
+  & th,
+  & td {
+    text-align: left;
+    padding: var(--size-1) var(--size-3);
+    border: 1px solid var(--color-surface-container-high);
+  }
+
+  & th {
+    background-color: var(--color-surface-container-low);
+  }
+
+  & details {
+    flex: 1 1 0;
+  }
+
+  & details > summary,
+  & summary {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--size-1) var(--size-2);
+    background-color: var(--color-surface-container-highest);
+
+    &::after {
+      content: "▲";
+      font-size: var(--size-5);
+    }
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: var(--color-on-tertiary-container);
+      background-color: var(--color-tertiary-container);
+    }
+  }
+
+  &[open] > summary::after,
+  & details[open] > summary::after {
+    content: "▼";
+  }
+}

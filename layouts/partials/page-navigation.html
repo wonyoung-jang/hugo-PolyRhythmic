@@ -1,0 +1,48 @@
+{{ $pages := site.RegularPages }} 
+{{ if and (gt (len $pages) 1) (in $pages . ) }}
+  <nav
+    class="layout page-navigation"
+    aria-label="Page Navigation">
+    {{ with $pages.Prev . }} 
+      {{ if eq .Title "" }}
+        <div class="component card prev empty">
+          <span class="page-direction"></span>
+        </div>
+      {{ else }}
+        <a
+          class="component card prev"
+          href="{{ .Permalink }}"
+          accesskey="p"
+          title="Previous page (p)">
+          <span class="page-direction">
+            <i class="icon">arrow_back</i>
+            <label>{{ i18n "prev_page" }}</label>
+          </span>
+
+          <span class="title-large">{{ .Name }}</span>
+        </a>
+      {{ end }} 
+    {{ end }} 
+    
+    {{ with $pages.Next . }} 
+      {{ if eq .Title "" }}
+        <div class="component card next empty">
+          <span class="page-direction"></span>
+        </div>
+      {{ else }}
+        <a
+          class="component card next"
+          href="{{ .Permalink }}"
+          accesskey="n"
+          title="Next page (n)">
+          <span class="page-direction">
+            <label>{{ i18n "next_page" }}</label>
+            <i class="icon">arrow_forward</i>
+          </span>
+
+          <span class="title-large">{{ .Name }}</span>
+        </a>
+      {{ end }} 
+    {{ end }}
+  </nav>
+{{ end }}

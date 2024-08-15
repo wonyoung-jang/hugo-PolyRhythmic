@@ -1,0 +1,103 @@
+.set.tabs:has(.sub-tabs-container) {
+  background-color: var(--color-surface-container);
+  padding: 0 var(--size-1);
+  
+  --set-gap: 7px;
+  --set-overflow: visible;
+  
+
+  .tab {
+    --container-shape: var(--shape-corner-m-top);
+
+    &.active {
+      --container-color: var(--color-surface-container-low);
+    }
+
+    &:not(.active) {
+      background-color: var(--color-surface-container-high);
+    }
+
+    &::before {
+      all: unset;
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      flex: 0 1 auto;
+      background-color: var(--container-color);
+      box-shadow: var(--container-elevation);
+      border: var(--container-outline);
+      border-radius: var(--container-shape);
+    }
+  }
+  
+  .sub-tabs-container {
+    flex: 1 1 auto;
+    position: relative;
+
+    .sub-tabs {
+      position: absolute;
+  
+      display: none;
+  
+      flex-flow: column nowrap;
+      align-items: stretch;
+      justify-content: flex-start;
+      min-width: fit-content;
+      width: 100%;
+      box-shadow: var(--elevation2);
+      --container-shape: var(--shape-corner-none);
+      z-index: 1;
+      
+      .tab {
+        flex: 1 1 auto;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: var(--size-2);
+        padding: var(--size-7);
+        --container-color: var(--color-surface-container);
+        --container-shape: var(--shape-corner-none);
+        z-index: 1;
+
+        &.active {
+          --container-color: var(--color-surface-container-high);
+        }
+
+        &::before {
+          all: unset;
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          flex: 0 1 auto;
+          background-color: var(--container-color);
+          box-shadow: var(--container-elevation);
+          border: var(--container-outline);
+          border-radius: var(--container-shape);
+        }
+      }
+    }
+  
+    &:hover .sub-tabs,
+    &:focus .sub-tabs {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .set.tabs:has(.sub-tabs-container) {
+    .tab {
+      max-height: var(--size-12);
+    }
+    
+    .tab .icon {
+      display: none;
+    }
+  }
+
+  main {
+    max-height: calc(100dvh - var(--size-28));
+  }
+}

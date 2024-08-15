@@ -1,0 +1,6 @@
+.set.segmented-buttons {
+  --set-display: flex;
+  --set-flex-flow: row nowrap;
+  --set-align-items: stretch;
+  --set-overflow: auto clip;
+}

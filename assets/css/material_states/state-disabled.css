@@ -1,0 +1,27 @@
+.component:is(
+    .button.common,
+    .button.icon,
+    .button.segmented,
+    .card,
+    .carousel.item,
+    .checkbox,
+    .chip,
+    .picker.date.docked,
+    .list.item,
+    .menu.item,
+    .radio,
+    .slider,
+    .switch,
+    .text-field,
+    .year,
+    .calendar-cell.day,
+    .calendar-cell.today
+) {
+  &.disabled,
+  &:disabled,
+  &:has([disabled]) {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: var(--state-disabled-opacity);
+  }
+}

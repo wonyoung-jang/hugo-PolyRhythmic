@@ -1,0 +1,96 @@
+.set.chips {
+  --set-flex: 1 1 auto;
+  --set-display: flex;
+  --set-flex-flow: row wrap;
+  --set-align-items: center;
+  --set-align-content: stretch;
+  --set-justify-content: flex-start;
+  --set-width: 100%;
+  --set-gap: var(--size-2);
+  --set-overflow: auto;
+}
+
+.chip {
+  cursor: pointer;
+
+  --container-display: flex;
+  --container-flex-flow: row nowrap;
+  --container-justify-content: flex-start;
+  --container-align-items: center;
+  --container-gap: var(--size-2);
+  --container-height: var(--size-8);
+  --container-width: initial;
+  --container-padding: 0 var(--size-4);
+
+  --container-outline: initial;
+  --container-elevation: initial;
+  --container-shape: var(--shape-corner-s);
+
+  --container-color: initial;
+
+  --text-color: var(--color-on-surface);
+  --icon-color: var(--color-primary);
+
+  font-size: var(--typescale-label-large-size);
+  line-height: var(--typescale-label-large-line-height);
+  font-weight: var(--typescale-label-large-weight);
+  font-family: var(--typescale-label-large-font);
+  color: var(--text-color);
+  
+  .icon {
+    color: var(--icon-color);
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+  }
+
+  & input {
+    display: none;
+  }
+  
+  &:has(.avatar) {
+    padding-left: var(--size-1);
+
+    .avatar {
+      height: var(--size-6);
+      width: var(--size-6);
+    }
+  }
+
+  &:has(.leading-icon, .favicon) {
+    padding-left: var(--size-2);
+
+    .favicon {
+      max-width: var(--size-5);
+      max-height: var(--size-5);
+      border-radius: var(--shape-corner-full);
+      overflow: clip;
+    }
+  }
+
+  &:has(.trailing-icon) {
+    padding-right: var(--size-2);
+  }
+
+
+  &.input {
+    --container-padding: 0 var(--size-3);
+  }
+
+  &.outlined {
+    --container-outline: 1px solid var(--color-outline);
+    --container-outline-hover: 1px solid var(--color-outline);
+    --container-outline-focus: 1px solid var(--color-outline);
+    --container-outline-press: 1px solid var(--color-outline);
+  }
+
+  &.elevated {
+    --container-color: var(--color-surface-container-low);
+    --container-elevation: var(--elevation1);
+  }
+
+  &:has(input:checked) {
+    --container-color: var(--color-secondary-container);
+    color: var(--color-on-secondary-container);
+  }
+}

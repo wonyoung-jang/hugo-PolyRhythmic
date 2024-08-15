@@ -1,0 +1,31 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  .anchor {
+    flex: 1 1 0;
+    height: 100%;
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-1);
+
+    user-select: none;
+
+    opacity: 0;
+    transition: opacity var(--motion-duration-medium2) var(--motion-easing-emphasized);
+    margin-inline-start: var(--size-1);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &:active .anchor,
+  &:focus-within .anchor,
+  &:hover .anchor {
+    opacity: 1;
+  }
+}

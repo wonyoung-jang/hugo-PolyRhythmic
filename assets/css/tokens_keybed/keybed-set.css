@@ -1,0 +1,27 @@
+.set {
+  --set-flex: initial;
+  --set-display: initial;
+  --set-flex-flow: initial;
+  --set-align-items: initial;
+  --set-align-content: initial;
+  --set-justify-content: initial;
+  --set-width: initial;
+  --set-gap: initial;
+  --set-padding: initial;
+  --set-overflow: initial;
+  --set-color: initial;
+}
+
+.set {
+  flex:             var(--set-flex);
+  display:          var(--set-display);
+  flex-flow:        var(--set-flex-flow);
+  align-items:      var(--set-align-items);
+  align-content:    var(--set-align-content);
+  justify-content:  var(--set-justify-content);
+  width:            var(--set-width);
+  gap:              var(--set-gap);
+  padding:          var(--set-padding);
+  overflow:         var(--set-overflow);
+  background-color: var(--set-color);
+}

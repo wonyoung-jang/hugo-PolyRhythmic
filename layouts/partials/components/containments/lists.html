@@ -1,0 +1,68 @@
+<div class="component list item {{ .size }} {{ .disabled }}">
+  {{ if .monogram }}
+    <span class="monogram">A</span>
+  {{ end }}
+
+  {{ if .image }}
+    <div class="image-thumbnail">
+    </div>
+  {{ end }}
+
+  {{ if .video }}
+    <div class="video-thumbnail">
+    </div>
+  {{ end }}
+
+  {{ if .radio }}
+    <label class="component radio">
+      <input type="radio"/>
+      <span></span>
+    </label>
+  {{ end }}
+
+  {{ if .checkbox_leading }}
+    <label class="component checkbox leading">
+      <input type="checkbox">
+      <span></span>
+    </label>
+  {{ end }}
+
+  {{ if .icon_leading }}
+    <i class="icon">person</i>
+  {{ end }}
+  
+  <div class="content">
+    <span class="headline">{{ .headline }}</span>
+    {{ with .supporting_text_content }}
+      <span class="supporting-text">
+        {{ . }}
+      </span>
+    {{ end }}
+  </div>
+
+  {{ if .checkbox_trailing }}
+    <label class="component checkbox trailing">
+      <input type="checkbox">
+      <span></span>
+    </label>
+  {{ end }}
+  
+  {{ if .icon_trailing }}
+    <i class="icon">arrow_right</i>
+  {{ end }}
+
+  {{ if .switch }}
+    <label class="component switch trailing">
+      <input type="checkbox">
+      <span></span>
+    </label>
+  {{ end }}
+
+  {{ if .supporting_text }}
+    <div class="trailing-supporting-text">100+</div>
+  {{ end }}
+</div>
+
+{{ if .dividers }}
+  <hr class="divider">
+{{ end }}

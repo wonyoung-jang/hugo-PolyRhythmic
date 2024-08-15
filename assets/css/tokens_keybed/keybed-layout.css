@@ -1,0 +1,35 @@
+.layout {
+  --layout-flex: initial;
+  --layout-display: initial;
+  --layout-flex-flow: initial;
+  --layout-align-items: initial;
+  --layout-align-content: initial;
+  --layout-justify-content: initial;
+  --layout-width: initial;
+  --layout-height: initial;
+  --layout-min-height: initial;
+  --layout-padding: initial;
+  --layout-margin: initial;
+  --layout-gap: initial;
+  --layout-shape: initial;
+  --layout-border: initial;
+  --layout-bg: initial;
+}
+
+.layout {
+  flex:             var(--layout-flex);
+  display:          var(--layout-display);
+  flex-flow:        var(--layout-flex-flow);
+  align-items:      var(--layout-align-items);
+  align-content:    var(--layout-align-content);
+  justify-content:  var(--layout-justify-content);
+  width:            var(--layout-width);
+  height:           var(--layout-height);
+  min-height:       var(--layout-min-height);
+  padding:          var(--layout-padding);
+  margin:           var(--layout-margin);
+  gap:              var(--layout-gap);
+  border-radius:    var(--layout-shape);
+  border:           var(--layout-border);
+  background: var(--layout-bg);
+}

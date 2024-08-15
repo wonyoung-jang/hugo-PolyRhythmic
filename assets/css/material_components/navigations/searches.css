@@ -1,0 +1,202 @@
+.search {
+  &.bar {
+    --container-display: flex;
+    --container-flex-flow: row nowrap;
+    --container-align-items: center;
+    --container-justify-content: flex-start;
+    --container-gap: var(--size-1);
+
+    --container-elevation: var(--elevation3);
+
+    --container-height: var(--size-14);
+    --container-shape: var(--shape-corner-full);
+    --container-padding: var(--size-1);
+
+    --container-color: var(--color-surface-container-high);
+    --icon-color: var(--color-on-surface);
+
+    --container-elevation-hover: var(--container-elevation);
+    --container-elevation-focus: var(--container-elevation);
+    --container-elevation-press: var(--container-elevation);
+    --container-elevation-disabled: var(--container-elevation);
+
+    width: 100%;
+
+    > .button.icon,
+    > .icon {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+
+      width: var(--size-10);
+      height: var(--size-10);
+      font-size: var(--size-6);
+
+      color: var(--color-on-surface);
+
+      &:first-of-type {
+        margin-inline-start: var(--size-3);
+      }
+
+      &:last-of-type {
+        margin-inline-end: var(--size-3);
+      }
+    }
+
+    & search,
+    & input {
+      flex: 1 1 auto;
+      border-radius: unset;
+      color: var(--color-on-surface);
+
+      &::placeholder {
+        color: var(--color-on-surface-variant);
+      }
+    }
+
+    .avatar {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-surface);
+      width: 30px;
+      height: 30px;
+      border-radius: var(--shape-corner-full);
+      font-size: initial;
+
+      background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+    }
+
+    .icon {
+      color: var(--color-on-surface-variant);
+    }
+  }
+
+  &.view.modal {
+    --container-display: flex;
+    --container-flex-flow: column nowrap;
+    --container-justify-content: initial;
+    --container-align-items: flex-start;
+    --container-gap: initial;
+    --container-height: initial;
+    --container-width: 100%;
+    --container-padding: initial;
+  
+    --container-outline: initial;
+    --container-elevation: initial;
+    --container-shape: var(--shape-corner-xl);
+    
+    --container-color: var(--color-surface-container-high);
+
+    min-width: var(--size-90);
+
+    .header {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--size-1);
+      padding: var(--size-1);
+      height: var(--size-14);
+      align-self: stretch;
+      border-radius: var(--shape-corner-xl-top);
+      background-color: var(--color-surface-container-high);
+
+      .button.icon {
+        width: var(--size-12);
+        height: var(--size-12);
+        padding: var(--size-6);
+      }
+
+      & search,
+      & input {
+        flex: 1 0 0;
+        color: var(--color-on-surface);
+      }
+    }
+
+    .divider {
+      color: var(--color-outline);
+    }
+
+    .set.lists {
+      align-self: stretch;
+      flex: 0;
+      margin: unset;
+      padding: unset;
+      min-height: var(--size-16);
+      width: 100%;
+
+      .list-item {
+        background-color: transparent;
+        min-height: var(--size-16);
+
+        &:last-of-type {
+          border-radius: var(--shape-corner-xl-bottom);
+        }
+      }
+    }
+  }
+
+  &.view.full {
+    --container-display: flex;
+    --container-flex-flow: column nowrap;
+    --container-justify-content: initial;
+    --container-align-items: flex-start;
+    --container-gap: initial;
+    --container-height: initial;
+    --container-width: 100%;
+    --container-padding: initial;
+  
+    --container-outline: initial;
+    --container-elevation: initial;
+    --container-shape: initial;
+    
+    --container-color: var(--color-surface-container-high);
+
+    min-width: var(--size-90);
+
+    .header {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--size-1);
+      padding: var(--size-1);
+      height: var(--size-14);
+      align-self: stretch;
+      background-color: var(--color-surface-container-high);
+
+      .button.icon {
+        width: var(--size-12);
+        height: var(--size-12);
+        padding: var(--size-6);
+      }
+
+      & input {
+        flex: 1 0 0;
+        color: var(--color-on-surface);
+      }
+    }
+
+    .divider {
+      color: var(--color-outline);
+    }
+
+    .set.lists {
+      align-self: stretch;
+      flex: 0;
+      margin: unset;
+      padding: unset;
+      min-height: var(--size-16);
+      width: 100%;
+
+      .list-item {
+        background-color: transparent;
+        min-height: var(--size-16);
+      }
+    }
+  }
+}

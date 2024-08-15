@@ -1,0 +1,55 @@
+.palette {
+  --set-flex:             initial;
+  --set-display:          flex;
+  --set-flex-flow:        row nowrap;
+  --set-align-items:      center;
+  --set-align-content:    initial;
+  --set-justify-content:  space-between;
+  --set-width:            initial;
+  --set-gap:              initial;
+  --set-overflow:         clip;
+
+  background-color: unset;
+  color: var(--palette-white);
+
+  .color-palette-cell {
+    flex: 1 1 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: var(--size-2);
+    font-family: var(--typeface-mono);
+
+    border-radius: unset;
+
+    &:nth-child(n + 7):nth-child(-n +11) {
+      color: var(--palette-black);
+    }
+  }
+
+  /* Hue Palette */
+  &#absolute-hues {
+    padding: var(--spacing-panes);
+    color: var(--palette-white);
+
+    .color-palette-cell {
+      color: var(--palette-black);
+    }
+  }
+}
+
+.palettes-main,
+.palettes-admonitions,
+.palettes-classic {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  padding: var(--spacing-panes);
+
+  & label {
+    overflow: clip;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

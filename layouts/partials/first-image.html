@@ -1,0 +1,10 @@
+{{ $content := .RawContent }}
+{{ $regex := `!\[.*?\]\((\/assets\/.*?)\)` }}
+{{ $matches := findRE $regex $content 1 }}
+{{ $imageURL := "" }}
+
+{{ if $matches }}
+  {{ $imageURL = replaceRE $regex "$1" (index $matches 0) }}
+{{ end }}
+
+{{ return $imageURL }}

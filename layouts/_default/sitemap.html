@@ -1,0 +1,42 @@
+{{- define "main" -}}
+<article 
+  class="layout panes basic-single-pane" 
+  id="page-sitemap">
+  <section class="layout pane">
+    <table class="table-sitemap">
+      <thead class="title-small">
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Link</th>
+          <th>Date Created</th>
+          <th>Last Modified</th>
+          <th>Kind</th>
+          <th>Type</th>
+          <th>Layout</th>
+        </tr>
+      </thead>
+      <tbody class="label-medium">
+        {{ $index := 0 }}
+        {{ range site.AllPages.ByTitle }}
+          {{ if ne .Title "" }}
+            {{ $index = add $index 1 }}
+            <tr>
+              <td>{{ $index }}</td>
+              <td>{{ .Title }}</td>
+              <td>
+                <a href="{{ .Permalink }}">{{ .Permalink }}</a>
+              </td>
+              <td>{{ .Date.Format "January 02, 2006" }}</td>
+              <td>{{ .Lastmod.Format "January 02, 2006" }}</td>
+              <td>{{ .Kind }}</td>
+              <td>{{ .Type }}</td>
+              <td>{{ .Layout }}</td>
+            </tr>
+          {{ end }}
+        {{ end }}
+      </tbody>
+    </table>
+  </section>
+</article>
+{{- end -}}

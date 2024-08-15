@@ -1,0 +1,32 @@
+.archive-posts {
+  width: 100%;
+}
+
+.archive-month {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--size-3);
+}
+
+.archive-month-header {
+  width: var(--size-50);
+}
+
+.archive-entry {
+  position: relative;
+  padding: var(--size-5);
+  background-color: var(--color-surface-container);
+
+  &:hover {
+    background-color: var(--color-surface-container-high);
+  }
+}
+
+.archive-entry-title {
+  margin: var(--size-2) 0;
+}
+
+.archive-count,
+.archive-meta {
+  color: var(--color-on-surface-variant);
+}

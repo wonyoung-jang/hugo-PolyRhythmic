@@ -1,0 +1,18 @@
+:root {
+  /* Scales */
+  --scale-min-2:          calc(pow(2, (1 / 12)));   /* 1.0594... */
+  --scale-maj-2:          calc(pow(2, (2 / 12)));   /* 1.1224... */
+  --scale-min-3:          calc(pow(2, (3 / 12)));   /* 1.1892... */
+  --scale-maj-3:          calc(pow(2, (4 / 12)));   /* 1.2599... */
+  --scale-perfect-fourth: calc(pow(2, (5 / 12)));   /* 1.3348... */
+  --scale-tritone:        calc(pow(2, (6 / 12)));   /* 1.4142... */
+  --scale-perfect-fifth:  calc(pow(2, (7 / 12)));   /* 1.4983... */
+  --scale-min-6:          calc(pow(2, (8 / 12)));   /* 1.5874... */
+  --scale-maj-6:          calc(pow(2, (9 / 12)));   /* 1.6817... */
+  --scale-min-7:          calc(pow(2, (10 / 12)));  /* 1.7817... */
+  --scale-maj-7:          calc(pow(2, (11 / 12)));  /* 1.8877... */
+  --scale-octave:         calc(pow(2, (12 / 12)));  /* 2 */
+
+  /* Golden ratio up */
+  --scale-fibonacci:      1.618;
+}

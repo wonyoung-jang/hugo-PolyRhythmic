@@ -1,0 +1,50 @@
+.component {
+  --container-display: initial;
+  --container-flex-flow: initial;
+  --container-justify-content: initial;
+  --container-align-content: initial;
+  --container-align-items: initial;
+  --container-gap: initial;
+  --container-height: initial;
+  --container-width: initial;
+  --container-padding: initial;
+
+  --container-outline: initial;
+  --container-elevation: initial;
+  --container-shape: initial;
+  
+  --container-color: initial;
+  
+  --text-color: initial;
+  --icon-color: initial;
+  
+  --state-color: var(--icon-color, var(--text-color));
+
+  --container-outline-hover: initial;
+  --container-outline-focus: initial;
+  --container-outline-press: initial;
+  --container-outline-disabled: initial;
+  
+  --container-elevation-hover: initial;
+  --container-elevation-focus: initial;
+  --container-elevation-press: initial;
+  --container-elevation-disabled: initial;
+}
+
+.component {
+  position: relative;
+  display:          var(--container-display);
+  flex-flow:        var(--container-flex-flow);
+  justify-content:  var(--container-justify-content);
+  align-items:      var(--container-align-items);
+  align-content:    var(--container-align-content);
+  gap:              var(--container-gap);
+  height:           var(--container-height);
+  width:            var(--container-width);
+  padding:          var(--container-padding);
+  
+  border-radius:    var(--container-shape);
+
+  color:            var(--text-color, var(--icon-color));
+  background:       var(--container-color);
+}

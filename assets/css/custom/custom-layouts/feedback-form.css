@@ -1,0 +1,30 @@
+.feedback-form {
+  --layout-flex: 1 1 auto;
+  --layout-display: flex;
+  --layout-flex-flow: column nowrap;
+  --layout-align-items: stretch;
+  --layout-padding: var(--size-13);
+  --layout-margin: var(--size-13);
+  --layout-gap: var(--size-13);
+
+  --layout-shape: var(--shape-corner-m);
+  --layout-border: initial;
+
+  --layout-bg: var(--color-surface-container);
+
+  box-shadow: var(--elevation1);
+  color: var(--color-on-surface);
+
+  .button {
+    cursor: pointer;
+    margin-top: var(--size-21);
+  }
+
+  .error {
+    color: var(--color-on-error);
+  }
+
+  .status {
+    color: var(--color-inverse-primary);
+  }
+}

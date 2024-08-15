@@ -1,0 +1,287 @@
+.text-field {
+  --container-display: flex;
+  --container-flex-flow: row nowrap;
+  --container-align-items: center;
+  --container-gap: var(--size-4);
+  min-height: var(--size-14);
+  --container-width: 100%;
+  --container-padding: var(--size-2) var(--size-4);
+
+  & input {
+    flex: 1 1 auto;
+    outline: none;
+    background-color: transparent;
+    z-index: 8;
+    color: transparent;
+
+    &::placeholder {
+      color: var(--color-on-surface-variant);
+    }
+  }
+
+  & input,
+  & textarea {
+    caret-color: var(--color-primary);
+  }
+
+  & label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+    white-space: nowrap;
+    left: 0;
+    color: var(--color-on-surface-variant);
+    padding-left: var(--size-4);
+    background-color: transparent;
+    z-index: 1;
+  }
+
+  &:has(.leading-icon) {
+    & label {
+      padding-inline-start: var(--size-13);
+    }
+  }
+
+  /* Filled text field */
+  &.filled {
+    --container-shape: var(--shape-corner-xs-top);
+    --container-color: var(--color-surface-container-highest);
+    --text-color: var(--color-on-surface);
+    --icon-color: var(--color-on-surface);
+
+    & hr {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    &:hover {
+      & hr {
+        height: 1px;
+        color: var(--color-on-surface);
+      }
+    }
+
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      & hr {
+        height: 3px;
+        color: var(--color-primary);
+      }
+      
+      & input {
+        flex: 1 1 auto;
+        color: var(--color-on-surface);
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+
+      &:has(label) {
+        & input {
+          padding-block-start: var(--size-2);
+          padding-top: var(--size-2);
+        }
+
+        & label {
+          top: 0px;
+          color: var(--color-primary);
+          font-family: var(--typescale-body-small-font);
+          font-size:   var(--typescale-body-small-size);
+          font-weight: var(--typescale-body-small-weight);
+          line-height: var(--typescale-body-small-line-height);  
+        }
+      }
+    }
+
+    & textarea:not(:placeholder-shown),
+    & input:not(:placeholder-shown) {
+      flex: 1 1 auto;
+      color: var(--color-on-surface);
+
+      &:has(+ label) {
+        padding-top: var(--size-2);
+      }
+      
+      + label {
+        top: 0px;
+        color: var(--color-primary);
+        font-family: var(--typescale-body-small-font);
+        font-size:   var(--typescale-body-small-size);
+        font-weight: var(--typescale-body-small-weight);
+        line-height: var(--typescale-body-small-line-height);
+      }
+    }
+  }
+
+  /* Outlined text field */
+  &.outlined {
+    --container-shape: var(--shape-corner-xs);
+    --container-color: inherit;
+    --text-color: var(--color-on-surface-variant);
+    --icon-color: var(--color-on-surface-variant);
+    
+    --container-outline: 1px solid var(--color-outline);
+    --container-outline-hover: 1px solid var(--color-on-surface);
+    --container-outline-focus: 2px solid var(--color-primary);
+    --disabled-outline: color-mix(in lch, 12% var(--color-on-surface), transparent);
+    --container-outline-disabled: 1px solid var(--disabled-outline);
+
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      --container-outline: var(--container-outline-focus);
+      & input {
+        flex: 1 1 auto;
+        color: var(--color-on-surface);
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+
+      &:has(label) {
+        & input {
+          flex: 1 1 auto;
+          padding-block-start: var(--size-2);
+          color: var(--color-on-surface);
+
+          &::placeholder {
+            color: transparent;
+          }
+        }
+
+        & label {
+          top: calc(-1 * var(--size-2));
+          color: var(--color-primary);
+          margin-inline: var(--size-2);
+          padding-inline: var(--size-1);
+          background-color: var(--color-surface-container-lowest);
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            top: calc(-1 * var(--size-2));
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-surface-container-lowest);
+          }
+
+          &::before {
+            left: 0;
+          }
+
+          &::after {
+            right: 0;
+          }
+        }
+      }
+    }
+
+    & textarea:not(:placeholder-shown),
+    & input:not(:placeholder-shown) {
+      flex: 1 1 auto;
+      color: var(--color-on-surface);
+
+      &:has(+ label) {
+        padding-top: var(--size-1);
+      }
+      
+      + label {
+        top: calc(-1 * var(--size-2));
+        margin-inline: var(--size-2);
+        padding-inline: var(--size-1);
+        background-color: inherit;
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  .suffix-content {
+    display: none;
+  }
+
+  &.suffix {
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      .suffix-content {
+        display: inline;
+      }
+    }
+  }
+
+  .supporting-text {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    height: var(--size-5);
+    padding: var(--size-1) var(--size-4) 0px var(--size-4);
+    align-items: flex-start;
+    gap: 10px;
+
+    font-size: var(--typescale-body-small-size);
+    line-height: var(--typescale-body-small-line-height);
+    font-weight: var(--typescale-body-small-weight);
+    font-family: var(--typescale-body-small-font);
+
+    color: var(--color-on-surface-variant);
+  }
+
+  /* Multi line input */
+  &:has(textarea) {
+    padding: var(--size-4);
+    height: auto;
+    color: transparent;
+
+    & textarea {
+      flex: 1 1 auto;
+      resize: vertical;
+      min-height: var(--size-14);
+      z-index: 8;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    & label {
+      align-items: flex-start;
+      top: var(--size-4);
+    }
+
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      & textarea {
+        padding-block-start: var(--size-2);
+        color: var(--color-on-surface);
+
+        &::placeholder {
+          color: var(--color-on-surface);
+        }
+      }
+    }
+  }
+
+  &:has(.trailing-icon) {
+    padding-right: var(--size-3);
+  }
+
+  &:has(.leading-icon) {
+    padding-left: var(--size-3);
+  }
+
+  .icon {
+    color: var(--color-on-surface-variant);
+
+    &.trailing-icon {
+      margin-left: auto;
+    }
+  }
+}

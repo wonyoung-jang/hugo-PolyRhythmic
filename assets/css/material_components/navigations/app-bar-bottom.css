@@ -1,0 +1,26 @@
+.app-bar.bottom {
+  --container-gap: 0;
+  --container-height: var(--size-20);
+  --container-width: 100%;
+  --container-padding: var(--size-3) var(--size-4) var(--size-3) var(--size-1);
+  --container-elevation: var(--elevation2);
+  
+  .start {
+    gap: var(--size-1);
+    display: flex;
+    flex-flow: row nowrap;
+    align-self: stretch;
+    align-items: center;
+    height: 100%;
+
+    .icon {
+      width: var(--size-4);
+    }
+  }
+
+  .end {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: auto;
+  }
+}

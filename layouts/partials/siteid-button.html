@@ -1,0 +1,11 @@
+<a  
+  class="component button common"
+  id="site-headline"
+  href="{{ "" | absLangURL }}"
+  accesskey="h" 
+  title="Go to home (h)">
+  <img 
+    src="{{ site.Params.assets.favicon | default "sitelogo.svg" | absURL }}" 
+    alt="Site logo">
+  <span class="site-id-title">{{ default site.Title | markdownify }}</span>
+</a>

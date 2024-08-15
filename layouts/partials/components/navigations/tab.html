@@ -1,0 +1,9 @@
+<span class="component tab {{ .type }} {{ .active }}">
+  {{ with .icon }}
+    <i class="icon">{{ . }}</i>
+  {{ end }}
+
+  {{ with .label }}
+    <div class="label">{{ . }}</div>
+  {{ end }}
+</span>

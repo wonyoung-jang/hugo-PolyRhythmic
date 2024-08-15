@@ -1,0 +1,153 @@
+.switch {
+  --container-display: flex;
+  --container-flex-flow: row nowrap;
+  --container-align-items: center;
+  --container-justify-content: flex-start;
+  direction: ltr;
+  --container-height: var(--size-8);
+  --container-width: var(--size-13);
+  cursor: pointer;
+
+  &:has(span:empty) {
+    --container-gap: 0;
+  }
+
+  > input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    
+    &:hover + span::after {
+      opacity: var(--state-hover-opacity);
+    }
+    
+    &:focus + span::after {
+      opacity: var(--state-focus-opacity);
+    }
+
+    &:active + span::after {
+      opacity: var(--state-press-opacity);
+    }
+
+    &:checked + span::before {
+      content: "";
+      left: var(--size-6);
+      right: var(--size-1);
+      color: var(--color-on-primary-container);
+      background-color: var(--color-on-primary);
+      width: var(--size-6);
+      height: var(--size-6);
+    }
+
+    &:checked + span::after {
+      background-color: var(--color-primary);
+      left: var(--size-4);
+      right: var(--size-1);
+    }
+    
+    &:checked + span {
+      border: none;
+      background-color: var(--color-primary);
+    }
+    
+    &:active {
+      + span::before {
+        width: var(--size-7);
+        height: var(--size-7);
+
+        transform: translateX(calc(-1 * var(--size-1)));
+      }
+      
+      &:checked + span::before {
+        transform: translateX(0px) scale(1.2);
+      }
+    }
+  }
+
+  /* Track */
+  > span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--color-on-surface);
+
+    min-height: var(--size-8);
+    min-width: var(--size-13);
+
+    border-radius: var(--shape-corner-full);
+    
+    background-color: var(--color-surface-container-highest);
+    border: 2px solid var(--color-outline);
+
+    /* Handle */
+    &::before {
+      content: "";
+      position: absolute;
+      left: var(--size-1);
+      right: var(--size-6);
+      z-index: 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: var(--shape-corner-full);
+
+      background-color: var(--color-outline);
+      color: var(--color-on-surface-variant);
+
+      transition: all var(--motion-duration-short4);
+      
+      font-family: var(--font-icon);
+      font-feature-settings: "liga";
+
+      font-size: var(--size-4);
+      width: var(--size-4);
+      height: var(--size-4);
+
+      user-select: none;
+    }
+
+    /* State layer */
+    &::after {
+      content: "";
+      position: absolute;
+      left: -9px;
+      right: var(--size-13);
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: var(--shape-corner-full);
+
+      background-color: var(--color-on-surface-variant);
+
+      transition: all var(--motion-duration-medium1);
+
+      width: var(--size-10);
+      height: var(--size-10);
+      user-select: none;
+
+      opacity: 0;
+    }
+  }
+
+  &.both > span::before {
+    content: "close";
+    width: var(--size-6);
+    height: var(--size-6);
+    left: 2px;
+  }
+
+  &.both > input:checked + span::before {
+    content: "check";
+  }
+
+  &.select > input:checked + span::before {
+    content: "check";
+  }
+}

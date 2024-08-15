@@ -1,0 +1,35 @@
+<section class="footer-links">
+  {{ $menus := site.Menus }}
+  {{ range $name, $menu := $menus }}
+    {{ if ne $name "main" }}
+      <div class="footer-links-list">
+        <span class="title-medium on-surface-variant">
+          {{ $name | humanize }}
+        </span>
+        {{ range $menu }}
+          {{ if .PageRef }}
+            <a href="{{ .PageRef }}">
+              {{ .Name }}
+            </a>
+          {{ else }}
+            <a  
+              href="{{ .URL }}"
+              target="_blank"
+              rel="external noopener noreferrer me">
+              {{ .Name }}
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+</section>
+
+{{/* Copyright */}}
+<section class="copyright">
+  <a  
+    id="copyright-button"
+    href="{{ "" | absLangURL }}">
+    © {{ now.Year }} {{ site.Title }}
+  </a>
+</section>

@@ -1,0 +1,18 @@
+<div class="component tooltip {{ if .rich }} rich{{ end }}">
+  {{ if .rich }}
+    <span class="subhead">
+      {{ .title }}
+    </span>
+  {{ end }}
+
+  <span class="supporting-text">
+    {{ .text }}
+  </span>
+
+  {{ if and .rich .actions }}
+    <div class="actions">
+      <button class="component button common">Cancel</button>
+      <button class="component button common">Accept</button>
+    </div>
+  {{ end }}
+</div>

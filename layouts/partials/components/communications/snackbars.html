@@ -1,0 +1,21 @@
+<div class="component snackbar {{ .size }}">
+  <div class="supporting-text">
+    {{ .text | safeHTML }}
+  </div>
+
+  {{ if or .action .closeButton }}
+    <div class="actions {{ .longerAction }}">
+      <button class="component button common">
+        {{ .action }}
+      </button>
+
+      {{ with .closeButton }}
+        <button class="component button icon">
+          <i class="icon">
+            {{ . }}
+          </i>
+        </button>
+      {{ end }}
+    </div>
+  {{ end }}
+</div>

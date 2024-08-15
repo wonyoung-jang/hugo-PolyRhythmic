@@ -1,0 +1,18 @@
+.panes {
+  --layout-flex: 1 1 auto;
+  --layout-display: flex;
+  --layout-flex-flow: row nowrap;
+  --layout-align-items: stretch;
+  --layout-align-content: initial;
+  --layout-justify-content: initial;
+  --layout-width: 100%;
+  --layout-height: auto;
+  --layout-min-height: auto;
+  --layout-padding: 0 var(--spacing-panes);
+  --layout-margin: 0;
+  --layout-gap: var(--spacing-panes);
+  --layout-border: initial;
+
+  --layout-bg: inherit;
+  --layout-shape: inherit;
+}

@@ -1,0 +1,67 @@
+.showcase-tokens {
+  --layout-flex: initial;
+  --layout-display: flex;
+  --layout-flex-flow: column nowrap;
+  --layout-align-items: stretch;
+  --layout-align-content: initial;
+  --layout-justify-content: initial;
+  --layout-width: 100%;
+  --layout-height: initial;
+  --layout-min-height: initial;
+  --layout-padding: initial;
+  --layout-margin: initial;
+  --layout-gap: initial;
+
+  --layout-shape: initial;
+  --layout-border: initial;
+
+  --layout-bg: var(--color-showcase-tokens-container);
+
+  margin-top: var(--size-15);
+  overflow-x: auto;
+
+  .showcase-tokens-title {
+    flex: 1 1 0;
+    display: flex;
+    flex-flow: row nowrap; 
+    width: 100%;
+    font-family: var(--typescale-title-large-font);
+    font-size: var(--typescale-title-large-size);
+    font-weight: var(--typescale-title-large-weight);
+    line-height: var(--typescale-title-large-line-height);
+    color: var(--color-on-surface);
+    background-color: var(--color-surface-container-high);
+
+    &:hover {
+      background-color: var(--color-surface-container-highest);
+    }
+  }
+
+  & summary {
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: var(--size-6);
+    border-radius: var(--shape-corner-none);
+    align-items: center;
+    justify-content: space-between;
+
+    &::after {
+      content: "▲";
+      font-size: var(--size-5);
+    }
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &[open] > summary::after {
+    content: "▼";
+  }
+}

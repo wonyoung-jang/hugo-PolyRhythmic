@@ -1,0 +1,50 @@
+{{/* Single date input */}}
+<div class="component picker date {{ .type }}">
+  <div class="header">
+    <div class="supporting-text">{{ .supporting_text }}</div>
+    <div class="headline-container">
+      <div class="headline">{{ .headline }}</div>
+      <button class="component button icon"><i class="icon">{{ .icon }}</i></button>
+    </div>
+  </div>
+
+  {{ if or (eq .type "docked") (eq .type "modal") }}
+  {{ else}}
+
+    <hr class="divider">
+
+    {{ if .date_range}}
+      <div class="text-field-container">
+        <div
+          class="component text-field outlined">
+          <input
+            type="date"
+            value="Start date" />
+          <label>Start</label>
+        </div>
+
+        <div
+          class="component text-field outlined">
+          <input
+            type="date"
+            values="End date" />
+          <label>End</label>
+        </div>
+      </div>
+    {{ else }}
+      <div
+        class="component text-field outlined">
+        <input
+          type="date"
+          name="date"
+          placeholder=" " />
+        <label>Date</label>
+      </div>
+    {{ end }}
+
+    <div class="date-picker-actions">
+      <button class="component button common">Cancel</button>
+      <button class="component button common">OK</button>
+    </div>
+  {{ end }}
+</div>

@@ -1,0 +1,117 @@
+.page-links {
+  --layout-flex: initial;
+  --layout-display: flex;
+  --layout-flex-flow: column nowrap;
+  --layout-align-items: stretch;
+  --layout-align-content: initial;
+  --layout-justify-content: flex-start;
+  --layout-width: 100%;
+  --layout-height: auto;
+  --layout-min-height: auto;
+  --layout-padding: var(--spacing-panes);
+  --layout-margin: 0;
+  --layout-gap: var(--size-24);
+
+  --layout-border: inherit;
+
+  #backlinks,
+  #related-pages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: var(--size-2);
+    
+    .page-links-title {
+      grid-column: 1 / 3;
+      margin-block: var(--size-5) var(--size-3);
+    }
+
+    .card {
+      .card-content {
+        align-items: flex-start
+      }
+    }
+  }
+
+  #share-links {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    
+    margin-top: var(--size-8);
+    margin-inline: var(--size-21);
+    padding: var(--size-6);
+
+    gap: var(--size-6);
+
+    .share-buttons,
+    .action-buttons {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: var(--size-1);
+      gap: var(--size-2);
+      width: 100%;
+
+      .button {
+        flex: 1 1 0;
+      }
+    }
+
+    .page-links-title {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+    }
+  }
+
+  .page-links-title {
+    width: 100%;
+    font-family: var(--typescale-headline-large-font);
+    font-size:   var(--typescale-headline-large-size);
+    font-weight: var(--typescale-headline-large-weight);
+    line-height: var(--typescale-headline-large-line-height);
+  }
+}
+
+/* Compact */
+@media screen and (max-width: 599px) {
+  .page-links {
+    #backlinks,
+    #related-pages {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: var(--size-2);
+      
+      .page-links-title {
+        width: 100%;
+        margin-block: var(--size-5) var(--size-3);
+      }
+
+      .card .card-content {
+        align-items: flex-start
+      }
+    }
+  }
+}
+
+/* Large */
+@media screen and (min-width: 1200px) {
+  .page-links {
+    #backlinks,
+    #related-pages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: var(--size-2);
+      
+      .page-links-title {
+        grid-column: 1 / 5;
+        margin-block: var(--size-5) var(--size-3);
+      }
+  
+      .card .card-content {
+        align-items: flex-start
+      }
+    }
+  }
+}

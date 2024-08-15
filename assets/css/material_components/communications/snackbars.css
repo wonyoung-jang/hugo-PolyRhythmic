@@ -1,0 +1,126 @@
+.snackbar {
+  --container-display: flex;
+  --container-flex-flow: row nowrap;
+  --container-justify-content: flex-start;
+  --container-align-items: center;
+  --container-gap: var(--size-3);
+  --container-height: var(--size-12);
+  --container-width: 100%;
+  --container-padding: 0 var(--size-4);
+  
+  --container-elevation: var(--elevation3);
+  --container-shape: var(--shape-corner-xs);
+
+  --container-color: var(--color-inverse-surface);
+
+  --container-elevation-hover: var(--container-elevation);
+  --container-elevation-focus: var(--container-elevation);
+  --container-elevation-press: var(--container-elevation);
+
+  .supporting-text {
+    color: var(--color-inverse-on-surface);
+    font-size: var(--typescale-body-medium-size);
+    line-height: var(--typescale-body-medium-line-height);
+    font-weight: var(--typescale-body-medium-weight);
+    font-family: var(--typescale-body-medium-font);
+  }
+
+  .actions {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: auto;
+    align-items: center;
+    
+    .button.common {
+      font-size: var(--typescale-label-large-size);
+      line-height: var(--typescale-label-large-line-height);
+      font-weight: var(--typescale-label-large-weight);
+      font-family: var(--typescale-label-large-font);
+      color: var(--color-inverse-primary);
+      --state-color: var(--color-inverse-primary);
+    }
+
+    .button.icon {
+      align-items: stretch;
+      --container-height: var(--size-12);
+      --container-width: var(--size-12);
+      --container-padding: var(--size-2);
+      --state-color: var(--color-inverse-on-surface);
+      color: var(--color-inverse-on-surface);
+      
+      .icon {
+        font-size: var(--size-6);
+      }
+    }
+  }
+
+  &:has(.actions) {
+    --container-padding: 0px 0px 0px var(--size-4);
+
+    &:has(.longer-action) {
+      .actions {
+        padding: 0px var(--size-2) var(--size-1) var(--size-2);
+      }
+
+      .supporting-text {
+        align-self: flex-start;
+        padding: 14px var(--size-1) 0px var(--size-1);
+      }
+    }
+  }
+  
+  &:has(.button.icon) {
+    --container-padding: 0px 0px 0px var(--size-4);
+
+    &:has(.longer-action) {
+      .actions {
+        padding: 0px 0px var(--size-1) var(--size-2);
+      }
+
+      .supporting-text {
+        align-self: flex-start;
+        padding: 14px var(--size-1) 0px var(--size-1);
+      }
+    }
+  }
+}
+
+.snackbar.two {
+  --container-height: var(--size-17);
+
+  &:has(.longer-action) {
+    --container-flex-flow: column nowrap;
+    --container-height: unset;
+    --container-gap: 14px;
+  }
+
+  &:has(.actions) {
+    --container-padding: 0px 0px 0px var(--size-4);
+
+    &:has(.longer-action) {
+      .actions {
+        padding: 0px var(--size-2) var(--size-1) var(--size-2);
+      }
+
+      .supporting-text {
+        align-self: flex-start;
+        padding: 14px var(--size-1) 0px var(--size-1);
+      }
+    }
+  }
+
+  &:has(.button.icon) {
+    --container-padding: 0px 0px 0px var(--size-4);
+
+    &:has(.longer-action) {
+      .actions {
+        padding: 0px 0px var(--size-1) var(--size-2);
+      }
+
+      .supporting-text {
+        align-self: flex-start;
+        padding: 14px var(--size-1) 0px var(--size-1);
+      }
+    }
+  }
+}

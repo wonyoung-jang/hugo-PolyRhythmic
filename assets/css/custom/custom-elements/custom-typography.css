@@ -1,0 +1,37 @@
+/* Headings */
+h1[id] {
+  color: var(--color-heading-1);
+}
+
+h2[id] {
+  color: var(--color-heading-2);
+}
+
+h3[id] {
+  color: var(--color-heading-3);
+}
+
+h4[id] {
+  color: var(--color-heading-4);
+}
+
+h5[id] {
+  color: var(--color-heading-5);
+}
+
+h6[id] {
+  color: var(--color-heading-6);
+}
+
+/* Highlights */
+.highlight-text {
+  background-color: var(--color-complementary);
+  color: var(--color-on-complementary);
+  padding-inline: 5px;
+  border-radius: var(--shape-corner-xs);
+  max-width: fit-content;
+
+  * {
+    color: inherit;
+  }
+}

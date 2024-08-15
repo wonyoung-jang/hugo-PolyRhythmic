@@ -1,0 +1,41 @@
+@media print {
+  html,
+  body,
+  main,
+  article,
+  section {
+    overflow: visible;
+    margin: 0;
+  }
+
+  #header,
+  #footer,
+  #top-link,
+  #share-links,
+  .page-navigation {
+    display: none !important;
+  }
+
+  * {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  @page {
+    size: auto;
+  }
+
+  table,
+  figure {
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+}

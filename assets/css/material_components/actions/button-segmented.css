@@ -1,0 +1,83 @@
+.button.segmented {
+  flex: 1 1 0;
+  cursor: pointer;
+  border-inline-end: 0px solid transparent;
+  border-right: 0px solid transparent;
+  min-width: fit-content;
+  --container-gap: var(--size-2);
+  --container-shape: var(--shape-corner-none);
+  --container-padding: 0 var(--size-4);
+  --container-outline: 1px solid var(--color-outline);
+  --container-color: var(--color-surface);
+  --icon-color: var(--color-on-surface);
+  --text-color: var(--color-on-surface);
+  --container-outline-hover: 1px solid var(--color-outline);
+  --container-outline-focus: 1px solid var(--color-outline);
+  --container-outline-press: 1px solid var(--color-outline);
+  --container-outline-disabled: 1px solid var(--color-outline-variant);
+  
+  .icon:first-of-type {
+    font-size: 18px;
+    color: var(--color-on-surface);
+    display: none;
+  }
+
+  
+  &.start {
+    --container-shape: var(--shape-corner-xl-start);
+  }
+
+  &.end {
+    --container-shape: var(--shape-corner-xl-end);
+
+    &::before {
+      border-inline-end: 1px solid var(--color-outline);
+      border-right: 1px solid var(--color-outline);
+    }
+
+    &:hover::before {
+      border-inline-end: 0px solid var(--color-outline);
+      border-right: 0px solid var(--color-outline);
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::before {
+      --container-outline: 1px solid var(--color-outline);
+      border-inline-end: 0px solid var(--color-outline);
+      border-right: 0px solid var(--color-outline);
+    }
+  }
+
+  & input {
+    display: none;
+  }
+
+  &:has(input:checked) {
+    --container-color: var(--color-secondary-container);
+    --icon-color: var(--color-on-secondary-container);
+    --text-color: var(--color-on-secondary-container);
+    
+    &:has(.icon) {
+      padding-left: var(--size-2);
+    }
+
+    .icon {
+      display: flex;
+      flex-flow: column nowrap;
+      color: var(--color-on-secondary-container);
+    }
+  }
+
+  &:has(input:disabled) {
+    --container-elevation: var(--elevation-disabled);
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+.set.segmented-buttons {
+  width: 100%;
+}

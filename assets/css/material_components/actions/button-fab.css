@@ -1,0 +1,49 @@
+.button.fab {
+  --container-width: var(--size-14);
+  --container-height: var(--size-14);
+  --container-shape: var(--shape-corner-l);
+  --container-padding: var(--size-4);
+  --container-elevation: var(--elevation3);
+  --container-elevation-hover: var(--elevation4);
+  --container-elevation-focus: var(--elevation3);
+  --container-elevation-press: var(--elevation3);
+
+  &.small {
+    --container-width: var(--size-12);
+    --container-height: var(--size-12);
+    --container-shape: var(--shape-corner-m);
+    --container-padding: 0;
+    
+    .icon {
+      font-size: var(--size-5);
+    }
+  }
+
+  &.large {
+    --container-width: var(--size-24);
+    --container-height: var(--size-24);
+    --container-shape: var(--size-9);
+    --container-padding: var(--size-4);
+    
+    .icon {
+      font-size: var(--size-9);
+    }
+  }
+
+  &.extended {
+    min-width: var(--size-20);
+    --container-width: auto;
+    --container-height: var(--size-14);
+    --container-shape: var(--shape-corner-l);
+    --container-padding: var(--size-4);
+    gap: var(--size-4);
+    
+    .icon {
+      font-size: var(--size-6);
+    }
+  }
+
+  .icon {
+    font-size: var(--size-6);
+  }
+}

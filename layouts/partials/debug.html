@@ -1,0 +1,473 @@
+<details class="debug-config">
+  <summary><h4>Debug</h4></summary>
+  {{/*  Page methods  */}}
+  <details open>
+    <summary><b>.Page</b></summary>
+    <table>
+      <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td><b>.Aliases</b></td>
+        <td><pre>{{ debug.Dump .Aliases }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.BundleType</b></td>
+        <td><pre>{{ debug.Dump .BundleType }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.CodeOwners</b></td>
+        <td><pre>{{ debug.Dump .CodeOwners }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Data</b></td>
+        <td><pre>{{ debug.Dump .Data }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Date</b></td>
+        <td><pre>{{ debug.Dump .Date }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Description</b></td>
+        <td><pre>{{ debug.Dump .Description }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Draft</b></td>
+        <td><pre>{{ debug.Dump .Draft }}</pre></td>
+      </tr>
+      {{/*  TODO Eq  */}}
+      <tr>
+        <td><b>.ExpiryDate</b></td>
+        <td><pre>{{ debug.Dump .ExpiryDate }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.File</b></td>
+        <td><pre>{{ debug.Dump .File }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.FuzzyWordCount</b></td>
+        <td><pre>{{ debug.Dump .FuzzyWordCount }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.HeadingsFiltered</b></td>
+        <td><pre>{{ debug.Dump .HeadingsFiltered }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.IsHome</b></td>
+        <td><pre>{{ debug.Dump .IsHome }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.IsNode</b></td>
+        <td><pre>{{ debug.Dump .IsNode }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.IsPage</b></td>
+        <td><pre>{{ debug.Dump .IsPage }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.IsSection</b></td>
+        <td><pre>{{ debug.Dump .IsSection }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.IsTranslated</b></td>
+        <td><pre>{{ debug.Dump .IsTranslated }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Keywords</b></td>
+        <td><pre>{{ debug.Dump .Keywords }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Kind</b></td>
+        <td><pre>{{ debug.Dump .Kind }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Lastmod</b></td>
+        <td><pre>{{ debug.Dump .Lastmod }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Layout</b></td>
+        <td><pre>{{ debug.Dump .Layout }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Len</b></td>
+        <td><pre>{{ debug.Dump .Len }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.LinkTitle</b></td>
+        <td><pre>{{ debug.Dump .LinkTitle }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Next</b></td>
+        <td><pre>{{ debug.Dump .Next }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.NextInSection</b></td>
+        <td><pre>{{ debug.Dump .NextInSection }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Path</b></td>
+        <td><pre>{{ debug.Dump .Path }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Permalink</b></td>
+        <td><pre>{{ debug.Dump .Permalink }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Plain</b></td>
+        <td><pre>{{ debug.Dump .Plain }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.PlainWords</b></td>
+        <td><pre>{{ debug.Dump .PlainWords }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Prev</b></td>
+        <td><pre>{{ debug.Dump .Prev }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.PrevInSection</b></td>
+        <td><pre>{{ debug.Dump .PrevInSection }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.PublishDate</b></td>
+        <td><pre>{{ debug.Dump .PublishDate }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.ReadingTime</b></td>
+        <td><pre>{{ debug.Dump .ReadingTime }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.RelPermalink</b></td>
+        <td><pre>{{ debug.Dump .RelPermalink }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.RenderShortcodes</b></td>
+        <td><pre>{{ debug.Dump .RenderShortcodes }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Resources</b></td>
+        <td><pre>{{ debug.Dump .Resources }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Scratch</b></td>
+        <td><pre>{{ debug.Dump .Scratch }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Section</b></td>
+        <td><pre>{{ debug.Dump .Section }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Sections</b></td>
+        <td><pre>{{ debug.Dump .Sections }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Slug</b></td>
+        <td><pre>{{ debug.Dump .Slug }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Summary</b></td>
+        <td><pre>{{ debug.Dump .Summary }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.TableOfContents</b></td>
+        <td><pre>{{ debug.Dump .TableOfContents }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Title</b></td>
+        <td><pre>{{ debug.Dump .Title }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.TranslationKey</b></td>
+        <td><pre>{{ debug.Dump .TranslationKey }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Translations</b></td>
+        <td><pre>{{ debug.Dump .Translations }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Truncated</b></td>
+        <td><pre>{{ debug.Dump .Truncated }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Type</b></td>
+        <td><pre>{{ debug.Dump .Type }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Weight</b></td>
+        <td><pre>{{ debug.Dump .Weight }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.WordCount</b></td>
+        <td><pre>{{ debug.Dump .WordCount }}</pre></td>
+      </tr>
+
+      {{/*  LONG OUTPUTS  */}}
+      <tr>
+        <td><b>.AllTranslations</b></td>
+        <td><pre>{{ debug.Dump .AllTranslations }}</pre></td>
+      </tr>      
+      <tr>
+        <td><b>.AlternativeOutputFormats</b></td>
+        <td><pre>{{ debug.Dump .AlternativeOutputFormats }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Ancestors</b></td>
+        <td><pre>{{ debug.Dump .Ancestors }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Content</b></td>
+        <td><pre>{{ debug.Dump .Content }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.CurrentSection</b></td>
+        <td><pre>{{ debug.Dump .CurrentSection }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.FirstSection</b></td>
+        <td><pre>{{ debug.Dump .FirstSection }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Fragments</b></td>
+        <td><pre>{{ debug.Dump .Fragments }}</pre></td>
+      </tr>
+      {{/*  TODO GetPage  */}}
+      {{/*  TODO GetTerms  */}}
+      <tr>
+        <td><b>.GitInfo</b></td>
+        <td><pre>{{ debug.Dump .GitInfo }}</pre></td>
+      </tr>
+      {{/*  TODO HasMenuCurrent  */}}
+      {{/*  TODO HasShortcode  */}}
+      {{/*  TODO InSection  */}}
+      {{/*  TODO IsAncestor  */}}
+      {{/*  TODO IsDescendant  */}}
+      {{/*  TODO IsMenuCurrent  */}}
+      <tr>
+        <td><b>.Language</b></td>
+        <td><pre>{{ debug.Dump .Language }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.OutputFormats</b></td>
+        <td><pre>{{ debug.Dump .OutputFormats }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Page</b></td>
+        <td><pre>{{ debug.Dump .Page }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Pages</b></td>
+        <td><pre>{{ debug.Dump .Pages }}</pre></td>
+      </tr>
+      {{/*  TODO Paginate  */}}
+      {{/*  TODO Paginator  */}}
+      {{/*  TODO Param  */}}
+      <tr>
+        <td><b>.Params</b></td>
+        <td><pre>{{ debug.Dump .Params }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Parent</b></td>
+        <td><pre>{{ debug.Dump .Parent }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.RawContent</b></td>
+        <td><pre>{{ debug.Dump .RawContent }}</pre></td>
+      </tr>
+      {{/*  TODO Ref  */}}
+      <tr>
+        <td><b>.RegularPages</b></td>
+        <td><pre>{{ debug.Dump .RegularPages }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.RegularPagesRecursive</b></td>
+        <td><pre>{{ debug.Dump .RegularPagesRecursive }}</pre></td>
+      </tr>
+      {{/*  TODO RelRef  */}}
+      {{/*  TODO Render  */}}
+      {{/*  TODO RenderString  */}}
+      <tr>
+        <td><b>.Site</b></td>
+        <td><pre>{{ debug.Dump .Site }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Sitemap</b></td>
+        <td><pre>{{ debug.Dump .Sitemap }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Sites</b></td>
+        <td><pre>{{ debug.Dump .Sites }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>.Store</b></td>
+        <td><pre>{{ debug.Dump .Store }}</pre></td>
+      </tr>
+    </table>
+  </details>
+
+  {{/*  Hugo methods  */}}
+  <details open>
+    <summary><b>hugo</b></summary>
+    <table>
+      <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td><b>hugo.BuildDate</b></td>
+        <td><pre>{{ debug.Dump hugo.BuildDate }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.CommitHash</b></td>
+        <td><pre>{{ debug.Dump hugo.CommitHash }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.Generator</b></td>
+        <td><pre>{{ debug.Dump hugo.Generator }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.GoVersion</b></td>
+        <td><pre>{{ debug.Dump hugo.GoVersion }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.IsDevelopment</b></td>
+        <td><pre>{{ debug.Dump hugo.IsDevelopment }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.IsExtended</b></td>
+        <td><pre>{{ debug.Dump hugo.IsExtended }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.IsMultihost</b></td>
+        <td><pre>{{ debug.Dump hugo.IsMultihost }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.IsMultilingual</b></td>
+        <td><pre>{{ debug.Dump hugo.IsMultilingual }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.IsProduction</b></td>
+        <td><pre>{{ debug.Dump hugo.IsProduction }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.IsServer</b></td>
+        <td><pre>{{ debug.Dump hugo.IsServer }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.Version</b></td>
+        <td><pre>{{ debug.Dump hugo.Version }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>hugo.WorkingDir</b></td>
+        <td><pre>{{ debug.Dump hugo.WorkingDir }}</pre></td>
+      </tr>
+      {{/*  Long outputs  */}}
+      <tr>
+        <td><b>hugo.Deps</b></td>
+        <td><pre>{{ debug.Dump hugo.Deps }}</pre></td>
+      </tr>
+    </table>
+  </details>
+
+  {{/*  Site methods  */}}
+  <details open>
+    <summary><b>site</b></summary>
+    <table>
+      <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td><b>site.BaseURL</b></td>
+        <td><pre>{{ debug.Dump site.BaseURL }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.BuildDrafts</b></td>
+        <td><pre>{{ debug.Dump site.BuildDrafts }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Copyright</b></td>
+        <td><pre>{{ debug.Dump site.Copyright }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Config.Services.Disqus.Shortname</b></td>
+        <td><pre>{{ debug.Dump site.Config.Services.Disqus.Shortname }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Config.Services.GoogleAnalytics.ID</b></td>
+        <td><pre>{{ debug.Dump site.Config.Services.GoogleAnalytics.ID }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.LanguagePrefix</b></td>
+        <td><pre>{{ debug.Dump site.LanguagePrefix }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Lastmod</b></td>
+        <td><pre>{{ debug.Dump site.Lastmod }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Title</b></td>
+        <td><pre>{{ debug.Dump site.Title }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Sections</b></td>
+        <td><pre>{{ debug.Dump site.Sections }}</pre></td>
+      </tr>
+      {{/*  LONG OUTPUTS  */}}
+      <tr>
+        <td><b>site.AllPages</b></td>
+        <td><pre>{{ debug.Dump site.AllPages }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Config</b></td>
+        <td><pre>{{ debug.Dump site.Config }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Data</b></td>
+        <td><pre>{{ debug.Dump site.Data }}</pre></td>
+      </tr>
+      {{/*  TODO GetPage  */}}
+      <tr>
+        <td><b>site.Home</b></td>
+        <td><pre>{{ debug.Dump site.Home }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Language</b></td>
+        <td><pre>{{ debug.Dump site.Language }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Languages</b></td>
+        <td><pre>{{ debug.Dump site.Languages }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.MainSections</b></td>
+        <td><pre>{{ debug.Dump site.MainSections }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Menus</b></td>
+        <td><pre>{{ debug.Dump site.Menus }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Pages</b></td>
+        <td><pre>{{ debug.Dump site.Pages }}</pre></td>
+      </tr>
+      {{/*  TODO site.Param  */}}
+      <tr>
+        <td><b>site.Params</b></td>
+        <td><pre>{{ debug.Dump site.Params }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.RegularPages</b></td>
+        <td><pre>{{ debug.Dump site.RegularPages }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Sites</b></td>
+        <td><pre>{{ debug.Dump site.Sites }}</pre></td>
+      </tr>
+      <tr>
+        <td><b>site.Taxonomies</b></td>
+        <td><pre>{{ debug.Dump site.Taxonomies }}</pre></td>
+      </tr>
+    </table>
+  </details>
+</details>

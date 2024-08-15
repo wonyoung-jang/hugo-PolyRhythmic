@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article
+  class="layout panes basic-single-pane"
+  id="showcase">
+  <section class="layout pane">
+    <h2>Single pane layout</h2>
+    {{ with .Content }} 
+        {{ . }} 
+    {{ end }}
+  </section>
+</article>
+{{ end }}

@@ -1,0 +1,51 @@
+.component:is(
+    .button,
+    .card,
+    .carousel.item,
+    .chip,
+    .picker.date.docked,
+    .picker.date.modal,
+    .dialog,
+    .list.item,
+    .menu.item,
+    .drawer.item,
+    .slider
+    .search.bar
+    .search.view,
+    .switch,
+    .snackbar,
+    .tab,
+    .picker.time,
+    .tooltip.rich,
+    .year,
+    .calendar-cell.day,
+    .calendar-cell.today,
+    .calendar-cell.selected,
+    .calendar-cell.range
+  ):not(:has(
+    .button, 
+    .checkbox, 
+    .radio, 
+    .switch)
+  ):not(:disabled):active {
+
+  &::before {
+    border: var(--container-outline-press);
+    box-shadow: var(--container-elevation-press);
+  }
+
+  &::after {
+    opacity: var(--state-press-opacity);
+    background-size: 50000%;
+    animation: ripplePress var(--motion-duration-short2) var(--motion-easing-emphasized) both;
+  }
+}
+
+@keyframes ripplePress {
+  from {
+    background-size: 50000%;
+  }
+  to {
+    background-size: 0%;
+  }
+}

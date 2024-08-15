@@ -1,0 +1,31 @@
+.sheet.bottom {
+  --container-width: 100%;
+  --container-elevation: var(--elevation1);
+  --container-shape: var(--shape-corner-xl-top);
+  --container-elevation-hover: var(--container-elevation);
+  --container-elevation-focus: var(--container-elevation);
+  --container-elevation-press: var(--container-elevation);
+  
+  max-width: var(--size-160);
+  margin-top: var(--size-18);
+  margin-inline: var(--size-14);
+
+  .drag-handle {
+    height: var(--size-1);
+    width: var(--size-8);
+    margin: 22px auto;
+    background-color: var(--color-on-surface-variant);
+    cursor: grab;
+  }
+
+  .content {
+    padding: var(--spacing-panes);
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .sheet.bottom {
+    margin-top: var(--size-14);
+    margin-inline: var(--size-14);
+  }
+}

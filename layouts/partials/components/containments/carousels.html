@@ -1,0 +1,21 @@
+<div class="set carousel {{ .layout }}">
+  {{ range .images }}
+    <div class="component carousel item {{ .size }}">
+      {{ with .icon }}
+        <i class="icon">{{ . }}</i>
+      {{ end }}
+        
+      {{ if or .label .supporting_text }}
+        <div class="carousel-item-text">
+          {{ with .label }}
+            <span class="label">{{ . }}</span>
+          {{ end }}
+          
+          {{ with .supporting_text }}
+            <span class="supporting-text">{{ . }}</span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  {{ end }}
+</div>

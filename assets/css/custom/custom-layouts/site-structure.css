@@ -1,0 +1,34 @@
+.content-wrapper {
+  --layout-flex: 1 1 auto;
+  --layout-display: flex;
+  --layout-flex-flow: column nowrap;
+  --layout-align-items: stretch;
+  --layout-align-content: initial;
+  --layout-justify-content: initial;
+  --layout-width: 100%;
+  --layout-height: 100%;
+  --layout-min-height: calc(100dvh - var(--size-32));
+  --layout-margin: 0;
+  --layout-gap: 0;
+  --layout-border: initial;
+
+  --layout-bg: var(--color-surface);
+  --layout-shape: var(--shape-corner-none);
+}
+
+.page-header,
+.page-navigation,
+.page-links {
+  --layout-bg: inherit;
+  --layout-shape: var(--shape-corner-none);
+}
+
+.page-navigation {
+  margin-top: var(--spacing-panes);
+}
+
+#header,
+#footer {
+  background-color: var(--color-surface-container);
+  border-radius: var(--shape-corner-none);
+}

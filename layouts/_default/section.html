@@ -1,0 +1,22 @@
+{{- define "main" -}}
+<article class="layout panes basic-single-pane">
+  <section
+    class="layout pane"
+    id="sections-page">
+    <div
+      class="set lists"
+      id="terms">
+      {{ range .Pages.ByTitle }}
+        <a
+          class="component list item one"
+          href="{{ .RelPermalink }}">
+          <div class="content">
+            <span class="headline">{{ .Title }}</span>
+          </div>
+        </a>
+        <hr class="divider" />
+      {{ end }}
+    </div>
+  </section>
+</article>
+{{- end -}}

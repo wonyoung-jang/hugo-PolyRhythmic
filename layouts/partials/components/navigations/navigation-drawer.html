@@ -1,0 +1,53 @@
+<div class="set navigation drawer {{ .type }}">
+  <div class="headline">{{ .headline }}</div>
+
+  {{ with .nav_item_1 }}
+    <div class="component navigation drawer item active">
+      {{ with .icon }}
+        <i class="icon">{{ . }}</i>
+      {{ end }}
+      <div class="label">{{ .label }}</div>
+    </div>
+  {{ end }}
+
+  {{ with .nav_item_2 }}
+    <div class="component navigation drawer item">
+      {{ with .icon }}
+        <i class="icon">{{ . }}</i>
+      {{ end }}
+      <div class="label">{{ .label }}</div>
+    </div>
+  {{ end }}
+
+  {{ with .nav_item_3 }}
+    <div class="component navigation drawer item">
+      {{ with .icon }}
+        <i class="icon">{{ . }}</i>
+      {{ end }}
+      <div class="label">{{ .label }}</div>
+    </div>
+  {{ end }}
+
+  {{ with .section_header}}
+    <hr class="divider mid">
+    <div class="section-header">{{ . }}</div>
+  {{ end }}
+
+  {{ with .nav_item_4 }}
+    <div class="component navigation drawer item">
+      {{ with .icon }}
+        <i class="icon">{{ . }}</i>
+      {{ end }}
+      <div class="label">{{ .label }}</div>
+    </div>
+  {{ end }}
+
+  {{ with .nav_item_5 }}
+    <div class="component navigation drawer item">
+      {{ with .icon }}
+        <i class="icon">{{ . }}</i>
+      {{ end }}
+      <div class="label">{{ .label }}</div>
+    </div>
+  {{ end }}
+</div>

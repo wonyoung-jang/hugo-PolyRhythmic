@@ -1,0 +1,30 @@
+<div class="component sheet side {{ .type }}">
+  <div class="header">
+    {{ if .back_icon }}
+      <button class="component button icon">
+        <i class="icon back-icon">
+          arrow_back
+        </i>
+      </button>
+    {{ end }}
+    <div class="headline">
+      {{ .headline }}
+    </div>
+    <button class="component button icon">
+      <i class="icon">
+        close
+      </i>
+    </button>
+  </div>
+  <div class="content">
+    {{ .content }}
+  </div>
+
+  {{ if .actions }}
+    <hr class="divider">
+    <div class="actions">
+      <button class="component button common tonal">Save</button>
+      <button class="component button common outlined">Cancel</button>
+    </div>
+  {{ end }}
+</div>

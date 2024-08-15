@@ -1,0 +1,12 @@
+<label class="component checkbox
+  {{ .disabled }} 
+  {{ if .error }} 
+    error-check 
+  {{ end }}">
+  <input 
+    {{ .disabled }} 
+    {{ .checked }} 
+    type="checkbox" 
+    class="{{ .indeterminate }}">
+  <span>{{ .label }}</span>
+</label>

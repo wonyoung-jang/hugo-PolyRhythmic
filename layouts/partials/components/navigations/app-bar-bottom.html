@@ -1,0 +1,35 @@
+<div class="component app-bar bottom">
+  <span class="start">
+    {{ with .icon_1 }}
+      <button class="component button icon">
+        <i class="icon">{{ . }}</i>
+      </button>
+    {{ end }}
+
+    {{ with .icon_2 }}
+      <button class="component button icon">
+        <i class="icon">{{ . }}</i>
+      </button>
+    {{ end }}
+
+    {{ with .icon_3 }}
+      <button class="component button icon">
+        <i class="icon">{{ . }}</i>
+      </button>
+    {{ end }}
+    
+    {{ with .icon_4 }}
+      <button class="component button icon">
+        <i class="icon">{{ . }}</i>
+      </button>
+    {{ end }}
+  </span>
+
+  {{ with .fab }}
+    <span class="end">
+      <button class="component button fab primary">
+        <i class="icon">{{ . }}</i>
+      </button>
+    </span>
+  {{ end }}
+</div>

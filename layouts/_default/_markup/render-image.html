@@ -1,0 +1,43 @@
+{{ $isCoverImage := not (.Page.Scratch.Get "coverImage") }}
+
+{{- if .IsBlock -}}
+  <figure
+    {{- if $isCoverImage }} 
+      class="cover-image"
+    {{- end -}}>
+    
+    <img
+      loading="lazy"
+      src="{{ .Destination | safeURL }}"
+      
+      {{- with .Text }}
+        alt="{{ . }}"
+      {{- end -}}>
+
+    {{- with .Title }}
+      <figcaption>
+        {{- . -}}
+      </figcaption>
+    {{- end -}}
+  </figure>
+{{- else -}}
+  <img
+    loading="lazy"
+    src="{{ .Destination | safeURL }}"
+
+    {{- with .Text }}
+      alt="{{- . -}}"
+    {{- end -}}
+
+    {{- with .Title }}
+      title="{{- . -}}"
+    {{- end -}}
+
+    {{- if $isCoverImage }} 
+      class="cover-image"
+    {{- end -}}>
+{{- end -}}
+
+{{ if $isCoverImage }}
+  {{ .Page.Scratch.Set "coverImage" true }}
+{{ end }}

@@ -1,0 +1,9 @@
+.item {
+  --container-display: flex;
+  --container-justify-content: center;
+  --container-align-items: center;
+  --container-width: 100%;
+  --container-color: none;
+  
+  cursor: pointer;
+}

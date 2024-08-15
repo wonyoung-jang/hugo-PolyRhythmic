@@ -1,0 +1,32 @@
+/* Small badge */
+.badge {
+  --container-display: flex;
+  --container-flex-flow: row nowrap;
+  --container-justify-content: center;
+  --container-align-items: center;
+  --container-height: 6px;
+  --container-width: 6px;
+  --container-shape: var(--shape-corner-full);
+  --container-color: var(--color-error);
+}
+
+/* Large badge */
+.badge.large {
+  --container-height: var(--size-4);
+  --container-width: unset;
+  --container-padding: var(--size-1);
+  --text-color: var(--color-on-error);
+  min-width: var(--size-4);
+  
+  /* Large badge label */
+  & span {
+    max-width: 4.1ch;
+    overflow: clip;
+    text-overflow: "+";
+    white-space: nowrap;
+    font-family: var(--typescale-label-small-font);
+    font-size: var(--typescale-label-small-size);
+    font-weight: var(--typescale-label-small-weight);
+    line-height: var(--typescale-label-small-line-height);
+  }
+}

@@ -1,0 +1,104 @@
+:root {
+  --color-showcase-tokens-container: var(--palette-neutral-variant-10);
+
+  & img {
+    filter: brightness(var(--input-dim-image));
+  }
+
+  #moon {
+    opacity: 0;
+  }
+
+  #sun {
+    transform: translate(calc(-1 * var(--size-3)), 0px);
+    opacity: 1;
+  }
+
+  #theme-toggle-container:focus-within {
+    #moon {
+      animation: set-moon var(--motion-duration-medium2) var(--motion-easing-emphasized) forwards;
+    }
+
+    #sun {
+      animation: rise-sun var(--motion-duration-medium2) var(--motion-easing-emphasized) forwards;
+    }
+  }
+}
+
+:root:has(#theme-toggle:checked) {
+  --color-showcase-tokens-container: var(--palette-neutral-variant-90);
+
+  #sun {
+    opacity: 0;
+  }
+
+  #moon {
+    transform: translate(var(--size-3), 0px);
+    opacity: 1;
+  }
+
+  #theme-toggle-container:focus-within {
+    #sun {
+      animation: set-sun var(--motion-duration-medium2) var(--motion-easing-emphasized) forwards;
+    }
+
+    #moon {
+      animation: rise-moon var(--motion-duration-medium2) var(--motion-easing-emphasized) forwards;
+    }
+  }
+
+  #theme-toggle {
+    + label {
+      --container-color: var(--color-surface-container-highest);
+      --icon-color: var(--color-on-surface-variant);
+
+      .icon {
+        font-variation-settings: "FILL" 0;
+      }
+    }
+  }
+}
+
+@keyframes rise-moon {
+  0% {
+    transform: translate(calc(-1 * var(--size-9)), var(--size-12));
+    opacity: 0;
+  }
+  100% {
+    transform: translate(var(--size-3), 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes rise-sun {
+  0% {
+    transform: translate(calc(-1 * var(--size-15)), var(--size-12));
+    opacity: 0;
+  }
+  100% {
+    transform: translate(calc(-1 * var(--size-3)), 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes set-moon {
+  0% {
+    transform: translate(var(--size-3), 0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--size-15), var(--size-12));
+    opacity: 0;
+  }
+}
+
+@keyframes set-sun {
+  0% {
+    transform: translate(calc(-1 * var(--size-3)), 0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--size-9), var(--size-12));
+    opacity: 0;
+  }
+}

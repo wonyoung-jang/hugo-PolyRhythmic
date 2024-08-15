@@ -1,0 +1,38 @@
+#searchbox {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: stretch;
+
+  #searchResults {
+    & li {
+      position: relative;
+      min-width: fit-content;
+      max-width: 80%;
+      background-color: var(--color-surface-container-low);
+      border-radius: var(--shape-corner-m);
+      color: var(--color-on-surface);
+      padding: var(--size-4);
+      margin-block: var(--size-1);
+
+      &:active {
+        background-color: var(--color-primary-container);
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+
+    & a {
+      position: absolute;
+      inset: 0; 
+    }
+
+    .focus,
+    & li:hover {
+      color: var(--color-on-tertiary-container);
+      background-color: var(--color-tertiary-container);
+    }
+  }
+}

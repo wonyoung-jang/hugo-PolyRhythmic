@@ -1,0 +1,31 @@
+{{- define "main" -}}
+<article 
+  class="layout panes basic-fixed-flex" 
+  id="single">
+  <aside 
+    class="layout pane fixed" 
+    id="toc">
+    {{ partial "toc.html" . }}
+  </aside>
+  
+  <section class="layout pane">
+    <div id="post-content">
+      {{ with .Content }}
+        {{ . }}
+      {{ end }}
+      
+      {{ if eq .Title "Contact"}}
+        {{ partial "feedback-form.html" . }}
+      {{ end }}
+      
+      {{ if eq .Title "Now"}}
+        {{ partial "most_recently_updated.html" . }}
+      {{ end }}
+
+      {{ if eq .Type "showcase/tokens" }}
+        {{ .Type }}
+      {{ end }}
+    </div>
+  </section>
+</article>
+{{- end -}}

@@ -1,0 +1,17 @@
+.button {
+  --container-display: flex;
+  --container-flex-flow: row nowrap;
+  --container-justify-content: center;
+  --container-align-items: center;
+  --container-height: var(--size-10);
+  --container-shape: var(--shape-corner-xl);
+  --container-padding: 0 var(--size-6);
+  
+  min-width: var(--size-10);
+  user-select: none;
+  cursor: pointer;
+  font-family: var(--typescale-label-large-font);
+  font-size: var(--typescale-label-large-size);
+  font-weight: var(--typescale-label-large-weight);
+  line-height: var(--typescale-label-large-line-height);
+}

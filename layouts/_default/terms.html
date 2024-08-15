@@ -1,0 +1,37 @@
+{{- define "main" -}}
+<article class="layout panes basic-single-pane">
+  <section
+    class="layout pane"
+    id="sections-page">
+    <div
+      class="set lists"
+      id="terms">
+      {{ range .Pages.ByTitle }}
+        <a
+          class="component list item one"
+          href="{{ .RelPermalink }}">
+          <span class="monogram">
+            <i class="icon">
+              {{ if eq .Title "Design" }} design_services 
+                {{ else if eq .Title "Software" }} terminal 
+                {{ else if eq .Title "University" }} school 
+                {{ else if eq .Title "Components" }} settings 
+                {{ else if eq .Title "Layouts" }} view_quilt 
+                {{ else if eq .Title "References" }} bookmark_border 
+                {{ else if eq .Title "Tokens" }} token 
+              {{ end }}
+            </i>
+          </span>
+
+          <div class="content">
+            <span class="headline"> {{ .Title }} </span>
+          </div>
+
+          <div class="trailing-supporting-text">{{len .Pages }} {{ $.Title }}</div>
+        </a>
+        <hr class="divider" />
+      {{ end }}
+    </div>
+  </section>
+</article>
+{{- end -}}

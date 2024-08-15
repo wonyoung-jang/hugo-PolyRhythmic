@@ -1,0 +1,57 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemesSiteBuilder?tab=readme-ov-file#theme-configuration
+
+name = "PolyRhythmic"
+license = "MIT"
+licenselink = "https://github.com/wonyoung-jang/hugo-PolyRhythmic/blob/master/LICENSE"
+description = "A fast, lightweight Material Design 3 Hugo theme"
+
+# The home page of the PolyRhythmic theme, where the source can be found
+homepage = "https://github.com/wonyoung-jang/exampleSite"
+
+# Running demo of the PolyRhythmic theme
+demosite = "https://wonyoungjang.org/exampleSite"
+
+# Tags for the PolyRhythmic theme
+tags = [
+  "blog",
+  "company",
+  "material-design",
+  "responsive",
+  "personal",
+  "customizable",
+  "dark",
+  "light",
+  "portfolio",
+  "docs",
+  "archive",
+  "contact",
+  "search",
+  "gallery",
+  "logseq"
+]
+
+# Features of the PolyRhythmic theme
+features = [
+  "material-design-3",
+  "responsive",
+  "light",
+  "dark",
+  "customizable-color ",
+  "fast-loading-times",
+  "SEO-optimized",
+  "search",
+  "archive",
+  "gallery",
+  "contact",
+  "mobile-friendly",
+  "social-media-integration",
+  "multi-language-support",
+  "syntax-highlighting",
+  "logseq"
+]
+
+# Author of the PolyRhythmic theme
+[author]
+  name = "Wonyoung Jang"
+  homepage = "https://wonyoungjang.org"

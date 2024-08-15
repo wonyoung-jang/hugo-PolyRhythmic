@@ -1,0 +1,5 @@
+.sheet {
+  --container-display: flex;
+  --container-flex-flow: column nowrap;
+  --container-color: var(--color-surface-container-low);
+}

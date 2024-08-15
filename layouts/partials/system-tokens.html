@@ -1,0 +1,89 @@
+<details
+  class="layout showcase-tokens system-color-tokens"
+  open>
+  <summary class="showcase-tokens-title">System tokens</summary>
+  <div class="sys-tokens">
+    {{ range slice "primary" "secondary" "tertiary" "error" }}
+      <div class="set swatch">
+        <div class="component color-swatch-cell {{ . }}">
+          <span>{{ title . }}</span>
+          <span>On {{ title . }}</span>
+        </div>
+        <div class="component color-swatch-cell {{ . }}-container">
+          <span>{{ title . }} Container</span>
+          <span>On {{ title . }} Container</span>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  <div class="sys-tokens">
+    {{ range slice "primary-fixed" "secondary-fixed" "tertiary-fixed" }}
+      <div class="set swatch">
+        <div class="component color-swatch-cell {{ . }} on-{{ . }}">
+          <span>{{ title . }}</span>
+          <span>On {{ title . }}</span>
+        </div>
+        <div class="component color-swatch-cell {{ . }}-dim on-{{ . }}-variant">
+          <span>{{ title . }} Dim</span>
+          <span>On {{ title . }} Variant</span>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  <div class="sys-tokens other-system-tokens">
+    <span
+      class="component color-swatch-cell"
+      style="background-color: var(--color-inverse-surface); color: var(--color-inverse-on-surface)">
+      Inverse Surface
+    </span>
+    <span
+      class="component color-swatch-cell"
+      style="background-color: var(--color-inverse-on-surface); color: var(--color-inverse-surface)">
+      Inverse On Surface
+    </span>
+    <span
+      class="component color-swatch-cell"
+      style="background-color: var(--color-inverse-primary); color: var(--color-inverse-surface)">
+      Inverse Primary
+    </span>
+  </div>
+
+  <div class="sys-tokens other-system-tokens">
+    <span
+      class="component color-swatch-cell"
+      style="background-color: var(--color-on-surface); color: var(--color-surface)">
+      On-Surface
+    </span>
+    <span
+      class="component color-swatch-cell"
+      style="background-color: var(--color-on-surface-variant); color: var(--color-surface)">
+      On-Surface Variant
+    </span>
+    <span
+      class="component color-swatch-cell"
+      style="background-color: var(--color-outline); color: var(--color-surface)">
+      Outline
+    </span>
+    <span
+      class="component color-swatch-cell"
+      style="background-color: var(--color-outline-variant); color: var(--color-surface-container-bright)">
+      Outline Variant
+    </span>
+  </div>
+
+  <div class="sys-tokens">
+    <div class="component color-swatch-cell surface-dim">Surface Dim</div>
+    <div class="component color-swatch-cell surface">Surface</div>
+    <div class="component color-swatch-cell surface-bright">Surface Bright</div>
+  </div>
+
+  <div class="sys-tokens">
+    <div class="component color-swatch-cell surface-container-lowest">Surface Container Lowest</div>
+    <div class="component color-swatch-cell surface-container-low">Surface Container Low</div>
+    <div class="component color-swatch-cell surface-container">Surface Container</div>
+    <div class="component color-swatch-cell surface-container-high">Surface Container High</div>
+    <div class="component color-swatch-cell surface-container-highest">Surface Container Highest</div>
+  </div>
+</details>

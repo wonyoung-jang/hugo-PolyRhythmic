@@ -1,0 +1,21 @@
+#playground > .test-set {
+  flex: 1 1 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding: 2em;
+  border: 1px solid;
+  margin-bottom: 1em;
+  border-radius: 8px;
+  gap: 16px;
+  align-items: stretch;
+
+  > * {
+    width: 100%;
+  }
+
+  & h2:first-child {
+    margin-block: 0.2em 0.5em;
+  }
+}

@@ -1,0 +1,18 @@
+.set.lists {
+  --set-flex: 1 1 auto;
+  --set-display: flex;
+  --set-flex-flow: column nowrap;
+  --set-align-items: flex-start;
+  --set-align-content: stretch;
+  --set-justify-content: flex-start;
+  --set-width: 100%;
+  --set-gap: 0;
+  --set-overflow: clip;
+  --set-color: var(--color-surface);
+  
+  max-width: 100%;
+
+  .divider {
+    color: var(--color-outline);
+  }
+}

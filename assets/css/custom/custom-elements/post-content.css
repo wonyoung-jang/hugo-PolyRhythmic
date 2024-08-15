@@ -1,0 +1,79 @@
+#post-content {
+  max-width: var(--input-char-width);
+  margin: var(--input-post-content-margin);
+
+  .highlight-text,
+  & p,
+  & pre,
+  & ul,
+  & ol,
+  & li,
+  & blockquote {
+    width: auto;
+  }
+
+  & p {
+    padding: 0 0 1.3em 0.5em;
+  }
+
+  & h1[id],
+  & h2[id],
+  & h3[id],
+  & h4[id],
+  & h5[id],
+  & h6[id] {
+    padding-top: 0.8em;
+    padding-block-start: 0.8em;
+    padding-bottom: 0.4em;
+    padding-block-end: 0.4em;
+  }
+
+  & ul {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  & figure:has(img, svg, video) {
+    margin: var(--size-2) auto;
+    max-width: 100%;
+
+    & img,
+    & svg,
+    & video {
+      max-inline-size: 100%;
+      max-block-size: fit-content;
+      align-items: center;
+      margin: var(--size-3) auto;
+    }
+  }
+
+  .cover-image {
+    margin: var(--size-5) auto;
+
+    & img,
+    & svg,
+    & video {
+      border-radius: inherit;
+      max-width: 88%;
+      margin: var(--size-5) auto;
+    }
+
+    & figcaption {
+      font-style: italic;
+      font-size: 88%;
+      max-width: 88%;
+      margin: var(--size-5) auto;
+    }
+  }
+
+  *:not(pre) > code {
+    display: inline-flex;
+    display: inline flex;
+    flex-flow: row nowrap;
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface-variant);
+    border-radius: var(--shape-corner-xs);
+    padding-inline: 5px;
+    margin-inline: 3px;
+  }
+}

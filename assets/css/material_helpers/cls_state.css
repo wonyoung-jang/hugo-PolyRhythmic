@@ -1,0 +1,20 @@
+/* State opacities */
+.state-drag {
+  opacity: var(--state-drag-opacity);
+}
+
+.state-press {
+  opacity: var(--state-press-opacity);
+}
+
+.state-focus {
+  opacity: var(--state-focus-opacity);
+}
+
+.state-hover {
+  opacity: var(--state-hover-opacity);
+}
+
+.state-disabled {
+  opacity: var(--state-disabled-opacity);
+}

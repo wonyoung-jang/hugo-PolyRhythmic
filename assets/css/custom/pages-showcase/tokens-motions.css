@@ -1,0 +1,80 @@
+.motion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-panes);
+  padding: var(--spacing-panes);
+}
+
+.duration-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+}
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+}
+
+.box {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--size-2);
+  background-color: var(--color-surface-container-highest);
+  padding: var(--size-4) var(--size-3);
+  border-radius: var(--shape-corner-s);
+  min-height: var(--size-30);
+}
+
+.box.translate {
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container-high);
+  border-radius: var(--shape-corner-m);
+  transition-property: all;
+  
+  & span {
+    opacity: 0;
+    margin-left: 0;
+    color: var(--color-on-primary-container);
+    background-color: var(--color-primary-container);
+    padding: var(--size-3);
+    border-radius: var(--shape-corner-xl);
+    transition-property: all;
+    transition-duration: inherit;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--color-surface-container-highest);
+    border-radius: var(--shape-corner-l);
+
+    & span {
+      opacity: 1;
+      margin-left: var(--size-10);
+    }
+  }
+}
+
+.box.skeleton {
+  background-color: var(--color-surface-bright);
+  animation: pulse calc(var(--motion-duration-extra-long4) * 1.5) infinite;
+  min-height: var(--size-25);
+}
+
+@keyframes pulse {
+  0% {
+    background-color: var(--color-surface-bright);
+  }
+  50% {
+    background-color: var(--color-surface-dim);
+  }
+  100% {
+    background-color: var(--color-surface-bright);
+  }
+}

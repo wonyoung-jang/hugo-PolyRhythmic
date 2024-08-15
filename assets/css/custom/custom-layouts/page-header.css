@@ -1,0 +1,25 @@
+.layout.page-header {
+  --layout-display: flex;
+  --layout-flex-flow: column nowrap;
+  --layout-align-items: stretch;
+  --layout-align-content: initial;
+  --layout-justify-content: initial;
+  --layout-height: max-content;
+  --layout-padding: var(--size-13) var(--size-8);
+  --layout-gap: var(--size-7);
+  
+  --layout-shape: var(--shape-corner-xl-bottom);
+  --layout-border: initial;
+
+  --layout-bg: var(--color-surface-container-low);
+  
+  .title,
+  .description {
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  
+  .metadata {
+    color: var(--color-on-surface-variant);
+  }
+}

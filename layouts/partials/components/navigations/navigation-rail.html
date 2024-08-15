@@ -1,0 +1,49 @@
+<div class="set navigation rail {{ .align }}">
+  <div class="menu-and-fab">
+    <button class="component button icon">
+      <i class="icon">{{ .icon_main }}</i>
+    </button>
+
+    <button class="component button fab tertiary-container">
+      <i class="icon">{{ .icon_fab }}</i>
+    </button>
+  </div>
+
+  <div class="destinations">
+    {{ with .nav_item_1 }}
+      <div class="component navigation rail item active">
+        <div class="icon-container">
+          <i class="icon">{{ .icon }}</i>
+        </div>
+        <div class="label">{{ .label }}</div>
+      </div>
+    {{ end }}
+    
+    {{ with .nav_item_2 }}
+      <div class="component navigation rail item">
+        <div class="icon-container">
+          <i class="icon">{{ .icon }}</i>
+        </div>
+        <div class="label">{{ .label }}</div>
+      </div>
+    {{ end }}
+    
+    {{ with .nav_item_3 }}
+      <div class="component navigation rail item">
+        <div class="icon-container">
+          <i class="icon">{{ .icon }}</i>
+        </div>
+        <div class="label">{{ .label }}</div>
+      </div>
+    {{ end }}
+    
+    {{ with .nav_item_4 }}
+      <div class="component navigation rail item">
+        <div class="icon-container">
+          <i class="icon">{{ .icon }}</i>
+        </div>
+        <div class="label">{{ .label }}</div>
+      </div>
+    {{ end }}
+  </div>
+</div>

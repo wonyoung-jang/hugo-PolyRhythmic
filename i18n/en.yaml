@@ -1,0 +1,91 @@
+# Page navigation
+
+- id: prev_page
+  translation: "Previous"
+
+- id: next_page
+  translation: "Up next"
+
+# Post meta
+
+- id: read_time
+  translation: "{{ .Count }} min read"
+
+# Table of contents
+
+- id: toc
+  translation: "On this page"
+
+# Navigation
+
+- id: translations
+  translation: "Translations"
+
+- id: home
+  translation: "Home"
+
+- id: search_placeholder
+  translation: "Search"
+
+# Code block
+
+- id: code_copy
+  translation: "copy"
+
+- id: code_copied
+  translation: "copied!"
+
+# Contact 
+
+- id: js_required
+  translation: "JavaScript is required to submit this form."
+
+- id: contact_submitted
+  translation: "Thank you for your message. It has been sent."
+
+- id: contact_error
+  translation: "There was an error sending your message. Please try again later."
+
+- id: contact_name
+  translation: "Name"
+
+- id: contact_name_placeholder
+  translation: "Enter your name"
+
+- id: contact_mail
+  translation: "Email"
+
+- id: contact_mail_placeholder
+  translation: "Enter your email address"
+
+- id: contact_subject
+  translation: "Subject"
+
+- id: contact_subject_placeholder
+  translation: "Enter the subject of your message"
+
+- id: contact_message
+  translation: "Message"
+
+- id: contact_message_placeholder
+  translation: "Enter your message"
+
+- id: contact_submit_feedback
+  translation: "Submit feedback"
+
+# 404
+
+- id: 404_message
+  translation: "Page not found"
+
+- id: 404_back_home
+  translation: "Back to home"
+
+# Input list of other UI components to translate
+
+# Navigation labels
+# Button text
+# Form labels
+# Section headings
+# Footer text
+# Error messages

@@ -1,0 +1,34 @@
+.set.navigation.rail {  
+  --set-flex-flow: column nowrap;
+  --set-gap: var(--size-10);
+  --set-width: var(--size-20);
+  --set-shape: var(--shape-corner-l);
+  --set-padding: var(--size-11) 0 var(--size-14) 0;
+  --set-color: var(--color-surface);
+  min-height: 900px;
+
+  &.middle {
+    --container-gap: unset;
+
+    .destinations {
+      margin-block: auto;
+    }
+  }
+
+  &.bottom {
+    --container-gap: unset;
+
+    .destinations {
+      margin-top: auto;
+    }
+  }
+
+  .menu-and-fab,
+  .destinations {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    align-items: center;
+    gap: var(--size-1);
+  }
+}

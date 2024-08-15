@@ -1,0 +1,61 @@
+.button.common {
+  min-width: var(--size-10);
+  --container-padding: 0 var(--size-3);
+  --container-gap: var(--size-2);
+  --icon-color: var(--color-primary);
+
+  &:has(+ .icon:is(:first-child)) {
+    padding-right: var(--size-4);
+
+    + .icon:first-child {
+      font-size: 18px;
+    }
+  }
+
+  &:has(+ .icon:is(:last-child)) {
+    padding-left: var(--size-2);
+    padding-right: var(--size-1);
+
+    + .icon:last-child {
+      font-size: 18px;
+    }
+  }
+
+  &.filled,
+  &.tonal,
+  &.elevated,
+  &.outlined {
+    --container-padding: 0 var(--size-6);
+
+    &:has(i:first-child) {
+      padding-left: var(--size-4);
+    }
+  }
+
+  &.filled {
+    --container-color: var(--color-primary);
+    --icon-color: var(--color-on-primary);
+  }
+
+  &.tonal {
+    --container-color: var(--color-secondary-container);
+    --icon-color: var(--color-on-secondary-container);
+  }
+
+  &.elevated {
+    --container-color: var(--color-surface-container-low);
+    --icon-color: var(--color-primary);
+    --container-elevation: var(--elevation1);
+    --container-elevation-hover: var(--elevation2);
+    --container-elevation-focus: var(--elevation1);
+    --container-elevation-press: var(--elevation1);
+    --container-elevation-disabled: var(--elevation0);
+  }
+
+  &.outlined {
+    --container-outline: 1px solid var(--color-outline);
+    --container-outline-hover: 1px solid var(--color-outline);
+    --container-outline-focus: 1px solid var(--color-primary);
+    --container-outline-press: 1px solid var(--color-outline);
+  }
+}

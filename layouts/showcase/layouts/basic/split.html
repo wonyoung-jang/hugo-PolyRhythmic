@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article
+  class="layout panes basic-split-pane"
+  id="showcase">
+  <section class="layout pane">
+    <h2>Split 1</h2>
+    {{ with .Content }} 
+        {{ . }} 
+    {{ end }}
+  </section>
+  
+  <section class="layout pane">
+    <h2>Split 2</h2>
+  </section>
+</article>
+{{ end }}

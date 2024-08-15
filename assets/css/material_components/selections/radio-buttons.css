@@ -1,0 +1,94 @@
+.radio {
+  --container-display: flex;
+  --container-align-items: center;
+  --container-gap: var(--size-2);
+  --container-height: var(--size-10);
+
+  --text-color: var(--color-on-surface-variant);
+  --icon-color: var(--color-on-surface-variant);
+
+  direction: ltr;
+
+  white-space: nowrap;
+  cursor: pointer;
+  
+  &:has(input:checked) {
+    --icon-color: var(--color-primary);
+  }
+
+  &:has(span:empty) {
+    --container-gap: 0;
+  } 
+
+  > input {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
+
+    &:checked + span::before {
+      content: "radio_button_checked";
+      color: var(--color-primary);
+    }
+    
+    &:hover + span::after {
+      opacity: var(--state-hover-opacity);
+    }
+
+    &:focus + span::after {
+      opacity: var(--state-focus-opacity);
+    }
+
+    &:active + span::after {
+      opacity: var(--state-press-opacity);
+    }
+  }
+  
+  > span {
+    display: flex;
+    align-items: center;
+    color: var(--color-on-surface-variant);
+
+    &::before {
+      content: "radio_button_unchecked";
+      color: var(--color-on-surface-variant);
+
+      display: flex;
+      align-items: center;
+
+      font-family: var(--font-icon);
+      font-size: var(--size-5);
+      width: var(--size-5);
+      height: var(--size-5);
+
+      direction: ltr;
+      font-feature-settings: "liga";
+      -webkit-font-smoothing: antialiased;
+      position: absolute;
+      inset: auto auto auto calc(-1 * var(--size-1));
+      border-radius: var(--shape-corner-full);
+      user-select: none;
+      box-shadow: 0 0 0 0 var(--icon-color);
+      transition: all var(--motion-duration-short3);
+    }
+
+    &::after {
+      content: "";
+      color: var(--color-on-surface-variant);
+
+      display: flex;
+      align-items: center;
+
+      width: var(--size-10);
+      height: var(--size-10);
+
+      direction: ltr;
+      position: absolute;
+      inset: auto auto auto -14px;
+      border-radius: var(--shape-corner-full);
+      user-select: none;
+      background-color: var(--icon-color);
+      opacity: 0;
+      transition: all var(--motion-duration-short3);
+    }
+  }
+}

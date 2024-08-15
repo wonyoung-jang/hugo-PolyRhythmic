@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section class="page-404">
+  <p class="display-large">404</p>
+  <h3>{{ i18n "404_message" }}</h3>
+  <a  
+    class="component button common outlined"
+    href="{{ "" | relURL }}">
+    <i class="icon">home</i>
+    <span>{{ i18n "404_back_home" }}</span>
+  </a>
+</section>
+{{ end }}

@@ -1,0 +1,64 @@
+.sheet.side {  
+  --container-padding: 0 0 var(--size-6) 0;
+  --container-width: 100%;
+  max-width: var(--size-100);
+  border-left: 1px solid var(--color-outline);
+
+  &.modal {
+    --container-elevation: var(--elevation1);
+    --container-shape: var(--shape-corner-l);
+    border-left: unset;
+  }
+
+  .header,
+  .content,
+  .actions {
+    width: 100%;
+  }
+
+  .header {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: var(--size-3) var(--size-3) var(--size-4) var(--size-1);
+    align-items: center;
+    justify-content: space-between;
+
+    .headline {
+      flex: 1 0 0;
+      padding-left: var(--size-6);
+      color: var(--color-on-surface-variant);
+      font-size: var(--typescale-title-large-size);
+      line-height: var(--typescale-title-large-line-height);
+      font-weight: var(--typescale-title-large-weight);
+      font-family: var(--typescale-title-large-font);
+    }
+
+    &:has(.back-icon) {
+      .headline {
+        padding-left: 0px;
+      }
+    }
+  }
+
+  .content {
+    flex: 1 0 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    align-self: stretch;
+    padding: var(--spacing-panes);
+  }
+
+  .actions {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-self: stretch;
+    padding: var(--size-4) var(--size-6) 0px var(--size-6);
+    gap: var(--size-2);
+  }
+
+  .divider {
+    color: var(--color-outline);
+  }
+}
