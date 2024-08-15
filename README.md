@@ -8,7 +8,7 @@
 **See exampleSite** source here: [**exampleSite**](https://github.com/wonyoung-jang/hugo-PolyRhythmic-demo).
 
 [![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-hugo-version&message=v0.132.2&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.132.2)
-[![GitHub](https://img.shields.io/github/license/wonyoung-jang/hugo-PolyRhythmic)](https://github.com/wonyoung-jang/hugo-PolyRhythmic/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/license/wonyoung-jang/hugo-PolyRhythmic)](https://github.com/wonyoung-jang/hugo-PolyRhythmic/blob/main/LICENSE)
 ![code-size](https://img.shields.io/github/languages/code-size/wonyoung-jang/hugo-PolyRhythmic)
 
 <p align="center">
