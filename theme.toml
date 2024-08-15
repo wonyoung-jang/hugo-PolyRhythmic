@@ -5,7 +5,7 @@ license = "MIT"
 licenselink = "https://github.com/wonyoung-jang/hugo-PolyRhythmic/blob/main/LICENSE"
 description = "A fast, lightweight Material Design 3 Hugo theme"
 homepage = "https://github.com/wonyoung-jang/hugo-PolyRhythmic"
-demosite = "https://wonyoungjang.org/hugo-PolyRhythmic-demo"
+demosite = "https://wonyoungjang.org/hugo-PolyRhythmic-demo/"
 tags = [
   "blog",
   "company",
@@ -43,4 +43,4 @@ features = [
 ]
 [author]
   name = "Wonyoung Jang"
-  homepage = "https://wonyoungjang.org"
+  homepage = "https://github.com/wonyoung-jang/"
