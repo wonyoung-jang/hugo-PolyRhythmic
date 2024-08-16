@@ -6,23 +6,28 @@
       <h2>Components panel</h2>
       <hr>
       <div class="components-panel">
-        {{/*  4 common buttons  */}}
+        {{/*  Top row  */}}
         <div class="row">
-          <div class="panel-button-grid">
-            {{ partial "components/actions/button-common.html" (dict
-              "type" "outlined"
-              "label" "Back")}}
-            {{ partial "components/actions/button-common.html" (dict
-              "type" "filled"
-              "label" "Complete")}}
-            {{ partial "components/actions/button-common.html" (dict
-              "type" "tonal"
-              "icon" "send"
-              "label" "Send")}}
-            {{ partial "components/actions/button-common.html" (dict
-              "type" "elevated"
-              "icon" "open_in_new"
-              "label" "Open")}}
+          {{/*  4 common buttons  */}}
+          <div class="column">
+            <div class="row">
+              {{ partial "components/actions/button-common.html" (dict
+                "type" "outlined"
+                "label" "Back")}}
+              {{ partial "components/actions/button-common.html" (dict
+                "type" "filled"
+                "label" "Complete")}}
+            </div>
+            <div class="row">
+              {{ partial "components/actions/button-common.html" (dict
+                "type" "tonal"
+                "icon" "send"
+                "label" "Send")}}
+              {{ partial "components/actions/button-common.html" (dict
+                "type" "elevated"
+                "icon" "open_in_new"
+                "label" "Open")}}
+            </div>
           </div>
           {{/*  3 FABs  */}}
           <div class="column">
@@ -42,21 +47,26 @@
               "icon" "edit")}}
           </div>
         </div>
+        {{/*  Middle row  */}}
         <div class="row">
           {{/*  4 icon buttons  */}}
-          <div class="panel-button-grid">
-            {{ partial "components/actions/button-icon.html" (dict
-              "type" "filled"
-              "icon" "palette")}}
-            {{ partial "components/actions/button-icon.html" (dict
-              "type" "tonal"
-              "icon" "edit")}}
-            {{ partial "components/actions/button-icon.html" (dict
+          <div class="column">
+            <div class="row">
+              {{ partial "components/actions/button-icon.html" (dict
+                "type" "filled"
+                "icon" "palette")}}
+              {{ partial "components/actions/button-icon.html" (dict
+                "type" "tonal"
+                "icon" "edit")}}
+            </div>
+            <div class="row">
+              {{ partial "components/actions/button-icon.html" (dict
               "type" "outlined"
               "icon" "check")}}
-            {{ partial "components/actions/button-icon.html" (dict
+              {{ partial "components/actions/button-icon.html" (dict
               "type" "standrd"
               "icon" "help")}}
+            </div>
           </div>
           {{/*  2 circular progress  */}}
           <div class="column">
@@ -108,7 +118,8 @@
             "container" "elevated"
             "name" "chips"
             "leading_icon" "check"
-            "label" "Free shipping") }}
+            "label" "Free shipping"
+            "checked" "checked") }}
           {{ partial "components/selections/chips.html" (dict
             "container" "outlined"
             "name" "chips"

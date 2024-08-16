@@ -1,32 +1,33 @@
-.panel-button-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--size-2);
-}
-
-.row {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: var(--size-2);
-  padding: var(--size-2);
-}
-
-.column {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: var(--size-2);
-  padding: var(--size-2);
-}
-
 .components-panel {
   display: flex;
   flex-flow: column nowrap;
-  align-items: stretch;
+  align-items: center;
+  max-width: fit-content;
   border-radius: var(--shape-corner-m);
+  margin: 0 auto;
+  padding: var(--spacing-panes);
   background: var(--color-surface-container);
-  padding: var(--size-16);
+  gap: var(--size-5);
+
+  .panel-button-grid,
+  .row,
+  .column {
+    align-self: stretch;
+    gap: var(--size-4);
+    padding: var(--size-1);
+  }
+  
+  .row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .column {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
 }
