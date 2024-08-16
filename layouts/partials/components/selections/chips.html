@@ -1,5 +1,5 @@
 <label class="component chip {{ .type }} {{ .container }} {{ .disabled }}">
-  <input type="checkbox" name="{{ .name }}">
+  <input type="checkbox" name="{{ .name }}" {{ .checked }}>
 
   {{ with .leading_icon }}
     <i class="icon leading-icon">{{ . }}</i>
