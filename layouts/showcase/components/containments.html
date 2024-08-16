@@ -209,9 +209,7 @@
           (dict 
             "icon" "image"
             "size" "small")
-          )
-        )
-      }}
+          )) }}
 
       {{/*  Center-aligned hero */}}
       <div class="sub-showcase-components-header">Center-aligned hero</div>
@@ -225,9 +223,7 @@
           (dict 
             "icon" "image"
             "size" "small")
-          )
-        )
-      }}
+          )) }}
       
       {{/*  Multi-browse */}}
       <div class="sub-showcase-components-header">Multi-browse</div>
@@ -241,9 +237,7 @@
           (dict 
             "icon" "image"
             "size" "small")
-          )
-        )
-      }}
+          )) }}
       
       {{/*  Uncontained */}}
       <div class="sub-showcase-components-header">Uncontained</div>
@@ -256,9 +250,7 @@
           (dict "icon" "image")
           (dict "icon" "image")
           (dict "icon" "image")
-          )
-        )
-      }}
+          )) }}
 
       {{/*  Full-screen  */}}
       <div class="sub-showcase-components-header">Full-screen</div>
@@ -268,9 +260,7 @@
           (dict "icon" "image")
           (dict "icon" "image")
           (dict "icon" "image")
-          )
-        )
-      }}
+          )) }}
 
       {{/*  Subcomponents  */}}
       <div class="sub-showcase-components-header">Subcomponents</div>
@@ -293,9 +283,7 @@
             "size" "medium"
             "label" "Label"
             "supporting_text" "Supporting text")
-          )
-        )
-      }}
+          )) }}
 
     </div>
     
@@ -306,25 +294,19 @@
       {{ partial "components/containments/dialogs.html" (dict 
         "headline" "Basic dialog"
         "supporting_text" "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis voluptas, repellat, impedit, sit reprehenderit nam et ipsa eius amet rem! Eligendi sequi magnam exercitationem vel dignissimos similique, atque earum."
-        "actions" true
-        ) 
-      }}
+        "actions" true) }}
 
       {{ partial "components/containments/dialogs.html" (dict 
         "icon" "chat"
         "headline" "Basic dialog with icon"
         "supporting_text" "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis voluptas, repellat, impedit, sit reprehenderit nam et ipsa eius amet rem! Eligendi sequi magnam exercitationem vel dignissimos similique, atque earum."
-        "actions" true
-        ) 
-      }}
+        "actions" true) }}
 
       <div class="sub-showcase-components-header">Full screen dialog</div>
       {{ partial "components/containments/dialogs.html" (dict 
         "type" "full"
         "headline" "Full screen dialog"
-        "supporting_text" "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis voluptas, repellat, impedit, sit reprehenderit nam et ipsa eius amet rem! Eligendi sequi magnam exercitationem vel dignissimos similique, atque earum."
-        ) 
-      }}
+        "supporting_text" "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis voluptas, repellat, impedit, sit reprehenderit nam et ipsa eius amet rem! Eligendi sequi magnam exercitationem vel dignissimos similique, atque earum.") }}
     </div>
     
     {{/*  Dividers  */}}
@@ -336,23 +318,15 @@
       <div class="divider-showcase-container">
         <div class="title-small">Mid inset</div>
         {{ partial "components/containments/dividers.html" (dict
-          "inset" "mid"
-          ) 
-        }}
+          "inset" "mid") }}
         <div class="title-small">Start inset</div>
         {{ partial "components/containments/dividers.html" (dict
-          "inset" "start"
-          ) 
-        }}
+          "inset" "start") }}
         <div class="title-small">End inset</div>
         {{ partial "components/containments/dividers.html" (dict
-          "inset" "end"
-          ) 
-        }}
+          "inset" "end") }}
         <div class="title-small">No inset</div>
-        {{ partial "components/containments/dividers.html" (dict
-          ) 
-        }}
+        {{ partial "components/containments/dividers.html" (dict) }}
       </div>
 
       <div class="sub-showcase-components-header">Vertical</div>
@@ -361,32 +335,24 @@
           Mid inset
           {{ partial "components/containments/dividers.html" (dict
             "vertical" "vertical"
-            "inset" "mid"
-            ) 
-          }}
+            "inset" "mid") }}
         </div>
         <div class="title-small">
           Start inset
           {{ partial "components/containments/dividers.html" (dict
             "vertical" "vertical"
-            "inset" "start"
-            ) 
-          }}
+            "inset" "start") }}
         </div>
         <div class="title-small">
           End inset
           {{ partial "components/containments/dividers.html" (dict
             "vertical" "vertical"
-            "inset" "end"
-            ) 
-          }}
+            "inset" "end") }}
         </div>
         <div class="title-small">
           No inset
           {{ partial "components/containments/dividers.html" (dict
-            "vertical" "vertical"
-            ) 
-          }}
+            "vertical" "vertical") }}
         </div>
       </div>
     </div>
@@ -403,170 +369,130 @@
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
-          "dividers" true
-          )
-        }}
+          "dividers" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "disabled" "disabled"
           "headline" "List-item disabled"
+          "dividers" true) }}
+        
+        {{ partial "components/containments/lists.html" (dict
+          "size" "one"
+          "headline" "List-item"
           "dividers" true
-          )
-        }}
+          "checkbox_trailing" true) }}
+                
+        {{ partial "components/containments/lists.html" (dict
+          "size" "one"
+          "headline" "List-item"
+          "dividers" true
+          "icon_trailing" true) }}
+                
+        {{ partial "components/containments/lists.html" (dict
+          "size" "one"
+          "headline" "List-item"
+          "dividers" true
+          "monogram" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "one"
+          "headline" "List-item"
+          "dividers" true
+          "checkbox_trailing" true
+          "monogram" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "one"
+          "headline" "List-item"
+          "dividers" true
+          "icon_trailing" true
+          "monogram" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "one"
+          "headline" "List-item"
+          "dividers" true
+          "icon_leading" true) }}
         
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
           "checkbox_trailing" true
-          )
-        }}
-                
-        {{ partial "components/containments/lists.html" (dict
-          "size" "one"
-          "headline" "List-item"
-          "dividers" true
-          "icon_trailing" true
-          )
-        }}
-                
-        {{ partial "components/containments/lists.html" (dict
-          "size" "one"
-          "headline" "List-item"
-          "dividers" true
-          "monogram" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "one"
-          "headline" "List-item"
-          "dividers" true
-          "checkbox_trailing" true
-          "monogram" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "one"
-          "headline" "List-item"
-          "dividers" true
-          "icon_trailing" true
-          "monogram" true
-          )
-        }}
+          "icon_leading" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
           "icon_leading" true
-          )
-        }}
-        
-        {{ partial "components/containments/lists.html" (dict
-          "size" "one"
-          "headline" "List-item"
-          "dividers" true
-          "checkbox_trailing" true
-          "icon_leading" true
-          )
-        }}
+          "icon_trailing" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
-          "icon_leading" true
-          "icon_trailing" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "one"
-          "headline" "List-item"
-          "dividers" true
-          "image" true
-          )
-        }}
+          "image" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
           "checkbox_trailing" true
-          "image" true
-          )
-        }}
+          "image" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
-          "video" true
-          )
-        }}
+          "video" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
           "checkbox_trailing" true
-          "video" true
-          )
-        }}
+          "video" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "one"
+          "headline" "List-item"
+          "dividers" true
+          "checkbox_leading" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
           "checkbox_leading" true
-          )
-        }}
+          "supporting_text" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
-          "checkbox_leading" true
-          "supporting_text" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "one"
-          "headline" "List-item"
-          "dividers" true
-          "radio" true
-          )
-        }}
+          "radio" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
           "radio" true
-          "supporting_text" true
-          )
-        }}
+          "supporting_text" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
-          "switch" true
-          )
-        }}
+          "switch" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "one"
           "headline" "List-item"
           "dividers" true
           "icon_leading" true
-          "switch" true
-          )
-        }}
+          "switch" true) }}
       </div>
 
       {{/*  Two line  */}}
@@ -576,18 +502,58 @@
           "size" "two"
           "headline" "List-item"
           "supporting_text_content" "Two lines"
-          "dividers" true
-          )
-        }}
+          "dividers" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
           "disabled" "disabled"
           "headline" "List-item disabled"
           "supporting_text_content" "Two lines"
+          "dividers" true) }}
+        
+        {{ partial "components/containments/lists.html" (dict
+          "size" "two"
+          "headline" "List-item"
+          "supporting_text_content" "Two lines"
           "dividers" true
-          )
-        }}
+          "checkbox_trailing" true) }}
+                
+        {{ partial "components/containments/lists.html" (dict
+          "size" "two"
+          "headline" "List-item"
+          "supporting_text_content" "Two lines"
+          "dividers" true
+          "icon_trailing" true) }}
+                
+        {{ partial "components/containments/lists.html" (dict
+          "size" "two"
+          "headline" "List-item"
+          "supporting_text_content" "Two lines"
+          "dividers" true
+          "monogram" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "two"
+          "headline" "List-item"
+          "supporting_text_content" "Two lines"
+          "dividers" true
+          "checkbox_trailing" true
+          "monogram" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "two"
+          "headline" "List-item"
+          "supporting_text_content" "Two lines"
+          "dividers" true
+          "icon_trailing" true
+          "monogram" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "two"
+          "headline" "List-item"
+          "supporting_text_content" "Two lines"
+          "dividers" true
+          "icon_leading" true) }}
         
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
@@ -595,46 +561,7 @@
           "supporting_text_content" "Two lines"
           "dividers" true
           "checkbox_trailing" true
-          )
-        }}
-                
-        {{ partial "components/containments/lists.html" (dict
-          "size" "two"
-          "headline" "List-item"
-          "supporting_text_content" "Two lines"
-          "dividers" true
-          "icon_trailing" true
-          )
-        }}
-                
-        {{ partial "components/containments/lists.html" (dict
-          "size" "two"
-          "headline" "List-item"
-          "supporting_text_content" "Two lines"
-          "dividers" true
-          "monogram" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "two"
-          "headline" "List-item"
-          "supporting_text_content" "Two lines"
-          "dividers" true
-          "checkbox_trailing" true
-          "monogram" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "two"
-          "headline" "List-item"
-          "supporting_text_content" "Two lines"
-          "dividers" true
-          "icon_trailing" true
-          "monogram" true
-          )
-        }}
+          "icon_leading" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
@@ -642,37 +569,14 @@
           "supporting_text_content" "Two lines"
           "dividers" true
           "icon_leading" true
-          )
-        }}
-        
-        {{ partial "components/containments/lists.html" (dict
-          "size" "two"
-          "headline" "List-item"
-          "supporting_text_content" "Two lines"
-          "dividers" true
-          "checkbox_trailing" true
-          "icon_leading" true
-          )
-        }}
+          "icon_trailing" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
           "headline" "List-item"
           "supporting_text_content" "Two lines"
           "dividers" true
-          "icon_leading" true
-          "icon_trailing" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "two"
-          "headline" "List-item"
-          "supporting_text_content" "Two lines"
-          "dividers" true
-          "image" true
-          )
-        }}
+          "image" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
@@ -680,18 +584,14 @@
           "supporting_text_content" "Two lines"
           "dividers" true
           "checkbox_trailing" true
-          "image" true
-          )
-        }}
+          "image" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
           "headline" "List-item"
           "supporting_text_content" "Two lines"
           "dividers" true
-          "video" true
-          )
-        }}
+          "video" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
@@ -699,9 +599,14 @@
           "supporting_text_content" "Two lines"
           "dividers" true
           "checkbox_trailing" true
-          "video" true
-          )
-        }}
+          "video" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "two"
+          "headline" "List-item"
+          "supporting_text_content" "Two lines"
+          "dividers" true
+          "checkbox_leading" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
@@ -709,27 +614,14 @@
           "supporting_text_content" "Two lines"
           "dividers" true
           "checkbox_leading" true
-          )
-        }}
+          "supporting_text" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
           "headline" "List-item"
           "supporting_text_content" "Two lines"
           "dividers" true
-          "checkbox_leading" true
-          "supporting_text" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "two"
-          "headline" "List-item"
-          "supporting_text_content" "Two lines"
-          "dividers" true
-          "radio" true
-          )
-        }}
+          "radio" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
@@ -737,18 +629,14 @@
           "supporting_text_content" "Two lines"
           "dividers" true
           "radio" true
-          "supporting_text" true
-          )
-        }}
+          "supporting_text" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
           "headline" "List-item"
           "supporting_text_content" "Two lines"
           "dividers" true
-          "switch" true
-          )
-        }}
+          "switch" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "two"
@@ -756,9 +644,7 @@
           "supporting_text_content" "Two lines"
           "dividers" true
           "icon_leading" true
-          "switch" true
-          )
-        }}
+          "switch" true) }}
       </div>
 
       {{/*  Three line  */}}
@@ -768,18 +654,58 @@
           "size" "three"
           "headline" "List-item"
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
-          "dividers" true
-          )
-        }}
+          "dividers" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
           "disabled" "disabled"
           "headline" "List-item disabled"
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
+          "dividers" true) }}
+        
+        {{ partial "components/containments/lists.html" (dict
+          "size" "three"
+          "headline" "List-item"
+          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
-          )
-        }}
+          "checkbox_trailing" true) }}
+                
+        {{ partial "components/containments/lists.html" (dict
+          "size" "three"
+          "headline" "List-item"
+          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
+          "dividers" true
+          "icon_trailing" true) }}
+                
+        {{ partial "components/containments/lists.html" (dict
+          "size" "three"
+          "headline" "List-item"
+          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
+          "dividers" true
+          "monogram" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "three"
+          "headline" "List-item"
+          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
+          "dividers" true
+          "checkbox_trailing" true
+          "monogram" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "three"
+          "headline" "List-item"
+          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
+          "dividers" true
+          "icon_trailing" true
+          "monogram" true) }}
+
+        {{ partial "components/containments/lists.html" (dict
+          "size" "three"
+          "headline" "List-item"
+          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
+          "dividers" true
+          "icon_leading" true) }}
         
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
@@ -787,46 +713,7 @@
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
           "checkbox_trailing" true
-          )
-        }}
-                
-        {{ partial "components/containments/lists.html" (dict
-          "size" "three"
-          "headline" "List-item"
-          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
-          "dividers" true
-          "icon_trailing" true
-          )
-        }}
-                
-        {{ partial "components/containments/lists.html" (dict
-          "size" "three"
-          "headline" "List-item"
-          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
-          "dividers" true
-          "monogram" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "three"
-          "headline" "List-item"
-          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
-          "dividers" true
-          "checkbox_trailing" true
-          "monogram" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "three"
-          "headline" "List-item"
-          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
-          "dividers" true
-          "icon_trailing" true
-          "monogram" true
-          )
-        }}
+          "icon_leading" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
@@ -834,37 +721,14 @@
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
           "icon_leading" true
-          )
-        }}
-        
-        {{ partial "components/containments/lists.html" (dict
-          "size" "three"
-          "headline" "List-item"
-          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
-          "dividers" true
-          "checkbox_trailing" true
-          "icon_leading" true
-          )
-        }}
+          "icon_trailing" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
           "headline" "List-item"
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
-          "icon_leading" true
-          "icon_trailing" true
-          )
-        }}
-
-        {{ partial "components/containments/lists.html" (dict
-          "size" "three"
-          "headline" "List-item"
-          "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
-          "dividers" true
-          "image" true
-          )
-        }}
+          "image" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
@@ -872,18 +736,14 @@
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
           "checkbox_trailing" true
-          "image" true
-          )
-        }}
+          "image" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
           "headline" "List-item"
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
-          "video" true
-          )
-        }}
+          "video" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
@@ -891,9 +751,7 @@
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
           "checkbox_trailing" true
-          "video" true
-          )
-        }}
+          "video" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
@@ -919,9 +777,7 @@
           "headline" "List-item"
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
-          "radio" true
-          )
-        }}
+          "radio" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
@@ -929,18 +785,14 @@
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
           "radio" true
-          "supporting_text" true
-          )
-        }}
+          "supporting_text" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
           "headline" "List-item"
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
-          "switch" true
-          )
-        }}
+          "switch" true) }}
 
         {{ partial "components/containments/lists.html" (dict
           "size" "three"
@@ -948,9 +800,7 @@
           "supporting_text_content" "Three lines Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis itaque et doloremque ut dolore vero ipsum ullam fuga."
           "dividers" true
           "icon_leading" true
-          "switch" true
-          )
-        }}
+          "switch" true) }}
       </div>
 
       {{/*  Subcomponents  */}}
@@ -975,85 +825,63 @@
       {{ partial "components/containments/sheet-bottom.html" (dict)}}  
       
       {{ partial "components/containments/sheet-bottom.html" (dict
-        "drag_handle" true
-        )
-      }}  
+        "drag_handle" true) }}
 
       <div class="sub-showcase-components-header">Modal bottom sheet</div>
       {{ partial "components/containments/sheet-bottom.html" (dict
-        "container" "modal"
-        )
-      }}  
+        "container" "modal") }}
       
       {{ partial "components/containments/sheet-bottom.html" (dict
         "container" "modal"
-        "drag_handle" true
-        )
-      }} 
+        "drag_handle" true) }}
 
       {{/*  Side sheets  */}}
       <div class="display-medium">Side sheets</div>
       <div class="sub-showcase-components-header">Standard side sheet</div>
       {{ partial "components/containments/sheet-side.html" (dict
         "headline" "Title"
+        "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!") }}
+
+      {{ partial "components/containments/sheet-side.html" (dict
+        "headline" "Title"
+        "back_icon" true
+        "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!") }}
+
+      {{ partial "components/containments/sheet-side.html" (dict
+        "headline" "Title"
         "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!"
-        )
-      }}
+        "actions" true) }}
 
       {{ partial "components/containments/sheet-side.html" (dict
         "headline" "Title"
         "back_icon" true
         "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!"
-        )
-      }}
-
-      {{ partial "components/containments/sheet-side.html" (dict
-        "headline" "Title"
-        "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!"
-        "actions" true
-        )
-      }}
-
-      {{ partial "components/containments/sheet-side.html" (dict
-        "headline" "Title"
-        "back_icon" true
-        "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!"
-        "actions" true
-        )
-      }}
+        "actions" true) }}
       
       <div class="sub-showcase-components-header">Modal side sheets</div>
       {{ partial "components/containments/sheet-side.html" (dict
         "type" "modal"
         "headline" "Title"
+        "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!") }}
+
+      {{ partial "components/containments/sheet-side.html" (dict
+        "type" "modal"
+        "headline" "Title"
+        "back_icon" true
+        "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!") }}
+
+      {{ partial "components/containments/sheet-side.html" (dict
+        "type" "modal"
+        "headline" "Title"
         "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!"
-        )
-      }}
+        "actions" true) }}
 
       {{ partial "components/containments/sheet-side.html" (dict
         "type" "modal"
         "headline" "Title"
         "back_icon" true
         "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!"
-        )
-      }}
-
-      {{ partial "components/containments/sheet-side.html" (dict
-        "type" "modal"
-        "headline" "Title"
-        "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!"
-        "actions" true
-        )
-      }}
-
-      {{ partial "components/containments/sheet-side.html" (dict
-        "type" "modal"
-        "headline" "Title"
-        "back_icon" true
-        "content" "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus deleniti reiciendis adipisci doloremque necessitatibus dolorem facilis, tenetur maxime illum et aliquid, molestias deserunt tempore ut nostrum non amet corrupti!"
-        "actions" true
-        )
-      }}
+        "actions" true) }}
     </div>
   </section>
 </article>

@@ -8,13 +8,13 @@
           time.Format 
           (default "January 2, 2006" site.Params.dateFormat)
         )
-      )
-    ) 
-  }}
+      ) 
+    ) }}
 {{- end }}
 
-{{- if .ReadingTime -}}
-  {{- $scratch.Add "meta" (slice (i18n "read_time" .ReadingTime)) }}
+{{- with .ReadingTime -}}
+  {{- $scratch.Add "meta" (slice 
+    (i18n "read_time" .)) }}
 {{- end }}
 
 {{- with ($scratch.Get "meta") }}

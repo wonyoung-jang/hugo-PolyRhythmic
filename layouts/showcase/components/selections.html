@@ -15,107 +15,75 @@
     <div class="layout showcase-components">
       {{/*  Selected  */}}
       <div class="sub-showcase-components-header">Regular</div>
+      {{ partial "components/selections/checkboxes.html" (dict) }}
+      
       {{ partial "components/selections/checkboxes.html" (dict 
-        ) 
-      }}
+        "disabled" "disabled") }}
       
       {{ partial "components/selections/checkboxes.html" (dict 
         "disabled" "disabled"
-        ) 
-      }}
+        "checked" "checked") }}
       
       {{ partial "components/selections/checkboxes.html" (dict 
-        "disabled" "disabled"
-        "checked" "checked"
-        ) 
-      }}
-      
-      {{ partial "components/selections/checkboxes.html" (dict 
-        "label" "Label"
-        ) 
-      }}
+        "label" "Label") }}
     
       {{/*  Indeterminate  */}}
       <div class="sub-showcase-components-header">Regular - indeterminate</div>
       {{ partial "components/selections/checkboxes.html" (dict 
+        "indeterminate" "indeterminate") }}
+
+      {{ partial "components/selections/checkboxes.html" (dict 
         "indeterminate" "indeterminate"
-        ) 
-      }}
+        "disabled" "disabled") }}
 
       {{ partial "components/selections/checkboxes.html" (dict 
         "indeterminate" "indeterminate"
         "disabled" "disabled"
-        ) 
-      }}
-
-      {{ partial "components/selections/checkboxes.html" (dict 
-        "indeterminate" "indeterminate"
-        "disabled" "disabled"
-        "checked" "checked"
-        ) 
-      }}
+        "checked" "checked") }}
       
       {{ partial "components/selections/checkboxes.html" (dict 
         "indeterminate" "indeterminate"
-        "label" "Label"
-        ) 
-      }}
+        "label" "Label") }}
 
       {{/*  Error  */}}
       <div class="sub-showcase-components-header">Error</div>
       {{ partial "components/selections/checkboxes.html" (dict 
+        "error" true) }}
+
+      {{ partial "components/selections/checkboxes.html" (dict 
         "error" true
-        ) 
-      }}
+        "disabled" "disabled") }}
 
       {{ partial "components/selections/checkboxes.html" (dict 
         "error" true
         "disabled" "disabled"
-        ) 
-      }}
-
-      {{ partial "components/selections/checkboxes.html" (dict 
-        "error" true
-        "disabled" "disabled"
-        "checked" "checked"
-        ) 
-      }}
+        "checked" "checked") }}
 
       {{ partial "components/selections/checkboxes.html" (dict 
         "label" "Label"
-        "error" true
-        ) 
-      }}
+        "error" true) }}
 
       {{/*  Indeterminate  */}}
       <div class="sub-showcase-components-header">Error - indeterminate</div>
       {{ partial "components/selections/checkboxes.html" (dict 
         "indeterminate" "indeterminate"
+        "error" true) }}
+
+      {{ partial "components/selections/checkboxes.html" (dict 
+        "indeterminate" "indeterminate"
         "error" true
-        ) 
-      }}
+        "disabled" "disabled") }}
 
       {{ partial "components/selections/checkboxes.html" (dict 
         "indeterminate" "indeterminate"
         "error" true
         "disabled" "disabled"
-        ) 
-      }}
-
-      {{ partial "components/selections/checkboxes.html" (dict 
-        "indeterminate" "indeterminate"
-        "error" true
-        "disabled" "disabled"
-        "checked" "checked"
-        ) 
-      }}
+        "checked" "checked") }}
 
       {{ partial "components/selections/checkboxes.html" (dict 
         "indeterminate" "indeterminate"
         "label" "Label"
-        "error" true
-        ) 
-      }}
+        "error" true) }}
     </div>
 
     {{/*  Chips  */}}
@@ -125,81 +93,63 @@
       <div class="sub-showcase-components-header">Assist chip</div>
     
       <div class="set chips">
-        {{ partial "components/selections/chips.html" 
-          (dict
-            "container" "outlined"
-            "name" "chips"
-            "label" "Chip") 
-        }}
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "name" "chips"
+          "label" "Chip") }}
 
-        {{ partial "components/selections/chips.html" 
-          (dict
-            "container" "outlined"
-            "name" "chips"
-            "leading_icon" "home"
-            "label" "Chip")  
-        }}
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "name" "chips"
+          "leading_icon" "home"
+          "label" "Chip") }}
 
-        {{ partial "components/selections/chips.html" 
-          (dict
-            "container" "outlined"
-            "name" "chips"
-            "favicon" true
-            "label" "Chip")  
-        }}
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "name" "chips"
+          "favicon" true
+          "label" "Chip") }}
       </div>
     
       <div class="set chips">
-        {{ partial "components/selections/chips.html" 
-          (dict
-            "container" "outlined"
-            "disabled" "disabled"
-            "name" "chips"
-            "label" "Chip") 
-        }}
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "disabled" "disabled"
+          "name" "chips"
+          "label" "Chip") }}
 
-        {{ partial "components/selections/chips.html" 
-          (dict
-            "container" "outlined"
-            "disabled" "disabled"
-            "name" "chips"
-            "leading_icon" "home"
-            "label" "Chip")  
-        }}
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "disabled" "disabled"
+          "name" "chips"
+          "leading_icon" "home"
+          "label" "Chip") }}
 
-        {{ partial "components/selections/chips.html" 
-          (dict
-            "container" "outlined"
-            "disabled" "disabled"
-            "name" "chips"
-            "favicon" true
-            "label" "Chip")  
-        }}
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "disabled" "disabled"
+          "name" "chips"
+          "favicon" true
+          "label" "Chip") }}
       </div>
 
       <div class="set chips">
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "name" "chips"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "name" "chips"
           "leading_icon" "home"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "name" "chips"
           "favicon" true
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
       </div>
 
       <div class="set chips">
@@ -207,27 +157,21 @@
           "container" "elevated"
           "disabled" "disabled"
           "name" "chips"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "disabled" "disabled"
           "name" "chips"
           "leading_icon" "home"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "disabled" "disabled"
           "name" "chips"
           "favicon" true
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
       </div>
 
       {{/*  Filter chip  */}}
@@ -237,51 +181,39 @@
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
           "name" "chips"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "name" "chips"
+          "leading_icon" "home"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "name" "chips"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "arrow_drop_down") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
           "name" "chips"
           "leading_icon" "home"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "arrow_drop_down") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
           "name" "chips"
           "label" "Chip"
-          "trailing_icon" "arrow_drop_down"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "outlined"
-          "name" "chips"
-          "leading_icon" "home"
-          "label" "Chip"
-          "trailing_icon" "arrow_drop_down"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "outlined"
-          "name" "chips"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
           "name" "chips"
           "leading_icon" "home"
           "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
       </div>
       
       <div class="set chips">
@@ -289,9 +221,21 @@
           "container" "outlined"
           "disabled" "disabled"
           "name" "chips"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "disabled" "disabled"
+          "name" "chips"
+          "leading_icon" "home"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "disabled" "disabled"
+          "name" "chips"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "arrow_drop_down") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
@@ -299,36 +243,14 @@
           "name" "chips"
           "leading_icon" "home"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "arrow_drop_down") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
           "disabled" "disabled"
           "name" "chips"
           "label" "Chip"
-          "trailing_icon" "arrow_drop_down"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "outlined"
-          "disabled" "disabled"
-          "name" "chips"
-          "leading_icon" "home"
-          "label" "Chip"
-          "trailing_icon" "arrow_drop_down"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "outlined"
-          "disabled" "disabled"
-          "name" "chips"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
@@ -336,60 +258,46 @@
           "name" "chips"
           "leading_icon" "home"
           "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
       </div>
 
       <div class="set chips">
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "name" "chips"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "elevated"
+          "name" "chips"
+          "leading_icon" "home"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "elevated"
+          "name" "chips"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "arrow_drop_down") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "name" "chips"
           "leading_icon" "home"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "arrow_drop_down") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "name" "chips"
           "label" "Chip"
-          "trailing_icon" "arrow_drop_down"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "elevated"
-          "name" "chips"
-          "leading_icon" "home"
-          "label" "Chip"
-          "trailing_icon" "arrow_drop_down"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "elevated"
-          "name" "chips"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "name" "chips"
           "leading_icon" "home"
           "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
       </div>
 
       <div class="set chips">
@@ -397,9 +305,21 @@
           "container" "elevated"
           "disabled" "disabled"
           "name" "chips"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "elevated"
+          "disabled" "disabled"
+          "name" "chips"
+          "leading_icon" "home"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "elevated"
+          "disabled" "disabled"
+          "name" "chips"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "arrow_drop_down") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
@@ -407,36 +327,14 @@
           "name" "chips"
           "leading_icon" "home"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "arrow_drop_down") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "disabled" "disabled"
           "name" "chips"
           "label" "Chip"
-          "trailing_icon" "arrow_drop_down"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "elevated"
-          "disabled" "disabled"
-          "name" "chips"
-          "leading_icon" "home"
-          "label" "Chip"
-          "trailing_icon" "arrow_drop_down"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "elevated"
-          "disabled" "disabled"
-          "name" "chips"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
@@ -444,9 +342,7 @@
           "name" "chips"
           "leading_icon" "home"
           "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
       </div>
 
       {{/*  Input chip  */}}
@@ -457,9 +353,21 @@
           "container" "outlined"
           "type" "input"
           "name" "chips"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "type" "input"
+          "name" "chips"
+          "leading_icon" "check"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "type" "input"
+          "name" "chips"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "close") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
@@ -467,27 +375,14 @@
           "name" "chips"
           "leading_icon" "check"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "close") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
           "type" "input"
           "name" "chips"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "outlined"
-          "type" "input"
-          "name" "chips"
-          "leading_icon" "check"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "avatar" "A"
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
@@ -495,18 +390,7 @@
           "name" "chips"
           "avatar" "A"
           "label" "Chip"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "outlined"
-          "type" "input"
-          "name" "chips"
-          "avatar" "A"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
       </div>
 
       <div class="set chips">
@@ -515,9 +399,23 @@
           "disabled" "disabled"
           "type" "input"
           "name" "chips"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "disabled" "disabled"
+          "type" "input"
+          "name" "chips"
+          "leading_icon" "check"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "outlined"
+          "disabled" "disabled"
+          "type" "input"
+          "name" "chips"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "close") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
@@ -526,29 +424,7 @@
           "name" "chips"
           "leading_icon" "check"
           "label" "Chip"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "outlined"
-          "disabled" "disabled"
-          "type" "input"
-          "name" "chips"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "outlined"
-          "disabled" "disabled"
-          "type" "input"
-          "name" "chips"
-          "leading_icon" "check"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
         
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
@@ -556,9 +432,7 @@
           "type" "input"
           "name" "chips"
           "avatar" "A"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
@@ -567,9 +441,7 @@
           "name" "chips"
           "avatar" "A"
           "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
       </div>
 
       <div class="set chips">
@@ -577,9 +449,21 @@
           "container" "elevated"
           "type" "input"
           "name" "chips"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "elevated"
+          "type" "input"
+          "name" "chips"
+          "leading_icon" "check"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "elevated"
+          "type" "input"
+          "name" "chips"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "close") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
@@ -587,36 +471,14 @@
           "name" "chips"
           "leading_icon" "check"
           "label" "Chip"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "elevated"
-          "type" "input"
-          "name" "chips"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "elevated"
-          "type" "input"
-          "name" "chips"
-          "leading_icon" "check"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
         
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "type" "input"
           "name" "chips"
           "avatar" "A"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
@@ -624,9 +486,7 @@
           "name" "chips"
           "avatar" "A"
           "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
       </div>
 
       <div class="set chips">
@@ -635,9 +495,23 @@
           "disabled" "disabled"
           "type" "input"
           "name" "chips"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "filled"
+          "disabled" "disabled"
+          "type" "input"
+          "name" "chips"
+          "leading_icon" "check"
+          "label" "Chip") }}
+
+        {{ partial "components/selections/chips.html" (dict
+          "container" "filled"
+          "disabled" "disabled"
+          "type" "input"
+          "name" "chips"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "close") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "filled"
@@ -646,29 +520,15 @@
           "name" "chips"
           "leading_icon" "check"
           "label" "Chip"
-          ) 
-        }}
+          "trailing_icon" "close") }}
 
         {{ partial "components/selections/chips.html" (dict
-          "container" "filled"
+          "container" "elevated"
           "disabled" "disabled"
           "type" "input"
           "name" "chips"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "filled"
-          "disabled" "disabled"
-          "type" "input"
-          "name" "chips"
-          "leading_icon" "check"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "avatar" "A"
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
@@ -677,19 +537,7 @@
           "name" "chips"
           "avatar" "A"
           "label" "Chip"
-          ) 
-        }}
-
-        {{ partial "components/selections/chips.html" (dict
-          "container" "elevated"
-          "disabled" "disabled"
-          "type" "input"
-          "name" "chips"
-          "avatar" "A"
-          "label" "Chip"
-          "trailing_icon" "close"
-          ) 
-        }}
+          "trailing_icon" "close") }}
       </div>
 
       {{/*  Suggestion chip  */}}
@@ -699,17 +547,13 @@
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
           "name" "chips"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
           "name" "chips"
           "leading_icon" "check"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
       </div>
 
       <div class="set chips">
@@ -717,35 +561,27 @@
           "container" "outlined"
           "disabled" "disabled"
           "name" "chips"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "outlined"
           "disabled" "disabled"
           "name" "chips"
           "leading_icon" "check"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
       </div>
       
       <div class="set chips">
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "name" "chips"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "name" "chips"
           "leading_icon" "check"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
       </div>
       
       <div class="set chips">
@@ -753,18 +589,14 @@
           "container" "elevated"
           "disabled" "disabled"
           "name" "chips"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
 
         {{ partial "components/selections/chips.html" (dict
           "container" "elevated"
           "disabled" "disabled"
           "name" "chips"
           "leading_icon" "check"
-          "label" "Chip"
-          ) 
-        }}
+          "label" "Chip") }}
       </div>
     </div>
     
@@ -779,28 +611,19 @@
           (dict "label" "Disabled" "disabled" "disabled")
           (dict "label" "Menu item 3")
           (dict "label" "Menu item 4")
-          )
-        )
-      }}
+          )) }}
 
       <div class="sub-showcase-components-header">With dividers</div>
       {{ partial "components/selections/menus.html" (dict
         "dividers" true
         "menu_items" (slice 
-          (dict 
-            "label" "Menu item 1")
-          (dict 
-            "label" "Menu item 2")
+          (dict "label" "Menu item 1")
+          (dict "label" "Menu item 2")
           (dict 
             "label" "Disabled"
             "disabled" "disabled")
-          (dict 
-            "label" "Menu item 3")
-          (dict 
-            "label" "Menu item 4")
-          ) 
-        )
-      }}
+          (dict "label" "Menu item 3")
+          (dict "label" "Menu item 4") ) ) }}
 
       {{/*  Subcomponents  */}}
       <div class="display-medium">Subcomponents</div>
@@ -833,24 +656,17 @@
         "legend" "Radio button" 
         "name" "radio"
         "options" (slice
-          (dict
-            "checked" false
-          )
+          (dict "checked" false)
           (dict
             "label" "Radio1" 
-            "checked" false
-          )
+            "checked" false)
           (dict
             "label" "Radio2" 
-            "checked" true
-          )
+            "checked" true)
           (dict
             "label" "Radio3" 
-            "checked" false
-          )
-        )
-      }}
-
+            "checked" false) ) }}
+      {{ partial "components/selections/radio-buttons.html" $radioData }}
       {{ $radioDataDisabled := dict 
         "legend" "Disabled radios" 
         "name" "radio-disabled"
@@ -864,11 +680,7 @@
             "disabled" "disabled"
             "label" "Disabled" 
             "checked" true
-          )
-        )
-      }}
-      
-      {{ partial "components/selections/radio-buttons.html" $radioData }}
+          ) ) }}
       {{ partial "components/selections/radio-buttons.html" $radioDataDisabled }}
     </div>
 
@@ -878,9 +690,7 @@
       <div class="sub-showcase-components-header">Continuous</div>
       {{ partial "components/selections/sliders.html" (dict 
         "config" "continuous"
-        "trackingDot" true
-        ) 
-      }}
+        "trackingDot" true) }}
     
       <div class="sub-showcase-components-header">Centered</div>
       {{ partial "components/selections/sliders.html" (dict 
@@ -888,9 +698,7 @@
         "value" "50" 
         "list" "markers" 
         "datalist" "markers" 
-        "markers" (slice "0" "10" "20" "30" "40" "50" "60" "70" "80" "90" "100")
-        ) 
-      }}
+        "markers" (slice "0" "10" "20" "30" "40" "50" "60" "70" "80" "90" "100")) }}
     
       <div class="sub-showcase-components-header">Discrete</div>
       {{ partial "components/selections/sliders.html" (dict 
@@ -898,9 +706,7 @@
         "step" "10" 
         "list" "markers-discrete" 
         "datalist" "markers-discrete" 
-        "markers" (slice "0" "10" "20" "30" "40" "50" "60" "70" "80" "90" "100")
-        )
-      }}
+        "markers" (slice "0" "10" "20" "30" "40" "50" "60" "70" "80" "90" "100")) }}
     
       <div class="sub-showcase-components-header">Range</div>
       {{ partial "components/selections/sliders.html" (dict 
@@ -908,17 +714,13 @@
         "range" true 
         "datalist"
         "markers-range" 
-        "markers" (slice "0" "100")
-        ) 
-      }}
+        "markers" (slice "0" "100")) }}
 
       <div class="sub-showcase-components-header">Disabled</div>
       {{ partial "components/selections/sliders.html" (dict 
         "config" "continuous"
         "disabled" "disabled"
-        "trackingDot" true
-        ) 
-      }}
+        "trackingDot" true) }}
       
       <div class="sub-showcase-components-header">Subcomponents</div>
       <div class="indicator value">50</div>
@@ -952,39 +754,27 @@
       {{ partial "components/selections/switches.html" dict }}
 
       {{ partial "components/selections/switches.html" (dict
-        "disabled" "disabled"
-        ) 
-      }}
+        "disabled" "disabled") }}
 
       {{ partial "components/selections/switches.html" (dict
         "disabled" "disabled"
-        "checked" "checked"
-        ) 
-      }}
+        "checked" "checked") }}
     
       <div class="sub-showcase-components-header">With icons</div>
       {{ partial "components/selections/switches.html" (dict 
-        "icons" "select"
-        ) 
-      }}
+        "icons" "select") }}
+
+      {{ partial "components/selections/switches.html" (dict 
+        "icons" "both") }}
 
       {{ partial "components/selections/switches.html" (dict 
         "icons" "both"
-        ) 
-      }}
-
-      {{ partial "components/selections/switches.html" (dict 
-        "icons" "both"
-        "disabled" "disabled"
-        ) 
-      }}
+        "disabled" "disabled") }}
       
       {{ partial "components/selections/switches.html" (dict 
         "icons" "select"
         "disabled" "disabled"
-        "checked" "checked"
-        ) 
-      }}
+        "checked" "checked") }}
     </div>
  
     {{/*  || Pickers  */}}
@@ -1001,9 +791,7 @@
         "config" "day"
         "supporting_text" "Select date (Day selection)"
         "headline" "Enter date"
-        "icon" "today"
-        ) 
-      }}
+        "icon" "today") }}
       
       {{/*  TODO Month selection  */}}
       {{ partial "components/selections/picker-date.html" (dict
@@ -1011,9 +799,7 @@
         "config" "month"
         "supporting_text" "Select date (Month selection)"
         "headline" "Enter date"
-        "icon" "today"
-        ) 
-      }}
+        "icon" "today") }}
 
       {{/*  TODO Year selection  */}}
       {{ partial "components/selections/picker-date.html" (dict
@@ -1021,9 +807,7 @@
         "config" "year"
         "supporting_text" "Select date (Year selection)"
         "headline" "Enter date"
-        "icon" "today"
-        ) 
-      }}
+        "icon" "today") }}
 
       {{/*  TODO Modal  */}}
       <div class="sub-showcase-components-header">Modal</div>
@@ -1033,9 +817,7 @@
         "config" "single"
         "supporting_text" "Select date (Single date selection)"
         "headline" "Enter date"
-        "icon" "today"
-        ) 
-      }}
+        "icon" "today") }}
 
       {{/*  TODO Date range selection  */}}
       {{ partial "components/selections/picker-date.html" (dict
@@ -1044,9 +826,7 @@
         "supporting_text" "Select date (Date range selection)"
         "headline" "Enter date"
         "icon" "today"
-        "date_range" true
-        ) 
-      }}
+        "date_range" true) }}
 
       {{/*  TODO Year selection */}}
       {{ partial "components/selections/picker-date.html" (dict
@@ -1054,9 +834,7 @@
         "config" "year"
         "supporting_text" "Select date (Year selection)"
         "headline" "Enter date"
-        "icon" "today"
-        ) 
-      }}
+        "icon" "today") }}
 
       {{/*  Modal input  */}}
       <div class="sub-showcase-components-header">Modal input</div>
@@ -1065,9 +843,7 @@
         "type" "input"
         "supporting_text" "Select date (Single date input)"
         "headline" "Enter date"
-        "icon" "today"
-        ) 
-      }}
+        "icon" "today") }}
 
       {{/*  Date range input  */}}
       {{ partial "components/selections/picker-date.html" (dict
@@ -1075,9 +851,7 @@
         "supporting_text" "Select date (Date range input)"
         "headline" "Enter date"
         "icon" "today"
-        "date_range" true
-        ) 
-      }}
+        "date_range" true) }}
 
       {{/*  Subcomponents  */}}
       <div class="display-medium">Subcomponents</div>
@@ -1126,9 +900,7 @@
         "time" "twelve-hour"
         "orientation" "vertical"
         "display" "12"
-        "headline" "Select time (12-hour - vertical)"
-        )
-      }}
+        "headline" "Select time (12-hour - vertical)") }}
 
       {{/*  12H Time input picker - horizontal  */}}
       {{ partial "components/selections/picker-time.html" (dict
@@ -1136,9 +908,7 @@
         "time" "twelve-hour"
         "orientation" "horizontal"
         "display" "12"
-        "headline" "Select time (12-hour - horizontal)"
-        )
-      }}
+        "headline" "Select time (12-hour - horizontal)") }}
 
       <div class="sub-showcase-components-header">Dial - 24-hour clock</div>
       {{/*  24H Time input picker - vertical  */}}
@@ -1147,9 +917,7 @@
         "time" "twenty-four-hour"
         "orientation" "vertical"
         "display" "24"
-        "headline" "Select time (24-hour - vertical)"
-        ) 
-      }}      
+        "headline" "Select time (24-hour - vertical)") }}
       
       {{/*  24H Time input picker - horizontal  */}}
       {{ partial "components/selections/picker-time.html" (dict
@@ -1157,9 +925,7 @@
         "time" "twenty-four-hour"
         "orientation" "horizontal"
         "display" "24"
-        "headline" "Select time (24-hour - horizontal)"
-        ) 
-      }}      
+        "headline" "Select time (24-hour - horizontal)") }}
 
       {{/*  Input  */}}
       <div class="sub-showcase-components-header">Input</div>
@@ -1167,17 +933,13 @@
       {{ partial "components/selections/picker-time.html" (dict
         "type" "input"
         "display" "12"
-        "headline" "Select time (12-hour)"
-        )
-      }}
+        "headline" "Select time (12-hour)") }}
 
       {{/*  24H Time input picker  */}}
       {{ partial "components/selections/picker-time.html" (dict
         "type" "input"
         "display" "24"
-        "headline" "Select time (24-hour)"
-        ) 
-      }}
+        "headline" "Select time (24-hour)") }}
 
       {{/*  Subcomponents  */}}
       <div class="display-medium">Subcomponents</div>

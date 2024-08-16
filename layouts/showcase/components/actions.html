@@ -27,8 +27,7 @@
           "label" "Filled tonal")
         (dict 
           "type" "outlined"
-          "label" "Outlined")
-      }}
+          "label" "Outlined") }}
 
       {{/*  Common w/o icon  */}}
       <div class="sub-showcase-components-header">No icon</div>
@@ -87,8 +86,7 @@
           "size" "extended"
           "extended" true 
           "icon" "add" 
-          "label" "Extended")
-      }}
+          "label" "Extended") }}
 
       {{ range $fabType := $fabTypes }}
         <div class="sub-showcase-components-header">{{ $fabType.title }}</div>
@@ -112,9 +110,7 @@
         {{ range $buttonTypes }}
           {{ partial "components/actions/button-icon.html" (dict
             "type" .
-            "icon" "settings"
-            )
-          }}
+            "icon" "settings") }}
         {{ end }}
       </section>
 
@@ -123,9 +119,7 @@
           {{ partial "components/actions/button-icon.html" (dict
             "type" .
             "icon" "settings"
-            "disabled" "disabled"
-            )
-          }}
+            "disabled" "disabled") }}
         {{ end }}
       </section>
 
@@ -137,9 +131,7 @@
             "id" .
             "type" .
             "icon" "settings"
-            "toggle" true
-            )
-          }}
+            "toggle" true) }}
         {{ end }}
       </section>
 
@@ -150,9 +142,7 @@
             "type" .
             "icon" "settings"
             "toggle" true
-            "disabled" "disabled"
-            )
-          }}
+            "disabled" "disabled") }}
         {{ end }}
       </section>
     </div>
@@ -187,10 +177,7 @@
             (dict 
               "id" "end4" 
               "label" "Single"
-              "icon" "check")
-          )
-        )
-      }}
+              "icon" "check") ) ) }}
 
       {{ range $segmentedButtons }}
         {{ partial "components/actions/button-segmented.html" . }}
@@ -223,10 +210,7 @@
             (dict 
               "id" "endcheck4" 
               "label" "Multi"
-              "icon" "check")
-          )
-        )
-      }}
+              "icon" "check") ) ) }}
 
       {{ range $segmentedButtons }}
         {{ partial "components/actions/button-segmented.html" . }}
@@ -251,10 +235,7 @@
             "id" "end2" 
             "disabled" "disabled"
             "label" "Disabled"
-            "icon" "check")
-          )
-        ) 
-      }}
+            "icon" "check") ) ) }}
 
       <div class="sub-showcase-components-header">Outlined - subcomponents</div>
       <label class="component button segmented start">
