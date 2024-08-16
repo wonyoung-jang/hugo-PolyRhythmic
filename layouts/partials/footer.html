@@ -8,12 +8,12 @@
         </span>
         {{ range $menu }}
           {{ if .PageRef }}
-            <a href="{{ .PageRef }}">
+            <a href="{{ .URL | safeHTMLAttr }}">
               {{ .Name }}
             </a>
           {{ else }}
             <a  
-              href="{{ .URL }}"
+              href="{{ .URL | safeHTMLAttr }}"
               target="_blank"
               rel="external noopener noreferrer me">
               {{ .Name }}
