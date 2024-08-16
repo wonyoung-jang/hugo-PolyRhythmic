@@ -1,3 +1,3 @@
-module github.com/wonyoung-jang/hugo-PolyRhythmic
+module hugo-PolyRhythmic
 
-go 1.23.0
+go 1.22.2

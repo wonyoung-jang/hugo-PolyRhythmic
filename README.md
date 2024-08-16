@@ -20,6 +20,15 @@
   </kbd>
 </p>
 
+<p align="center">
+  <kbd>
+    <img 
+      src="https://raw.githubusercontent.com/wonyoung-jang/hugo-PolyRhythmic/main/images/screenshot.png" 
+      alt="Screenshot" 
+      title="Screenshot"/>
+  </kbd>
+</p>
+
 ## Features
 
 -   Pipeline, fingerprint, bundle and minify Hugo assets

@@ -3,6 +3,122 @@
   <section class="layout pane" id="playground">
     {{/*  Used by Logseq  */}}
     <section class="test-set">
+      <h2>Components panel</h2>
+      <hr>
+      <div class="components-panel">
+        {{/*  4 common buttons  */}}
+        <div class="row">
+          <div class="panel-button-grid">
+            {{ partial "components/actions/button-common.html" (dict
+              "type" "outlined"
+              "label" "Back")}}
+            {{ partial "components/actions/button-common.html" (dict
+              "type" "filled"
+              "label" "Complete")}}
+            {{ partial "components/actions/button-common.html" (dict
+              "type" "tonal"
+              "icon" "send"
+              "label" "Send")}}
+            {{ partial "components/actions/button-common.html" (dict
+              "type" "elevated"
+              "icon" "open_in_new"
+              "label" "Open")}}
+          </div>
+          {{/*  3 FABs  */}}
+          <div class="column">
+            {{ partial "components/actions/button-fab.html" (dict
+              "class" "primary-container"
+              "size" "large"
+              "icon" "add")}}
+          </div>
+          <div class="column">
+            {{ partial "components/actions/button-fab.html" (dict
+              "class" "secondary-container"
+              "size" "medium"
+              "icon" "edit")}}
+            {{ partial "components/actions/button-fab.html" (dict
+              "class" "tertiary-container"
+              "size" "small"
+              "icon" "edit")}}
+          </div>
+        </div>
+        <div class="row">
+          {{/*  4 icon buttons  */}}
+          <div class="panel-button-grid">
+            {{ partial "components/actions/button-icon.html" (dict
+              "type" "filled"
+              "icon" "palette")}}
+            {{ partial "components/actions/button-icon.html" (dict
+              "type" "tonal"
+              "icon" "edit")}}
+            {{ partial "components/actions/button-icon.html" (dict
+              "type" "outlined"
+              "icon" "check")}}
+            {{ partial "components/actions/button-icon.html" (dict
+              "type" "standrd"
+              "icon" "help")}}
+          </div>
+          {{/*  2 circular progress  */}}
+          <div class="column">
+            <div class="row">
+              {{ partial "components/communications/progress-indicators.html" (dict
+                "config" "circular"
+                "determinate" "determinate")}}
+              {{ partial "components/communications/progress-indicators.html" (dict
+                "config" "circular"
+                "determinate" "indeterminate")}}
+            </div>
+            {{/*  2 linear progress  */}}
+            <div class="column">
+              {{ partial "components/communications/progress-indicators.html" (dict
+                "config" "linear"
+                "determinate" "determinate")}}
+              {{ partial "components/communications/progress-indicators.html" (dict
+                "config" "linear"
+                "determinate" "indeterminate")}}
+            </div>
+          </div>
+          <div class="row">
+            {{/*  2 radios  */}}
+            {{ $radioData := dict 
+              "name" "radio"
+              "options" (slice
+                (dict "checked" true)
+                (dict "checked" false) ) }}
+            {{ partial "components/selections/radio-buttons.html" $radioData }}  
+            <div class="column">
+              {{/*  1 checkbox  */}}
+              {{ partial "components/selections/checkboxes.html" (dict
+                "checked" "checked")}}
+              {{/*  1 switch  */}}
+              {{ partial "components/selections/switches.html" (dict 
+                "checked" "checked"
+                "icons" "both") }}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {{/*  3 chips  */}}
+          {{ partial "components/selections/chips.html" (dict
+            "container" "outlined"
+            "name" "chips"
+            "leading_icon" "today"
+            "label" "Add to calendar") }}
+          {{ partial "components/selections/chips.html" (dict
+            "container" "elevated"
+            "name" "chips"
+            "leading_icon" "check"
+            "label" "Free shipping") }}
+          {{ partial "components/selections/chips.html" (dict
+            "container" "outlined"
+            "name" "chips"
+            "label" "Close chip"
+            "trailing_icon" "close") }}
+        </div>
+      </div>
+    </section>
+    {{/*  Used by Logseq  */}}
+    <section class="test-set">
       <h2>Used by Logseq</h2>
       
       <hr>

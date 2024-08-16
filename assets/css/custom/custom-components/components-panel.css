@@ -1,0 +1,32 @@
+.panel-button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--size-2);
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-2);
+  padding: var(--size-2);
+}
+
+.column {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-2);
+  padding: var(--size-2);
+}
+
+.components-panel {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  border-radius: var(--shape-corner-m);
+  background: var(--color-surface-container);
+  padding: var(--size-16);
+}
