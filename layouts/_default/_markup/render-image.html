@@ -8,7 +8,10 @@
     
     <img
       loading="lazy"
-      src="{{ .Destination | safeURL }}"
+      src=" 
+        {{with (resources.GetMatch .Destination)}} 
+          {{ .Permalink }}
+        {{end}}" 
       
       {{- with .Text }}
         alt="{{ . }}"
@@ -17,7 +20,7 @@
     {{- with .Title }}
       <figcaption>
         {{- . -}}
-      </figcaption>
+      </figcaption> 
     {{- end -}}
   </figure>
 {{- else -}}
