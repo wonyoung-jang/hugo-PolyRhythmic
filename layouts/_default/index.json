@@ -1,7 +1,13 @@
 {{ $.Scratch.Add "index" slice }}
 
 {{ range site.AllPages }}
-    {{ $.Scratch.Add "index" (dict "title" .Title "content" .Plain "permalink" .Permalink "summary" .Summary) }}
+    {{ $.Scratch.Add "index" (dict 
+        "title" .Title 
+        "section" .Section
+        "permalink" .Permalink 
+        "description" .Description
+        "summary" .Summary
+        "content" .Plain) }}
 {{ end }}
 
 {{ $.Scratch.Get "index" | jsonify }}
