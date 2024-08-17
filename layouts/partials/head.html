@@ -52,6 +52,14 @@
   {{ end }}
 </title>
 
+{{/*  Preload fonts  */}}
+<link 
+  href="/themes/PolyRhythmic/static/fonts/material-symbols-sharp.woff2"
+  rel="preload" 
+  as="font" 
+  type="font/woff2"
+  crossorigin>
+
 {{/* Core CSS */}}
 {{- $cssFiles := dict
   "base"                  (resources.Match "css/base/**.css")
