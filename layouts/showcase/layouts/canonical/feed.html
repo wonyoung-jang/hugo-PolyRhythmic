@@ -4,7 +4,10 @@
   id="showcase">
   <section class="layout pane">
     <div class="component card elevated">
-      <span class="card-title"> Elevated card </span>
+      <span class="card-title">Elevated card</span>
+      {{ with .Content }} 
+        {{ . }} 
+      {{ end }}
     </div>
     <div class="component card elevated">
       <span class="card-title"> Elevated card </span>

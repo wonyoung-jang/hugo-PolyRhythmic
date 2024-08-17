@@ -7,7 +7,7 @@
       (not (eq .Title "Sitemap"))
       (not (eq .Title "Search")) 
       (not (or (eq .Title "404 Page not found") (eq .Title "Now")))) }}
-      <div class="label-medium">{{ partial "post-meta.html" . }}</div>
+      <div class="label-medium">{{ partialCached "post-meta.html" . .Title }}</div>
     {{ end }} 
 
     {{/* Title */}}
@@ -20,12 +20,12 @@
     
     {{/* Github button */}}
     {{ with .Params.githubRepo }}
-      {{ partial "github-button.html" (dict "githubRepo" .) }} 
+      {{ partialCached "github-button.html" (dict "githubRepo" .) .Title }} 
     {{ end }}
 
     {{/* Debug */}}
     {{ if site.Params.debug }}
-      {{ partial "debug.html" .Page }}
+      {{ partialCached "debug.html" . .Title }}
     {{ end }}
 
   </section>

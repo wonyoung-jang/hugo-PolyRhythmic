@@ -25,4 +25,4 @@
 </nav>
 
 {{/* Tabs */}} 
-{{ partial "tab_menu.html" (dict "menuID" "main" "page" .) }} 
+{{- partialCached "tab_menu.html" (dict "menuID" "main" "page" .) .Title -}} 

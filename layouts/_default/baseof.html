@@ -32,7 +32,7 @@
       </div>
 
       {{/* Layout: Page Navigation */}}
-      {{- partial "page-navigation.html" . -}}
+      {{- partialCached "page-navigation.html" . .Page -}}
 
       {{/* Layout: Page Links */}}
       {{- if .IsPage -}}
