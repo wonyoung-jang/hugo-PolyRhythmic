@@ -244,8 +244,10 @@ samp {
 a {
   background-color: transparent;
   text-decoration: none;
-
+  
   &:not(.component) {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
     color: var(--color-sub60);
   
     &[rel*="external"] {
@@ -259,10 +261,6 @@ a {
         color: var(--color-on-add60-container);
       }
     }
-  }
-  
-  &:hover {
-    text-decoration: none;
   }
 }
 
