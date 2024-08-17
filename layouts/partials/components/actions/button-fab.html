@@ -1,8 +1,8 @@
 <button 
   class="component button {{ .class }} fab {{ .size }}">
-  {{ if or (not .extended) (and .extended .icon) }}
+  {{ with .icon }}
     <i class="icon">
-      {{ .icon }}
+      {{ . }}
     </i>
   {{ end }}
 
