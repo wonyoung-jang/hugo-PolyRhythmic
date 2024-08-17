@@ -5,7 +5,7 @@
 
   {{/* Head */}}
   <head>
-    {{- partial "head.html" . -}}
+    {{- partialCached "head.html" . .Page -}}
   </head>
 
   {{/* Body */}}
@@ -24,7 +24,7 @@
       {{/* Layout: Content Wrapper */}}
       <div class="layout content-wrapper">
         {{/* Layout: Page Header */}}
-        {{- partial "page-header.html" . -}}
+        {{- partialCached "page-header.html" . .Page -}}
 
         {{/* Layout: Main */}}
         {{- block "main" . -}}
@@ -36,20 +36,20 @@
 
       {{/* Layout: Page Links */}}
       {{- if .IsPage -}}
-        {{- partial "page-links.html" . -}}
+        {{- partialCached "page-links.html" . .Page -}}
       {{- end -}}
-      
-      {{/* Footer */}}
-      <footer 
-        id="footer" 
-        role="contentinfo">    
-
-        {{/* Links + Copyright */}}
-        {{- partial "footer.html" . -}}
-        
-        {{/* Component: Top-Link */}}
-        {{- partialCached "top-link-fab.html" . -}}
-      </footer>
     </main>
+    
+    {{/* Footer */}}
+    <footer 
+      id="footer" 
+      role="contentinfo">    
+
+      {{/* Links + Copyright */}}
+      {{- partialCached "footer.html" . -}}
+      
+      {{/* Component: Top-Link */}}
+      {{- partialCached "top-link-fab.html" . -}}
+    </footer>
   </body>
 </html>
