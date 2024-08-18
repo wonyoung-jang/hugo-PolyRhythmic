@@ -5,7 +5,7 @@
     <h3>{{ $k | humanize }}</h3>
     {{ range $v }}
       {{ partial "components/actions/button-common.html" (dict
-        "type" "outlined"
+        "type" "tonal"
         "icon" .icon
         "label" .name
         "href" .url)}}
