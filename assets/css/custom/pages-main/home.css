@@ -92,6 +92,7 @@
       flex-flow: column nowrap;
       gap: var(--size-5);
       padding: var(--size-5);
+      min-width: calc(50% - var(--size-5));
 
       & h3 {
         margin-block: var(--size-3) var(--size-5);
