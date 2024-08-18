@@ -4,15 +4,11 @@
     id="projects">
     <h3>{{ $k | humanize }}</h3>
     {{ range $v }}
-      <a  
-        class="component button fab secondary-container extended"
-        id="{{ .name | urlize }}"
-        href="{{ trim .url " " }}" 
-        rel="noopener" 
-        title="{{ .name }}">
-        <i class="icon">{{ .icon }}</i>
-        <span>{{ .name }}</span>
-      </a>
+      {{ partial "components/actions/button-common.html" (dict
+        "type" "outlined"
+        "icon" .icon
+        "label" .name
+        "href" .url)}}
     {{ end }}
   </div>
 {{ end }}

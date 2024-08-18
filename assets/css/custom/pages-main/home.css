@@ -68,18 +68,18 @@
     flex-flow: column nowrap;
     align-items: flex-start;
     padding-bottom: var(--size-8);
-    
+
     & li {
       display: inline-flex;
       flex-flow: row wrap;
       padding-right: var(--spacing-panes);
-      
+
       &::before {
         display: none;
       }
     }
   }
-  
+
   .home-buttons-container {
     display: flex;
     flex-flow: row wrap;
@@ -87,19 +87,20 @@
     margin: var(--size-8);
 
     .home-buttons {
-      flex: 1 1 0;
+      flex: 1 1 auto;
       display: flex;
       flex-flow: column nowrap;
       gap: var(--size-5);
-      padding: var(--size-3);
-      height: max-content;
+      padding: var(--size-5);
 
       & h3 {
         margin-block: var(--size-3) var(--size-5);
       }
 
-      .button {
-        margin-inline: var(--size-2);
+      .button,
+      .button span {
+        flex: 1 0 auto;
+        min-width: fit-content;
       }
     }
   }
