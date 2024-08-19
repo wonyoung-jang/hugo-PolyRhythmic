@@ -47,7 +47,7 @@
     }
   }
 
-  .cover-image {
+  #cover-image {
     margin: var(--size-5) auto;
 
     & img,

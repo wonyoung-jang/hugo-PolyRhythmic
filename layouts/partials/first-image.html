@@ -1,10 +1,6 @@
-{{ $content := .RawContent }}
-{{ $regex := `!\[.*?\]\((\/images\/.*?)\)` }}
-{{ $matches := findRE $regex $content 1 }}
-{{ $imageURL := "" }}
+{{ $regex := `(?s)<figure.*?>.*?</figure>` }}
+{{ $matches := findRE $regex .Content 1 }}
 
 {{ if $matches }}
-  {{ $imageURL = replaceRE $regex "$1" (index $matches 0) }}
+  {{ return index $matches 0 }}
 {{ end }}
-
-{{ return $imageURL }}

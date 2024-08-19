@@ -7,14 +7,9 @@
         aria-label="post link to {{ .Title | plainify }}" 
         href="{{ .Permalink }}">
           
-        {{ $imageURL := partial "first-image.html" . }}
-        {{ if $imageURL }}
           <div class="card-image">
-            <img    
-              src="{{ $imageURL }}" 
-              alt="Cover image for {{ .Title }}">
-          </div>
-        {{ end }}  
+            {{ partial "first-image.html" . | safeHTML }}
+          </div> 
 
         <div class="card-content">
           <div class="card-meta">{{ partial "post-meta.html" . }}</div>
