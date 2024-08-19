@@ -1,5 +1,5 @@
 {{ $content := .RawContent }}
-{{ $regex := `!\[.*?\]\((\/assets\/.*?)\)` }}
+{{ $regex := `!\[.*?\]\((\/images\/.*?)\)` }}
 {{ $matches := findRE $regex $content 1 }}
 {{ $imageURL := "" }}
 

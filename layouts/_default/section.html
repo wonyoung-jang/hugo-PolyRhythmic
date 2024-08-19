@@ -1,22 +1,28 @@
 {{- define "main" -}}
-<article class="layout panes basic-single-pane">
-  <section
-    class="layout pane"
-    id="sections-page">
-    <div
-      class="set lists"
-      id="terms">
-      {{ range .Pages.ByTitle }}
-        <a
-          class="component list item one"
-          href="{{ .RelPermalink }}">
-          <div class="content">
-            <span class="headline">{{ .Title }}</span>
+<article class="layout panes canon-feed">
+  <section class="layout pane">
+    {{ range $index, $page := .RegularPages.ByTitle }}        
+      <a  
+        class="component card elevated"
+        aria-label="post link to {{ .Title | plainify }}" 
+        href="{{ .Permalink }}">
+          
+        {{ $imageURL := partial "first-image.html" . }}
+        {{ if $imageURL }}
+          <div class="card-image">
+            <img    
+              src="{{ $imageURL }}" 
+              alt="Cover image for {{ .Title }}">
           </div>
-        </a>
-        <hr class="divider" />
-      {{ end }}
-    </div>
+        {{ end }}  
+
+        <div class="card-content">
+          <div class="card-meta">{{ partial "post-meta.html" . }}</div>
+          <span class="card-title">{{ .Title }}</span>
+          <p class="card-description">{{ .Description }}</p>
+        </div>
+      </a>
+    {{ end }}
   </section>
 </article>
 {{- end -}}
