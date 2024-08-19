@@ -24,7 +24,7 @@
       {{/* Layout: Content Wrapper */}}
       <div class="layout content-wrapper">
         {{/* Layout: Page Header */}}
-        {{- partialCached "page-header.html" . .Page -}}
+        {{- partial "page-header.html" . -}}
 
         {{/* Layout: Main */}}
         {{- block "main" . -}}

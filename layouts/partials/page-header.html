@@ -1,4 +1,4 @@
-{{ if and (not .IsHome) (.Title) (not (eq .Title "404 Page not found")) }}
+{{ if and (not .IsHome) (ne .Title "404 Page not found") }}
   <section class="layout page-header">
     {{/* Metadata */}} 
     {{ if (and 
@@ -11,7 +11,9 @@
     {{ end }} 
 
     {{/* Title */}}
-    <h1 class="title">{{ .Title }}</h1>
+    {{ with .Title }}
+      <h1 class="title">{{ . }}</h1>
+    {{ end }}
 
     {{/* Description */}} 
     {{ if .Description }}
@@ -20,7 +22,7 @@
     
     {{/* Github button */}}
     {{ with .Params.githubRepo }}
-      {{ partialCached "github-button.html" (dict "githubRepo" .) .Title }} 
+      {{ partial "github-button.html" (dict "githubRepo" .) }} 
     {{ end }}
 
     {{/* Debug */}}
