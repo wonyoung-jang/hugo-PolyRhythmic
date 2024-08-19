@@ -3,6 +3,10 @@
 <h4 align=center>Fast | Responsive | Material Design 3</h4>
 <br>
 
+### [PolyRhythmic on official Hugo site](https://themes.gohugo.io/themes/hugo-polyrhythmic/)
+
+### [PolyRhythmic on GitHub](https://github.com/wonyoung-jang/hugo-PolyRhythmic)
+
 <!-- **See documentation** here: [**Wiki**](https://github.com/wonyoung-jang/hugo-PolyRhythmic/wiki) -->
 
 <!-- **See exampleSite** source here: [**exampleSite**](https://github.com/wonyoung-jang/hugo-PolyRhythmic-demo) -->
