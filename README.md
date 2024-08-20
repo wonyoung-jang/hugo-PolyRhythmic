@@ -1,11 +1,15 @@
 <h1 align=center>Hugo PolyRhythmic | <a href="https://polyrhythmic.xyz/" rel="nofollow">Live Demo</a></h1>
 
 <h4 align=center>Fast | Responsive | Material Design 3</h4>
+
+<h3 align=center>❗This theme is still very much in development. Please use with caution.</h3>
+
+<h3 align=center>PolyRhythmic is on: 
+<a href="https://themes.gohugo.io/themes/hugo-polyrhythmic/" rel="nofollow">Hugo Themes</a> | 
+<a href="https://github.com/wonyoung-jang/hugo-PolyRhythmic" rel="nofollow">GitHub</a>
+</h3>
+
 <br>
-
-### [PolyRhythmic on official Hugo site](https://themes.gohugo.io/themes/hugo-polyrhythmic/)
-
-### [PolyRhythmic on GitHub](https://github.com/wonyoung-jang/hugo-PolyRhythmic)
 
 <!-- **See documentation** here: [**Wiki**](https://github.com/wonyoung-jang/hugo-PolyRhythmic/wiki) -->
 
