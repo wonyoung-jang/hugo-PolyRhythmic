@@ -30,3 +30,9 @@
 .archive-meta {
   color: var(--color-on-surface-variant);
 }
+
+.archive-year {
+  [class*="-link"] {
+    text-decoration: none;
+  }
+}

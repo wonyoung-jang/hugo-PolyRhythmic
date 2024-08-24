@@ -43,6 +43,10 @@
     align-items: stretch;
     margin-top: var(--size-16);
     
+    & a {
+      text-decoration: none;
+    }
+
     #copyright-button {
       display: flex;
       justify-content: flex-start;
