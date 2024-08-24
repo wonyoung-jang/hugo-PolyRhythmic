@@ -96,8 +96,4 @@
       display: none;
     }
   }
-
-  main {
-    max-height: calc(100dvh - var(--size-28));
-  }
 }

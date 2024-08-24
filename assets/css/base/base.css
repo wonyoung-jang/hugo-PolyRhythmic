@@ -65,10 +65,10 @@ html {
 
 /* Body */
 body {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   margin: 0;
-  width: auto;
   max-width: 100dvw;
   min-height: 100dvh;
   align-items: stretch;
@@ -83,7 +83,6 @@ body {
 
   line-height: inherit;
 }
-
 
 /* ------------------------------------------------------------------------- */
 /* || Content sectioning */
