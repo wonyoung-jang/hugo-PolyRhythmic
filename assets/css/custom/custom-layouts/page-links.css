@@ -37,9 +37,13 @@
     display: flex;
     flex-flow: column nowrap;
     
+    background: var(--color-surface-container-low);
+    border-radius: var(--shape-corner-s);
+    box-shadow: var(--elevation2);
     margin-top: var(--size-8);
-    margin-inline: var(--size-21);
     padding: var(--size-6);
+    min-width: 75%;
+    margin-inline: auto;
 
     gap: var(--size-6);
 
@@ -48,14 +52,21 @@
       display: flex;
       flex-flow: row wrap;
       align-items: center;
-      justify-content: space-evenly;
       padding: var(--size-1);
-      gap: var(--size-2);
-      width: 100%;
+      gap: var(--size-1);
+      margin-inline: auto;
 
       .button {
         flex: 1 1 0;
       }
+    }
+
+    .share-buttons {
+      min-width: 95%;
+    }
+
+    .action-buttons {
+      width: 85%;
     }
 
     .page-links-title {
