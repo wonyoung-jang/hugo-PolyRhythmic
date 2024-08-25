@@ -11,10 +11,10 @@
             <a
               class="archive-header-link"
               href="#{{ $year }}">
-              <h4>
+              <h2>
                 {{- $year -}}
                 <sup class="archive-count"> &nbsp;{{ len .Pages }} </sup>
-              </h4>
+              </h2>
             </a>
           </span>
 
@@ -26,10 +26,10 @@
                 <a
                   class="archive-header-link"
                   href="#{{ $year }}-{{ .Key }}">
-                  <h5>
+                  <h3>
                     {{- .Key -}}
                     <sup class="archive-count"> &nbsp;{{ len .Pages }} </sup>
-                  </h5>
+                  </h3>
                 </a>
               </span>
 
@@ -45,7 +45,7 @@
                       aria-label="post link to {{ .Title | plainify }}"
                       href="{{ .Permalink }}">
                       <span class="archive-entry-title entry-hint-parent">
-                        <h6>{{- .Title | markdownify }}</h6>
+                        <h4>{{- .Title | markdownify }}</h4>
                       </span>
                       <div class="archive-meta">{{- partial "post-meta.html" . -}}</div>
                     </a>
