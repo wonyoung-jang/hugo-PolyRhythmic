@@ -1,34 +1,23 @@
 #page-sitemap {
   padding: unset;
   margin: unset;
+  max-width: 100%;
+  overflow-x: auto;
 
   .table-sitemap {
-    display: block;
-    border-spacing: 0px;
-    overflow-x: auto;
-    border-radius: var(--shape-corner-l);
-
-    & tr {
-      white-space: nowrap;
-      border-radius: unset;
-    }
+    width: 100%;
+    background: var(--color-surface-container);
+    padding: var(--size-1);
 
     & td,
     & th {
-      padding: var(--size-1) var(--size-2);
-      border: 1px solid var(--color-outline-variant);
-    }
-
-    & td {
-      background: var(--color-surface);
+      padding: var(--size-2) var(--size-4);
     }
 
     & th {
       background: var(--color-surface-container-lowest);
       border-bottom: var(--color-outline-variant);
-      caption-side: bottom;
       text-align: left;
-      vertical-align: top;
 
       color: var(--color-on-surface);
       font-family: var(--typescale-title-medium-font);
@@ -36,5 +25,44 @@
       line-height: var(--typescale-title-medium-line-height);
       font-weight: var(--typescale-title-medium-weight);
     }
+
+    & tr:nth-of-type(2n) {
+      background: var(--color-surface-container-low);
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  th {
+    display: none;
+  }
+  
+  td {
+    display: grid;
+    grid-template-columns: 15ch auto;
+    gap: var(--size-4);
+    padding: var(--size-4) var(--size-8);
+
+    &:first-child {
+      padding-top: var(--size-16);
+    }
+    
+    &:last-child {
+      padding-bottom: var(--size-16);
+    }
+  
+    &::before {
+      font-weight: var(--typeface-weight-bold);
+      text-transform: capitalize;
+    }
+    
+    &:nth-of-type(1) { display: none; }
+    &:nth-of-type(2)::before { content: "title"; }
+    &:nth-of-type(3)::before { content: "link"; }
+    &:nth-of-type(4)::before { content: "date created"; }
+    &:nth-of-type(5)::before { content: "last modified"; }
+    &:nth-of-type(6)::before { content: "kind"; }
+    &:nth-of-type(7)::before { content: "type"; }
+    &:nth-of-type(8)::before { content: "layout"; }
   }
 }
