@@ -4,19 +4,30 @@
   flex-flow: column nowrap;
   align-self: stretch;
 
+  &:has(#searchResults:not(:empty)) {    
+    .search.bar {
+      
+      &::before {
+        border-bottom: 1px solid var(--color-outline-variant);
+        border-radius: var(--shape-corner-xl-top);
+        box-shadow: var(--elevation0);
+      }
+    }
+  }
+
   #searchResults {
+    background: var(--color-surface-container-high);
+    border-radius: var(--shape-corner-xl-bottom);
+
     & li {
+      margin-left: unset;
       position: relative;
       min-width: fit-content;
-      max-width: 80%;
-      background-color: var(--color-surface-container-low);
-      border-radius: var(--shape-corner-m);
       color: var(--color-on-surface);
       padding: var(--size-4);
-      margin-block: var(--size-1);
 
       &:active {
-        background-color: var(--color-primary-container);
+        background: var(--color-primary-container);
       }
 
       &::before {
@@ -32,7 +43,7 @@
     .focus,
     & li:hover {
       color: var(--color-on-tertiary-container);
-      background-color: var(--color-tertiary-container);
+      background: var(--color-tertiary-container);
     }
   }
 }
