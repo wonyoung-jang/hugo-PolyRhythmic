@@ -87,12 +87,12 @@
     margin: var(--size-8);
 
     .home-buttons {
-      flex: 1 1 auto;
+      flex: 1 1 0;
       display: flex;
       flex-flow: column nowrap;
       gap: var(--size-5);
       padding: var(--size-5);
-      min-width: calc(50% - var(--size-5));
+      min-width: calc(33% - var(--size-5));
 
       & h3 {
         margin-block: var(--size-3) var(--size-5);
