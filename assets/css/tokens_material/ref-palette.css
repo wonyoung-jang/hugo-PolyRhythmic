@@ -2,8 +2,8 @@
     /* || Hues (0-360) */
     
     /* Black and white */
-    --palette-black: #000000;
-    --palette-white: #FFFFFF;
+    --palette-black: #000;
+    --palette-white: #FFF;
 
     /* Key hues */
     --hue-primary:  var(--input-color-hue);
