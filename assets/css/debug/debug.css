@@ -1,6 +1,6 @@
 * {
   outline: 1px solid rgb(255, 255, 50) !important;
-  
+
   * {
     outline: 1px dashed rgba(255, 255, 0, 0.336) !important;
   }
@@ -8,16 +8,15 @@
 
 .layout {
   outline: 1px solid rgb(255, 50, 50) !important;
-  
+
   * {
     outline: 1px dashed rgb(255, 50, 50) !important;
   }
 }
 
-
 .set {
   outline: 1px solid rgb(50, 255, 50) !important;
-  
+
   * {
     outline: 1px dashed rgb(50, 255, 50) !important;
   }
@@ -25,7 +24,7 @@
 
 .component {
   outline: 1px solid rgb(50, 50, 255) !important;
-  
+
   * {
     outline: 1px dashed rgb(50, 50, 255) !important;
   }
