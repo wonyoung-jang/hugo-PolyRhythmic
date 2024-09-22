@@ -87,7 +87,7 @@
     margin: var(--size-8);
 
     .home-buttons {
-      flex: 1 1 0;
+      flex: 1 1 auto;
       display: flex;
       flex-flow: column nowrap;
       gap: var(--size-5);
@@ -100,8 +100,9 @@
 
       .button,
       .button span {
-        flex: 1 0 auto;
+        flex: 0 1 auto;
         min-width: fit-content;
+        max-height: fit-content;
       }
     }
   }
