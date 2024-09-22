@@ -1,6 +1,7 @@
+// Local storage
 document.addEventListener("DOMContentLoaded", function () {
   const root = document.documentElement;
-  
+
   // Theme-toggle
   const themeSelector = document.getElementById("theme-toggle");
   const savedTheme = localStorage.getItem("pref-theme");
@@ -487,4 +488,55 @@ document.querySelectorAll('pre > code').forEach((codeblock) => {
     // code blocks not having highlight as parent class
     codeblock.parentNode.prepend(copybutton);
   }
+});
+
+// Details state functions
+// Function to get a page identifier
+function getPageIdentifier() {
+  return window.location.pathname.replace(/\//g, '_') || 'index';
+}
+
+// Function to generate a unique identifier for each details element
+function generateDetailsId(details, index) {
+  const nearestHeading = details.querySelector('summary')?.textContent || '';
+  return `${nearestHeading.trim().toLowerCase().replace(/\s+/g, '_')}_${index}`;
+}
+
+// Function to save the state of all details elements on the current page
+function saveDetailsState() {
+  const pageId = getPageIdentifier();
+  const detailsState = {};
+  document.querySelectorAll('details').forEach((details, index) => {
+    const id = generateDetailsId(details, index);
+    detailsState[id] = details.open;
+  });
+  const allPagesState = JSON.parse(localStorage.getItem('allDetailsState') || '{}');
+  allPagesState[pageId] = detailsState;
+  localStorage.setItem('allDetailsState', JSON.stringify(allPagesState));
+}
+
+// Function to load and apply the saved state for the current page
+function loadDetailsState() {
+  const pageId = getPageIdentifier();
+  const allPagesState = JSON.parse(localStorage.getItem('allDetailsState') || '{}');
+  const pageState = allPagesState[pageId] || {};
+  document.querySelectorAll('details').forEach((details, index) => {
+    const id = generateDetailsId(details, index);
+    if (id in pageState) {
+      details.open = pageState[id];
+    }
+  });
+}
+
+// Add event listeners to all details elements
+function addDetailsListeners() {
+  document.querySelectorAll('details').forEach(details => {
+    details.addEventListener('toggle', saveDetailsState);
+  });
+}
+
+// Initialize the system
+document.addEventListener('DOMContentLoaded', () => {
+  loadDetailsState();
+  addDetailsListeners();
 });
