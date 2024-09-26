@@ -36,16 +36,28 @@
     }
   }
 
-  .copyright {
+  .footer-lower {
     flex: 1 1 0;
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-end;
     justify-content: space-between;
-    margin-top: var(--size-16);
+    gap: var(--size-5);
+    margin-top: var(--spacing-panes);
     
+    > * {
+      flex: 1 1 0;
+    }
+
     & a {
       text-decoration: none;
+    }
+
+    .copyright {
+      display: flex;
+      align-items: flex-start;
+      flex-flow: column nowrap;
+      gap: var(--spacing-panes);
     }
 
     #copyright-button {
@@ -57,6 +69,21 @@
       &:hover {
         color: var(--color-on-surface);
         text-decoration: underline;
+      }
+    }
+
+    .footer-buttons {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: var(--spacing-panes);
+      align-items: stretch;
+
+      .footer-buttons-set {
+        display: flex;
+        flex-flow: row nowrap;      
+        align-items: center;
+        justify-content: center;  
+        gap: var(--size-3);
       }
     }
   }

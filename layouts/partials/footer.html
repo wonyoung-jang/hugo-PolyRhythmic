@@ -28,12 +28,39 @@
 </section>
 
 {{/* Copyright */}}
-<section class="copyright">
-  <a  
-    id="copyright-button"
-    href="{{ "" | absLangURL }}">
-    © {{ now.Year }} {{ site.Title }}
-  </a>
+<section class="footer-lower">
+  <div class="copyright">
+    {{ with site.Copyright }}
+      <p>
+        {{ . | safeHTML }}
+      </p>
+    {{ end }}
+    <a  
+      id="copyright-button"
+      href="{{ "" | absLangURL }}">
+      © {{ now.Year }} {{ site.Title }}
+    </a>
+  </div>
+
+  {{ with site.Params.footerButtons }}
+    <div class="footer-buttons">
+      <div class="footer-buttons-set">
+        {{ range . }}
+          {{ partial "components/actions/button-icon.html" (dict
+            "type" "tonal"
+            "icon" .icon
+            "label" ""
+            "href" .url)}}
+        {{ end }}
+      </div>
+  
+      {{ with site.Params.footerButtonsText }}
+        <span class="footer-buttons-text">
+          {{ . | markdownify }}
+        </span>
+      {{ end }}
+    </div>
+  {{ end }}
 
   {{ with site.Params.assets.footerImage }}
     <img 
