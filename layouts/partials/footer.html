@@ -11,13 +11,15 @@
             <a href="{{ .URL | safeHTMLAttr }}">
               {{ .Name }}
             </a>
-          {{ else }}
+          {{ else if .URL }}
             <a  
               href="{{ .URL | safeHTMLAttr }}"
               target="_blank"
               rel="external noopener noreferrer me">
               {{ .Name }}
             </a>
+          {{ else }}
+            <p>{{ .Name | safeHTML }}</p>
           {{ end }}
         {{ end }}
       </div>
@@ -32,4 +34,11 @@
     href="{{ "" | absLangURL }}">
     © {{ now.Year }} {{ site.Title }}
   </a>
+
+  {{ with site.Params.assets.footerImage }}
+    <img 
+      id="footer-image"
+      src="{{ . | absURL }}"
+      alt="Footer image">
+  {{ end }}
 </section>

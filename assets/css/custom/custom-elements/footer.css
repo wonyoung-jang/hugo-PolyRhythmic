@@ -40,7 +40,8 @@
     flex: 1 1 0;
     display: flex;
     flex-flow: row nowrap;
-    align-items: stretch;
+    align-items: flex-end;
+    justify-content: space-between;
     margin-top: var(--size-16);
     
     & a {
