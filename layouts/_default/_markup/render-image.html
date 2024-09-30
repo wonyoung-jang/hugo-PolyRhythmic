@@ -24,6 +24,7 @@
     {{- end -}}
   </figure>
 {{- else -}}
+  {{/*  ![description](destination "title")  */}}
   <img
     loading="lazy"
     src="{{ .Destination | safeURL }}"
