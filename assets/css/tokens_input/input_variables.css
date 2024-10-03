@@ -79,18 +79,3 @@
     --input-post-content-margin: 0;
   }
 }
-
-figure:not(#cover-image) {
-  position: relative;
-  z-index: 0;
-  
-  &:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: var(--size-3) auto;
-    border-radius: inherit;
-    background: radial-gradient(circle, var(--color-on-surface-variant), transparent);
-    opacity: 0.5;
-  }
-}
