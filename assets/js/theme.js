@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateChroma();
 
   chromaSelector.addEventListener("input", updateChroma);
-
+  
   // Tertiary temperature direction
   const tertiarySelectorCool = document.getElementById("tertiary-selector-cool");
   const tertiarySelectorWarm = document.getElementById("tertiary-selector-warm");

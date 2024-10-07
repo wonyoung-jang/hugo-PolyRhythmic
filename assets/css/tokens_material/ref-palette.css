@@ -95,8 +95,8 @@
     --palette-primary-60: oklch(70% var(--chroma-primary) var(--hue-primary));
     --palette-primary-70: oklch(80% var(--chroma-primary) var(--hue-primary));
     --palette-primary-80: oklch(90% var(--chroma-primary) var(--hue-primary));
-    --palette-primary-90: oklch(100% var(--chroma-primary) var(--hue-primary));
-    --palette-primary-95: oklch(95% var(--chroma-primary) var(--hue-primary));
+    --palette-primary-90: oklch(95% var(--chroma-primary) var(--hue-primary));
+    --palette-primary-95: oklch(99% var(--chroma-primary) var(--hue-primary));
     --palette-primary-100: var(--palette-white);
 
     /* Secondary */
