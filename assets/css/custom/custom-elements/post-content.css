@@ -14,6 +14,88 @@
 
   & p {
     padding: 0 0 1.3em 0.5em;
+
+    &:has(img:first-of-type) {
+      position: relative;
+      display: flex;
+      flex-flow: column nowrap;
+      height: 100%;
+      min-height: auto;
+      margin: var(--size-2) 0;
+      padding: var(--size-5) 0 var(--size-5) 20%;
+      overflow: visible;
+
+      & img:first-of-type,
+      & img#cover-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16%;
+        height: 100%;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+  }
+
+  & ul {
+    &:has(li:first-child > figure) {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: column nowrap;
+      min-height: max-content;
+      padding-left: 16%;
+
+      & li:first-child > figure  {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 16%;
+        margin: 0;
+        
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          margin: 0;
+        }
+      }
+    }
+      
+
+    &:has(li:last-child > figure) {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: column nowrap;
+      min-height: max-content;
+      padding-right: 16%;
+
+      & li:last-child > figure  {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 16%;
+        margin: 0;
+        
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          margin: 0;
+        }
+      }
+    }
+      
+    & li > figure {
+      max-width: 16%;
+      margin: 0;
+    }
   }
 
   & h1[id],
