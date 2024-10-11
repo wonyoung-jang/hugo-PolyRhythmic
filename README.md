@@ -6,7 +6,8 @@
 
 <h3 align=center>PolyRhythmic is on: 
 <a href="https://themes.gohugo.io/themes/hugo-polyrhythmic/" rel="nofollow">Hugo Themes</a> | 
-<a href="https://github.com/wonyoung-jang/hugo-PolyRhythmic" rel="nofollow">GitHub</a>
+<a href="https://github.com/wonyoung-jang/hugo-PolyRhythmic" rel="nofollow">GitHub</a> |
+<a href="https://www.producthunt.com/posts/polyrhythmic" rel="nofollow">Product Hunt</a>
 </h3>
 
 <br>
