@@ -1,8 +1,10 @@
 :root {
   /* || Colors */
 
-  /* Color primary */
+  /* Color primary hue | Default: 268deg */
   --input-color-hue: 268deg;
+  
+  /* Color primary chroma | Default: 44% */
   --input-color-chroma: 44%;
   
   /* Color harmonization */
@@ -28,13 +30,13 @@
   /* Icon font family */
   --font-icon: var(--typeface-icon-sharp);
   
-  /* Font size */
-  --input-font-size:  14px;
+  /* Font size | Default: 16px */
+  --input-font-size: 16px; 
 
   /* || Shapes */
 
-  /* Shape corner */
-  --input-shape-corner: 1.7px;
+  /* Shape corner | Default: 4px */
+  --input-shape-corner: 4px;
 
   /* Shape scale */
   --input-shape-scale: var(--scale-octave);
@@ -60,9 +62,11 @@
     --input-dim-image: 0.8;
   }
 
-  /* Line character width */
-  --input-char-width: auto;
-  --input-post-content-margin: 0;
+  /* Line character width | Default: 60ch  */
+  --input-char-width: 60ch;
+
+  /* Post content margin | Default: 0 auto */
+  --input-post-content-margin: 0 auto;
 
   &:has(#width-selector-60:checked) {
     --input-char-width: 60ch;
