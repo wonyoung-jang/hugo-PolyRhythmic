@@ -11,7 +11,9 @@
     align-items: center;
     padding: var(--size-3);
   }
-
+  .controls::before {
+    box-shadow:none;
+  }
   .controls {
     position: absolute;
     inset: auto 0 auto auto;
