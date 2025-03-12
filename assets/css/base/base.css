@@ -87,12 +87,7 @@ body {
 /* || Content sectioning */
 
 /* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:is(h1, h2, h3, h4, h5, h6) {
   text-wrap: balance;  
 }
 
@@ -174,15 +169,12 @@ hr {
 }
 
 /* Lists */
-li,
-dd {
+:is(li, dd) {
   margin-left: 1em;
   margin-inline-start: 1em;
 }
 
-ul,
-ol,
-li {
+:is(ul, ol, li) {
   list-style: none;
 }
 
@@ -215,12 +207,7 @@ pre {
 /* || Inline text semantics */
 
 /* Basic typography */
-a,
-b,
-strong,
-em,
-del,
-mark {
+:is(a, b, strong, em, del, mark) {
   font-size: var(--typescale-body-large-size);
   line-height: var(--typescale-body-large-line-height);
   font-weight: var(--typescale-body-large-weight);
@@ -229,9 +216,7 @@ mark {
 }
 
 /* Mono text */
-code,
-kbd,
-samp {
+:is(code, kbd, samp) {
   font-family: var(--typeface-mono);
   font-size: var(--typeface-body-large-size);
   font-weight: var(--typeface-body-large-weight);
@@ -270,8 +255,7 @@ abbr[title] {
 }
 
 /* Bold and strong */
-b,
-strong {
+:is(b, strong) {
   font-weight: var(--typeface-weight-bold);
   -webkit-font-smoothing: antialiased;
 
@@ -281,8 +265,7 @@ strong {
 }
 
 /* Italic */
-em,
-i {
+:is(em, i) {
   font-style: italic;
 }
 
@@ -292,8 +275,7 @@ small {
 }
 
 /* Subscript and superscript */
-sub,
-sup {
+:is(sub, sup) {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -323,9 +305,7 @@ mark {
 /* || Image and multimedia */
 
 /* Images and videos */
-figure,
-img,
-video {
+:is(figure, img, video) {
   display: block;
 
   max-width: 100%;
@@ -409,10 +389,7 @@ progress {
 }
 
 /* Default inputs */
-input,
-button,
-textarea,
-select {
+:is(input, button, textarea, select) {
   font: inherit;
   background-color: transparent;
 }
@@ -422,46 +399,31 @@ textarea {
   overflow: auto;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
+:is(button, input, optgroup, select, textarea) {
   font-family: inherit;
   margin: 0;
 }
 
-button,
-input {
+:is(button, input) {
   overflow: visible;
 }
 
-button,
-select {
+:is(button, select) {
   text-transform: none;
 }
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+:where(button, [type="button"], [type="reset"], [type="submit"]) {
   -webkit-appearance: button;
   appearance: button;
-}
 
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
 
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+  &:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
 }
 
 [type="checkbox"],
@@ -491,8 +453,6 @@ button:-moz-focusring,
   font: inherit;
 }
 
-
-/* ------------------------------------------------------------------------- */
 /* || Interactive elements */
 
 /* Details and summaries */

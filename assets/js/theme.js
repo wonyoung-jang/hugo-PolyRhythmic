@@ -540,3 +540,49 @@ document.addEventListener('DOMContentLoaded', () => {
   loadDetailsState();
   addDetailsListeners();
 });
+
+// Function for randomize hue
+function randomizeHues() {
+  const root = document.documentElement;
+  const hueSelector = document.getElementById("hue-selector");
+
+  // Generate random hue and chroma values
+  const randomHue = Math.floor(Math.random() * 360);
+
+  // Set the new values to the sliders
+  hueSelector.value = randomHue;
+  
+  // Update CSS variables directly
+  root.style.setProperty("--input-color-hue", randomHue + "deg");
+  
+  // Save to localStorage
+  localStorage.setItem("theme-hue", randomHue);
+}
+
+const randomizeHue = document.getElementById("randomize-hues");
+if (randomizeHue) {
+  randomizeHue.addEventListener("click", randomizeHues);
+}
+
+// Function for randomize chroma
+function randomizeChromas() {
+  const root = document.documentElement;
+  const chromaSelector = document.getElementById("chroma-selector");
+
+  // Generate random hue and chroma values
+  const randomChroma = Math.floor(Math.random() * 100);
+
+  // Set the new values to the sliders
+  chromaSelector.value = randomChroma;
+  
+  // Update CSS variables directly
+  root.style.setProperty("--input-color-chroma", randomChroma + "%");
+  
+  // Save to localStorage
+  localStorage.setItem("theme-chroma", randomChroma);
+}
+
+const randomizeChroma = document.getElementById("randomize-chromas");
+if (randomizeChroma) {
+  randomizeChroma.addEventListener("click", randomizeChromas);
+}
