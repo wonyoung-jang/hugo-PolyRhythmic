@@ -6,10 +6,10 @@
   outline: 1px solid var(--color-outline-variant);
   border-radius: var(--shape-corner-m);
   box-shadow: var(--elevation1);
+  min-width: 100%;
   min-height: var(--size-24);
   background-color: var(--color-surface-container-low);
   color: var(--text-color);
-
   --icon-size: calc(var(--spacing-panes) * 5);
 
   &[class*="-container"] {

@@ -82,9 +82,9 @@
 
   .home-buttons-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     gap: var(--size-3);
-    margin: var(--size-8);
+    margin: var(--size-16) 25%;
 
     .home-buttons {
       flex: 1 1 auto;
@@ -92,6 +92,7 @@
       flex-flow: column nowrap;
       gap: var(--size-5);
       padding: var(--size-5);
+      margin: var(--size-5);
       min-width: calc(33% - var(--size-5));
 
       & h3 {
