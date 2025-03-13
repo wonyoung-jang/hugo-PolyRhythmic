@@ -586,3 +586,72 @@ const randomizeChroma = document.getElementById("randomize-chromas");
 if (randomizeChroma) {
   randomizeChroma.addEventListener("click", randomizeChromas);
 }
+
+// A set of functions for default controls on double click
+
+function resetDefaultHue() {
+  // Set the default values to the sliders
+  hueSelector.value = 268;
+
+  // Update CSS variables directly
+  root.style.setProperty("--input-color-hue", "268deg");
+
+  // Save to localStorage
+  localStorage.setItem("theme-hue", "268deg");
+}
+
+function resetDefaultChroma() {
+  // Set the default values to the sliders
+  chromaSelector.value = 44;
+
+  // Update CSS variables directly
+  root.style.setProperty("--input-color-chroma", "44%");
+
+  // Save to localStorage
+  localStorage.setItem("theme-chroma", "44");
+}
+
+function resetDefaultShape() {
+  // Set the default values to the sliders
+  shapeSelector.value = 4;
+
+  // Update CSS variables directly
+  root.style.setProperty("--input-shape-corner", "4px");
+
+  // Save to localStorage
+  localStorage.setItem("theme-shape", "4");
+}
+
+function resetDefaultFontSize() {
+  // Set the default values to the sliders
+  fontSizeSelector.value = 16;
+
+  // Update CSS variables directly
+  root.style.setProperty("--input-font-size", "16px");
+
+  // Save to localStorage
+  localStorage.setItem("typography-font-size", "16");
+}
+
+function resetDefaultLineHeight() {
+  // Set the default values to the sliders
+  lineHeightSelector.value = 1.5;
+
+  // Update CSS variables directly
+  root.style.setProperty("--input-line-height", "1.5rem");
+
+  // Save to localStorage
+  localStorage.setItem("typography-line-height", "1.5");
+}
+
+const root = document.documentElement;
+const hueSelector = document.getElementById("hue-selector");
+const chromaSelector = document.getElementById("chroma-selector");
+const shapeSelector = document.getElementById("shape-selector");
+const fontSizeSelector = document.getElementById("font-size-selector");
+const lineHeightSelector = document.getElementById("line-height-selector");
+hueSelector.addEventListener("dblclick", resetDefaultHue);
+chromaSelector.addEventListener("dblclick", resetDefaultChroma);
+shapeSelector.addEventListener("dblclick", resetDefaultShape);
+fontSizeSelector.addEventListener("dblclick", resetDefaultFontSize);
+lineHeightSelector.addEventListener("dblclick", resetDefaultLineHeight);
