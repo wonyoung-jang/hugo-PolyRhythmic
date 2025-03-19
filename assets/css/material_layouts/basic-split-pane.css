@@ -2,7 +2,7 @@
   --layout-flex-flow: row nowrap;
 
   .pane {
-    --layout-flex: 1 1 0;
+    --layout-flex: 1 1 auto;
   }
 }
 
@@ -11,7 +11,7 @@
   .basic-split-pane {
     .pane {
       --layout-display: none;
-      --layout-flex: 1 1 0;
+      --layout-flex: 1 1 auto;
       --layout-width: calc(50% - var(--spacing-panes) / 2);
     }
 

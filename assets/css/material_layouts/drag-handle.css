@@ -1,0 +1,43 @@
+.drag-handle-container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--spacing-panes);
+  height: auto;
+  cursor: ew-resize;
+  
+  .drag-handle {
+    position: relative;
+    z-index: 0;
+    background: var(--color-outline);
+    border-radius: var(--shape-corner-full);
+    width: var(--size-1);
+    height: var(--size-12);
+  }
+  
+  .drag-handle::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  
+  &:hover .drag-handle::after {
+    background: var(--color-inverse-on-surface);
+    opacity: var(--state-hover-opacity);
+  }
+
+  &:is(:focus, :focus-visible, :focus-within) .drag-handle::after {
+    background: var(--color-inverse-on-surface);
+    opacity: var(--state-focus-opacity);
+  }
+  
+  &:active .drag-handle {
+    border-radius: var(--shape-corner-m);
+    background: var(--color-on-surface);
+    width: var(--size-3);
+    height: var(--size-14);
+  }
+}

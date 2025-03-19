@@ -655,3 +655,49 @@ chromaSelector.addEventListener("dblclick", resetDefaultChroma);
 shapeSelector.addEventListener("dblclick", resetDefaultShape);
 fontSizeSelector.addEventListener("dblclick", resetDefaultFontSize);
 lineHeightSelector.addEventListener("dblclick", resetDefaultLineHeight);
+
+// Pane resizer
+// {{ define "main" }}
+// <article
+//   class="layout panes basic-split-pane"
+//   id="showcase">
+//   <section class="layout pane">
+//     <h2>Split 1</h2>
+//     {{ with .Content }} 
+//       {{ . }} 
+//     {{ end }}
+//   </section>
+  
+//  <div class="drag-handle-container">
+//      <div class="drag-handle"></div>
+//    </div>
+//   <section class="layout pane">
+//     <h2>Split 2</h2>
+//   </section>
+// </article>
+// {{ end }}
+
+const divider = document.querySelector(".drag-handle-container");
+const pane1 = document.querySelector(".layout.pane:first-of-type");
+const pane2 = document.querySelector(".layout.pane:last-of-type");
+
+let startX = 0;
+let startWidth = 0;
+
+function mouseMove(e) {
+  const dx = e.clientX - startX;
+  pane1.style.width = `${startWidth + dx}px`;
+  pane2.style.width = `calc(100% - ${pane1.offsetWidth}px)`;
+}
+
+function stopDrag() {
+  document.removeEventListener("mousemove", mouseMove);
+  document.removeEventListener("mouseup", stopDrag);
+}
+
+divider.addEventListener("mousedown", (e) => {
+  startX = e.clientX;
+  startWidth = pane1.getBoundingClientRect().width;
+  document.addEventListener("mousemove", mouseMove);
+  document.addEventListener("mouseup", stopDrag);
+});

@@ -15,4 +15,8 @@
 
   --layout-bg: inherit;
   --layout-shape: inherit;
+
+  &:has(.drag-handle-container) {
+    --layout-gap: unset;
+  }
 }

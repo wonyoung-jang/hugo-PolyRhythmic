@@ -15,11 +15,11 @@
     --layout-flex-flow: row nowrap;
 
     .focus-pane {
-      --layout-flex: 2 1 0;
+      --layout-flex: 2 1 auto;
     }
 
     .supporting-pane {
-      --layout-flex: 1 2 0;
+      --layout-flex: 1 2 auto;
     }
   }
 }

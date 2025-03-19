@@ -1,7 +1,7 @@
 .canon-list-detail {
   .detail-pane,
   .list-pane {
-    --layout-flex: 1 1 0;
+    --layout-flex: 1 1 auto;
   }
 }
 
