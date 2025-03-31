@@ -162,6 +162,15 @@
   integrity="{{ $theme.Data.Integrity }}">
 </script>
 
+{{/*  Code copy controls  */}}
+{{ $codeCopy := resources.Get "js/codecopy.js.html" | resources.ExecuteAsTemplate "codecopy.js" . | resources.Minify | fingerprint }}
+<script 
+  defer 
+  crossorigin="anonymous" 
+  src="{{ $codeCopy.RelPermalink }}" 
+  integrity="{{ $codeCopy.Data.Integrity }}">
+</script>
+
 {{/* Favicons */}}
 <link 
   rel="icon" 
