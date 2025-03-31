@@ -1,0 +1,56 @@
+{{ if .Get "href" }}
+  <a 
+    class="component button icon {{ .Get "type" }}" 
+    {{ .Get "disabled" }}
+    href="{{ .Get "href" }}">
+    {{ if .Get "toggle" }}
+      <input 
+        type="checkbox" 
+        id="{{ .Get "id" }}" />
+        
+      <label 
+        class="component button icon"
+        for="{{ .Get "id" }}">
+
+        {{ with .Get "icon" }}
+          <i class="icon">
+            {{ . }}
+          </i>
+        {{ end }}
+      </label>
+    {{ else }}
+      {{ with .Get "icon" }}
+        <i class="icon">
+          {{ . }}
+        </i>
+      {{ end }}
+    {{ end }}
+  </a>
+{{ else }}
+  <button 
+    class="component button icon {{ .Get "type" }}" 
+    {{ .Get "disabled" }}>
+    {{ if .Get "toggle" }}
+      <input 
+        type="checkbox" 
+        id="{{ .Get "id" }}" />
+        
+      <label 
+        class="component button icon"
+        for="{{ .Get "id" }}">
+
+        {{ with .Get "icon" }}
+          <i class="icon">
+            {{ . }}
+          </i>
+        {{ end }}
+      </label>
+    {{ else }}
+      {{ with .Get "icon" }}
+        <i class="icon">
+          {{ . }}
+        </i>
+      {{ end }}
+    {{ end }}
+  </button>
+{{ end }}

@@ -32,7 +32,7 @@
   <div class="copyright">
     {{ with site.Copyright }}
       <p>
-        {{ . | safeHTML }}
+        {{ . | markdownify }}
       </p>
     {{ end }}
     <a  

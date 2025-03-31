@@ -1,0 +1,28 @@
+{{ if .Get "href" }}
+<a class="component button common {{ .Get "type" }}"
+  {{ .Get "disabled" }}
+  href="{{ .Get "href" }}">
+  {{ with .Get "icon" }}
+    <i class="icon">
+      {{ . }}
+    </i>
+  {{ end }}
+
+  {{ with .Inner | $.Page.RenderString }}
+    {{ . }}
+  {{ end }}
+</a>
+{{ else }}
+<button class="component button common {{ .Get "type" }}"
+  {{ .Get "disabled" }}>
+  {{ with .Get "icon" }}
+    <i class="icon">
+      {{ . }}
+    </i>
+  {{ end }}
+
+  {{- with .Inner | $.Page.RenderString -}}
+    {{ . }}
+  {{ end }}
+</button>
+{{ end }}

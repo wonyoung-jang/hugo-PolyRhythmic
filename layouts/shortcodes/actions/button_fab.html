@@ -1,0 +1,15 @@
+<button class="component button {{ .Get "class" }} fab {{ .Get "size" }}">
+  {{ with .Get "icon" }}
+    <i class="icon">
+      {{ . }}
+    </i>
+  {{ end }}
+
+  {{ $size := .Get "size"}}
+
+  {{ if eq $size "extended" }}
+    {{- with .Inner | $.Page.RenderString -}}
+      {{ . }}
+    {{ end }}
+  {{ end }}
+</button>
