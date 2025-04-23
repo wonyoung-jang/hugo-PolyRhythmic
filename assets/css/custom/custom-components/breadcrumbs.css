@@ -1,0 +1,34 @@
+.breadcrumb {
+  padding: 0;
+
+  & ol {
+    padding: 0;
+    margin: 0;
+  }
+  
+  & li {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &::before {
+      margin: 0;
+    }
+
+    &:not(:last-child)::after {
+      content: "»";
+      padding: 0 var(--size-2);
+    }
+
+    &.active {
+      display: none;
+    }
+
+    & a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+  }
+}
+
