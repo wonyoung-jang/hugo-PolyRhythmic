@@ -46,7 +46,7 @@
     text-wrap: balance;
     gap: var(--size-5);
     padding: var(--size-8);
-    margin: var(--spacing-panes);
+    margin: var(--spacing-panes) auto;
     border-radius: var(--shape-corner-m);
 
     .blurb {
@@ -82,9 +82,9 @@
 
   .home-buttons-container {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     gap: var(--size-3);
-    margin: var(--size-16) 25%;
+    margin: var(--size-16) auto;
 
     .home-buttons {
       flex: 1 1 auto;
@@ -93,7 +93,6 @@
       gap: var(--size-5);
       padding: var(--size-5);
       margin: var(--size-5);
-      min-width: calc(33% - var(--size-5));
 
       & h3 {
         margin-block: var(--size-3) var(--size-5);
@@ -103,7 +102,6 @@
       .button span {
         flex: 0 1 auto;
         min-width: fit-content;
-        max-height: fit-content;
       }
     }
   }

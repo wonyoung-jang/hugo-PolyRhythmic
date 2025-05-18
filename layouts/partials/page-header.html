@@ -1,5 +1,8 @@
 {{ if and (not .IsHome) (ne .Title "404 Page not found") }}
   <section class="layout page-header">
+    {{/* Breadcrumbs */}}
+    {{ partial "breadcrumbs.html" . }}
+
     {{/* Metadata */}} 
     {{ if (and 
       (not (or (eq .Kind "taxonomy") (eq .Kind "term"))) 
