@@ -71,7 +71,24 @@
   border-radius: var(--shape-corner-l-end);
 }
 
-/* 6. Extra large */
+/* 6. Large increased */
+.shape-li {
+  border-radius: var(--shape-corner-li);
+}
+.shape-li-top {
+  border-radius: var(--shape-corner-li-top);
+}
+.shape-li-bottom {
+  border-radius: var(--shape-corner-li-bottom);
+}
+.shape-li-start {
+  border-radius: var(--shape-corner-li-start);
+}
+.shape-li-end {
+  border-radius: var(--shape-corner-li-end);
+}
+
+/* 7. Extra large */
 .shape-xl {
   border-radius: var(--shape-corner-xl);
 }
@@ -88,7 +105,41 @@
   border-radius: var(--shape-corner-xl-end);
 }
 
-/* 7. Full */
+/* 8. Extra large increased */
+.shape-xli {
+  border-radius: var(--shape-corner-xli);
+}
+.shape-xli-top {
+  border-radius: var(--shape-corner-xli-top);
+}
+.shape-xli-bottom {
+  border-radius: var(--shape-corner-xli-bottom);
+}
+.shape-xli-start {
+  border-radius: var(--shape-corner-xli-start);
+}
+.shape-xli-end {
+  border-radius: var(--shape-corner-xli-end);
+}
+
+/* 9. Extra extra large */
+.shape-xxl {
+  border-radius: var(--shape-corner-xxl);
+}
+.shape-xxl-top {
+  border-radius: var(--shape-corner-xxl-top);
+}
+.shape-xxl-bottom {
+  border-radius: var(--shape-corner-xxl-bottom);
+}
+.shape-xxl-start {
+  border-radius: var(--shape-corner-xxl-start);
+}
+.shape-xxl-end {
+  border-radius: var(--shape-corner-xxl-end);
+}
+
+/* 10. Full */
 .shape-full {
   border-radius: var(--shape-corner-full);
 }
