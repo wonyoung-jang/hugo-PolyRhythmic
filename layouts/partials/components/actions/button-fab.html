@@ -1,12 +1,12 @@
 <button 
-  class="component button {{ .class }} fab {{ .size }}">
+  class="component button {{ .class }} fab {{ .size }} {{ .type }}">
   {{ with .icon }}
     <i class="icon">
       {{ . }}
     </i>
   {{ end }}
 
-  {{ if eq .size "extended" }}
+  {{ if eq .type "extended" }}
     {{ .label }}
   {{ end }}
 </button>

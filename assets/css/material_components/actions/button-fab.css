@@ -7,22 +7,26 @@
   --container-elevation-hover: var(--elevation4);
   --container-elevation-focus: var(--elevation3);
   --container-elevation-press: var(--elevation3);
+  
+  .icon {
+    font-size: var(--size-6);
+  }
 
-  &.small {
-    --container-width: var(--size-12);
-    --container-height: var(--size-12);
-    --container-shape: var(--shape-corner-m);
-    --container-padding: 0;
+  &.medium {
+    --container-width: var(--size-20);
+    --container-height: var(--size-20);
+    --container-shape: var(--shape-corner-li);
+    --container-padding: var(--size-4);
     
     .icon {
-      font-size: var(--size-5);
+      font-size: var(--size-7);
     }
   }
 
   &.large {
     --container-width: var(--size-24);
     --container-height: var(--size-24);
-    --container-shape: var(--size-9);
+    --container-shape: var(--shape-corner-xl);
     --container-padding: var(--size-4);
     
     .icon {
@@ -32,18 +36,42 @@
 
   &.extended {
     min-width: var(--size-20);
-    --container-width: auto;
-    --container-height: var(--size-14);
-    --container-shape: var(--shape-corner-l);
-    --container-padding: var(--size-4);
     gap: var(--size-4);
-    
-    .icon {
-      font-size: var(--size-6);
-    }
-  }
+    --container-width: auto;
+    --container-padding: var(--size-4);
 
-  .icon {
-    font-size: var(--size-6);
+    &.small {
+      --container-height: var(--size-14);
+      --container-shape: var(--shape-corner-l);
+
+      font-size: var(--size-4);
+
+      .icon {
+        font-size: var(--size-6);
+      }
+    }
+
+    &.medium {
+      --container-height: var(--size-20);
+      --container-shape: var(--shape-corner-li);
+
+      font-size: 22px;
+
+      .icon {
+        font-size: var(--size-7);
+      }
+    }
+
+    &.large {
+      --container-height: var(--size-24);
+      --container-shape: var(--shape-corner-xl);
+      
+      font-size: var(--size-6);
+      
+      .icon {
+        font-size: var(--size-9);
+      }
+    }
+    
   }
 }
