@@ -2,11 +2,9 @@
   position: relative;
   display: flex;
   flex-flow: column nowrap;
-  align-self: stretch;
 
   &:has(#searchResults:not(:empty)) {    
     .search.bar {
-      
       &::before {
         border-bottom: 1px solid var(--color-outline-variant);
         border-radius: var(--shape-corner-xl-top);
@@ -16,6 +14,11 @@
   }
 
   #searchResults {
+    position: absolute;
+    inset: 100% 0 auto;
+    
+    display: flex;
+    flex-flow: column nowrap;
     background: var(--color-surface-container-high);
     border-radius: var(--shape-corner-xl-bottom);
 
@@ -44,6 +47,15 @@
     & li:hover {
       color: var(--color-on-tertiary-container);
       background: var(--color-tertiary-container);
+    }
+  }
+}
+
+/* Compact to Medium sizes doesn't show header search box */
+@media screen and (0px <= width < 839px) {
+  #searchbox {
+    &.header-searchbox {
+      display: none;
     }
   }
 }

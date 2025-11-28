@@ -8,8 +8,14 @@
     {{- partialCached "siteid-button.html" . -}}
   </section>
 
+  
   {{/* Buttons */}}
   <section class="end">
+    {{/* Search bar in header */}} 
+    {{- if and (.Site.Params.features.headerSearch) (ne .Layout "search") -}}
+      {{- partialCached "search_header.html" . -}}
+    {{- end -}}
+    
     {{/* Language switch */}} 
     {{- partialCached "translation_list.html" . -}} 
     

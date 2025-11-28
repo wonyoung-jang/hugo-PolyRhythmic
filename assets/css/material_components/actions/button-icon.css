@@ -4,7 +4,103 @@
   --container-padding: 0;
   --container-shape: var(--shape-corner-full);
   --icon-color: var(--color-on-surface-variant);
+
+  &.narrow {
+    min-width: var(--size-8);
+  }
+
+  &.wide {
+    min-width: var(--size-13);
+  }
+
+  .icon,
+  & svg {
+    font-size: var(--size-6);
+  }
   
+  &.square {
+    --container-shape: var(--shape-corner-m);
+
+    &.medium {
+      --container-shape: var(--shape-corner-l);
+    }
+
+    &:is(.large, .xlarge) {
+      --container-shape: var(--shape-corner-xl);
+    }
+  }
+
+  &.xsmall {
+    min-height: var(--size-8);
+    min-width: var(--size-8);
+
+    &.narrow {
+      min-width: var(--size-7);
+    }
+
+    &.wide {
+      min-width: var(--size-10);
+    }
+
+    .icon,
+    & svg {
+      font-size: var(--size-5);
+    }
+  }
+  
+  &.medium {
+    min-height: var(--size-14);
+    min-width: var(--size-14);
+
+    &.narrow {
+      min-width: var(--size-12);
+    }
+
+    &.wide {
+      min-width: var(--size-18);
+    }
+
+    .icon,
+    & svg {
+      font-size: var(--size-6);
+    }
+  }
+
+  &.large {
+    min-height: var(--size-24);
+    min-width: var(--size-24);
+
+    &.narrow {
+      min-width: var(--size-16);
+    }
+
+    &.wide {
+      min-width: var(--size-32);
+    }
+
+    .icon,
+    & svg {
+      font-size: var(--size-8);
+    }
+  }
+
+  &.xlarge {
+    min-height: var(--size-34);
+    min-width: var(--size-34);
+
+    &.narrow {
+      min-width: var(--size-26);
+    }
+
+    &.wide {
+      min-width: var(--size-46);
+    }
+
+    .icon,
+    & svg {
+      font-size: var(--size-10);
+    }
+  }
 
   & input[type="checkbox"] {
     display: none;

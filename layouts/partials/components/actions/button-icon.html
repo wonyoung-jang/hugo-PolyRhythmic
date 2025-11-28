@@ -1,6 +1,6 @@
 {{ if .href }}
   <a 
-    class="component button icon {{ .type }}" 
+    class="component button icon {{ .type }} {{ .size }} {{ .shape }} {{ .width }}" 
     {{ .disabled }}
     href="{{ .href }}">
     {{ if .toggle }}
@@ -28,7 +28,7 @@
   </a>
 {{ else }}
   <button 
-    class="component button icon {{ .type }}" 
+    class="component button icon {{ .type }} {{ .size }} {{ .shape }} {{ .width }}" 
     {{ .disabled }}>
     {{ if .toggle }}
       <input 

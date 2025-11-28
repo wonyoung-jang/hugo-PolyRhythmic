@@ -136,7 +136,7 @@
 {{- end }}
 
 {{/* Search */}}
-{{ if (eq .Layout `search`) }}
+{{/*  {{ if (eq .Layout `search`) }}  */}}
   <link 
     rel="preload" 
     as="fetch" 
@@ -151,7 +151,7 @@
     src="{{ $search.RelPermalink }}" 
     integrity="{{ $search.Data.Integrity }}">
   </script>
-{{ end }}
+{{/*  {{ end }}  */}}
 
 {{/*  Theme controls  */}}
 {{ $theme := resources.Get "js/theme.js" | resources.Minify | fingerprint }}

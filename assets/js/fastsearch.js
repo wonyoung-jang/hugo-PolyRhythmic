@@ -1,57 +1,54 @@
 import * as params from "@params";
 
 let fuse;
-let resList = document.getElementById("searchResults");
-let sInput = document.getElementById("searchInput");
-let first,
-  last,
-  current_elem = null;
+const resultsList = document.getElementById("searchResults");
+const searchInput = document.getElementById("searchInput");
+let firstResult, lastResult, currentElement = null;
 let resultsAvailable = false;
 
 window.onload = function () {
-  let xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
+  
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
-        let data = JSON.parse(xhr.responseText);
+        const data = JSON.parse(xhr.responseText);
+        
         if (data) {
-          let options;
-          if (params.fuseOpts) {
-            options = {
-              isCaseSensitive: params.fuseOpts.iscasesensitive ?? false,
-              includeScore: params.fuseOpts.includescore ?? false,
-              includeMatches: params.fuseOpts.includematches ?? false,
-              minMatchCharLength: params.fuseOpts.minmatchcharlength ?? 1,
-              shouldSort: params.fuseOpts.shouldsort ?? true,
-              findAllMatches: params.fuseOpts.findallmatches ?? false,
-              keys: params.fuseOpts.keys ?? ["title", "permalink", "summary", "content"],
-
-              location: params.fuseOpts.location ?? 0,
-              threshold: params.fuseOpts.threshold ?? 0.6,
-              distance: params.fuseOpts.distance ?? 100,
-              ignoreLocation: params.fuseOpts.ignorelocation ?? false,
-            };
-          }
+          const options = {
+            isCaseSensitive: params.fuseOpts?.iscasesensitive ?? false,
+            includeScore: params.fuseOpts?.includescore ?? false,
+            includeMatches: params.fuseOpts?.includematches ?? false,
+            minMatchCharLength: params.fuseOpts?.minmatchcharlength ?? 1,
+            shouldSort: params.fuseOpts?.shouldsort ?? true,
+            findAllMatches: params.fuseOpts?.findallmatches ?? false,
+            keys: params.fuseOpts?.keys ?? ["title", "permalink", "summary", "content"],
+            location: params.fuseOpts?.location ?? 0,
+            threshold: params.fuseOpts?.threshold ?? 0.6,
+            distance: params.fuseOpts?.distance ?? 100,
+            ignoreLocation: params.fuseOpts?.ignorelocation ?? false,
+          };
+          
           fuse = new Fuse(data, options);
         }
       } else {
-        console.log(xhr.responseText);
+        console.error("Failed to load search index:", xhr.responseText);
       }
     }
   };
-  xhr.open("GET", "../index.json");
+  xhr.open("GET", "/index.json");
   xhr.send();
 };
 
-function activeToggle(ae) {
-  document.querySelectorAll(".focus").forEach(function (element) {
-    element.classList.remove("focus");
+function activeToggle(element) {
+  document.querySelectorAll(".focus").forEach(el => {
+    el.classList.remove("focus");
   });
 
-  if (ae) {
-    ae.focus();
-    document.activeElement = current_elem = ae;
-    ae.parentElement.classList.add("focus");
+  if (element) {
+    element.focus();
+    currentElement = element;
+    element.parentElement.classList.add("focus");
   } else {
     document.activeElement.parentElement.classList.add("focus");
   }
@@ -59,75 +56,107 @@ function activeToggle(ae) {
 
 function reset() {
   resultsAvailable = false;
-  resList.innerHTML = sInput.value = "";
-  sInput.focus();
+  resultsList.innerHTML = "";
+  searchInput.value = "";
+  searchInput.focus();
 }
 
-sInput.onkeyup = function (e) {
-  if (fuse) {
-    let results;
+searchInput.onkeyup = function (e) {
+  if (!fuse) return;
 
-    if (params.fuseOpts) {
-      results = fuse.search(this.value.trim(), { limit: params.fuseOpts.limit });
-    } else {
-      results = fuse.search(this.value.trim());
-    }
+  const searchTerm = this.value.trim();
+  const searchOptions = params.fuseOpts?.limit 
+    ? { limit: params.fuseOpts.limit } 
+    : {};
+  const results = fuse.search(searchTerm, searchOptions);
 
-    if (results.length !== 0) {
-      let resultSet = "";
+  if (results.length > 0) {
+    const resultHTML = results.map(result => 
+      `<li class="post-entry">
+        <span class="entry-header">${result.item.title}</span>
+        <a href="${result.item.permalink}" aria-label="${result.item.title}"></a>
+      </li>`
+    ).join("");
 
-      for (let item in results) {
-        resultSet +=
-          `<li class="post-entry"><span class="entry-header">${results[item].item.title}</span>` +
-          `<a href="${results[item].item.permalink}" aria-label="${results[item].item.title}"></a></li>`;
-      }
-
-      resList.innerHTML = resultSet;
-      resultsAvailable = true;
-      first = resList.firstChild;
-      last = resList.lastChild;
-    } else {
-      resultsAvailable = false;
-      resList.innerHTML = "";
-    }
+    resultsList.innerHTML = resultHTML;
+    resultsAvailable = true;
+    firstResult = resultsList.firstChild;
+    lastResult = resultsList.lastChild;
+  } else {
+    resultsAvailable = false;
+    resultsList.innerHTML = "";
   }
 };
 
-sInput.addEventListener("search", function (e) {
+searchInput.addEventListener("search", function (e) {
   if (!this.value) reset();
 });
 
-document.onkeydown = function (e) {
-  let key = e.key;
-  let ae = document.activeElement;
-
-  let inbox = document.getElementById("searchbox").contains(ae);
-
-  if (ae === sInput) {
-    let elements = document.getElementsByClassName("focus");
-    while (elements.length > 0) {
-      elements[0].classList.remove("focus");
-    }
-  } else if (current_elem) ae = current_elem;
-  if (key === "Escape") {
+// Keyboard navigation
+document.addEventListener("keydown", function (e) {
+  const activeElement = document.activeElement;
+  const inSearchBox = document.getElementById("searchbox")?.contains(activeElement);
+  
+  // Handle Escape key
+  if (e.key === "Escape" && inSearchBox) {
     reset();
-  } else if (!resultsAvailable || !inbox) {
     return;
-  } else if (key === "ArrowDown") {
-    e.preventDefault();
-    if (ae == sInput) {
-      activeToggle(resList.firstChild.lastChild);
-    } else if (ae.parentElement != last) {
-      activeToggle(ae.parentElement.nextSibling.lastChild);
-    }
-  } else if (key === "ArrowUp") {
-    e.preventDefault();
-    if (ae.parentElement == first) {
-      activeToggle(sInput);
-    } else if (ae != sInput) {
-      activeToggle(ae.parentElement.previousSibling.lastChild);
-    }
-  } else if (key === "ArrowRight") {
-    ae.click();
   }
-};
+
+  // Only handle navigation if results are available and we're in the search box
+  if (!resultsAvailable || !inSearchBox) {
+    return;
+  }
+
+  const key = e.key;
+  const allLinks = Array.from(resultsList.querySelectorAll("a"));
+  
+  if (allLinks.length === 0) return;
+
+  const currentIndex = allLinks.indexOf(activeElement);
+
+  // Arrow Down - move to next result
+  if (key === "ArrowDown") {
+    e.preventDefault();
+    
+    // Remove previous focus class
+    document.querySelectorAll(".focus").forEach(el => {
+      el.classList.remove("focus");
+    });
+
+    if (activeElement === searchInput) {
+      // Move from input to first result
+      allLinks[0].focus();
+      allLinks[0].parentElement.classList.add("focus");
+    } else if (currentIndex >= 0 && currentIndex < allLinks.length - 1) {
+      // Move to next result
+      allLinks[currentIndex + 1].focus();
+      allLinks[currentIndex + 1].parentElement.classList.add("focus");
+    }
+  }
+  
+  // Arrow Up - move to previous result
+  else if (key === "ArrowUp") {
+    e.preventDefault();
+    
+    // Remove previous focus class
+    document.querySelectorAll(".focus").forEach(el => {
+      el.classList.remove("focus");
+    });
+
+    if (currentIndex === 0) {
+      // Move from first result back to input
+      searchInput.focus();
+    } else if (currentIndex > 0) {
+      // Move to previous result
+      allLinks[currentIndex - 1].focus();
+      allLinks[currentIndex - 1].parentElement.classList.add("focus");
+    }
+  }
+  
+  // Enter or ArrowRight - activate link
+  else if ((key === "Enter" || key === "ArrowRight") && activeElement.tagName === "A") {
+    e.preventDefault();
+    activeElement.click();
+  }
+});
