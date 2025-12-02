@@ -16,18 +16,20 @@
           href="{{ .RelPermalink }}">
           <span class="monogram">
             <i class="icon">
+              {{ $icon := "article" }}
               {{ range site.Menus.main }}
                 {{ if eq .Name $parentTitle }}
                   {{ if .HasChildren }}
                     {{ range .Children }}
                       {{ if eq .Name $pageTitle }}
-                        {{ .Pre }}
+                        {{ $icon = .Pre }}
                       {{ end }}
                     {{ end }}
                   {{ end }}
                 {{ end }}
               {{ end }}
-            </i>
+              {{ $icon }}
+              </i>
           </span>
 
           <div class="content">
