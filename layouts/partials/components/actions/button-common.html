@@ -1,8 +1,9 @@
 {{ if .href }}
-  <a 
-    class="component button common {{ .type }}" 
+  <a
+    class="component button common {{ .type }}"
     {{ .disabled }}
-    href="{{ .href }}">
+    href="{{ .href }}"
+  >
     {{ with .icon }}
       <i class="icon">
         {{ . }}
@@ -14,9 +15,7 @@
     {{ end }}
   </a>
 {{ else }}
-  <button 
-    class="component button common {{ .type }}" 
-    {{ .disabled }}>
+  <button class="component button common {{ .type }}" {{ .disabled }}>
     {{ with .icon }}
       <i class="icon">
         {{ . }}

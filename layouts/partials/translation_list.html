@@ -1,10 +1,7 @@
 {{ if .IsTranslated }}
   {{ range .Translations }}
-    <a  
-      class="component button common" 
-      elevated
-      href="{{ .Permalink }}">
+    <a class="component button common" elevated href="{{ .Permalink }}">
       {{ .Lang | title }}
-    </a> 
+    </a>
   {{ end }}
 {{ end }}

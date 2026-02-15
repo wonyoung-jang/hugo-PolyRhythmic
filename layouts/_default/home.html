@@ -1,63 +1,62 @@
-{{- define "main" -}} 
-{{ $home := site.Params.home }}
-<article
-  class="layout panes basic-single-pane"
-  id="home-page">
-  <section class="layout pane">
-    {{/* Home page header and tagline */}}
-    {{ if or $home.title $home.tagline }}
-      <section id="home-header">
-        <span class="site-id">
-          {{/* Site ID logo */}}
-          <img 
-            height="80"
-            width="80"
-            src="{{ site.Params.assets.favicon | default "sitelogo.svg" | absURL }}" 
-            alt="Site logo">
+{{- define "main" -}}
+  {{ $home := site.Params.home }}
+  <article class="layout panes basic-single-pane" id="home-page">
+    <section class="layout pane">
+      {{/* Home page header and tagline */}}
+      {{ if or $home.title $home.tagline }}
+        <section id="home-header">
+          <span class="site-id">
+            {{/* Site ID logo */}}
+            <img
+              height="80"
+              width="80"
+              src="{{ site.Params.assets.favicon | default "sitelogo.svg" | absURL }}"
+              alt="Site logo"
+            />
 
-          {{/* Site title */}}
-          {{ with $home.title }}
-            <h1>
-              {{ default site.Title . | markdownify }}
-            </h1>
+            {{/* Site title */}}
+            {{ with $home.title }}
+              <h1>
+                {{ default site.Title . | markdownify }}
+              </h1>
+            {{ end }}
+          </span>
+
+          {{/* Site tagline */}}
+          {{ with $home.tagline }}
+            <span class="tagline title-large">
+              {{ . | markdownify }}
+            </span>
           {{ end }}
-        </span>
+        </section>
+      {{ end }}
 
-        {{/* Site tagline */}} 
-        {{ with $home.tagline }}
-          <span class="tagline title-large">
-            {{ . | markdownify }}
-          </span>
-        {{ end }}
+      {{/* Site welcome blurb */}}
+      {{ if or $home.blurb $home.welcome }}
+        <section id="home-blurb">
+          {{ with $home.welcome }}
+            <h2>{{ . | markdownify }}</h2>
+          {{ end }}
+
+          {{ with $home.blurb }}
+            <span class="blurb title-medium">
+              {{ . | markdownify }}
+            </span>
+          {{ end }}
+        </section>
+      {{ end }}
+
+      {{/* Home page content */}}
+      {{ with .Content }}
+        <div id="post-content">
+          <div class="home-page-content">{{ . }}</div>
+        </div>
+      {{ end }}
+
+      {{/* Home page buttons */}}
+      <section class="home-buttons-container">
+        {{- partialCached "homepage-buttons.html" $home -}}
       </section>
-    {{ end }}
-
-    {{/* Site welcome blurb */}} 
-    {{ if or $home.blurb $home.welcome }}
-      <section id="home-blurb">
-        {{ with $home.welcome }}
-          <h2>{{ . | markdownify }}</h2>
-        {{ end }}
-
-        {{ with $home.blurb }}
-          <span class="blurb title-medium">
-            {{ . | markdownify }}
-          </span>
-        {{ end }}
-      </section>
-    {{ end }} 
-    
-    {{/* Home page content */}} 
-    {{ with .Content }}
-      <div id="post-content">
-        <div class="home-page-content">{{ . }}</div>
-      </div>
-    {{ end }} 
-    
-    {{/* Home page buttons */}}
-    <section class="home-buttons-container">
-      {{- partialCached "homepage-buttons.html" $home -}}
     </section>
-  </section>
-</article>
+  </article>
 {{- end -}}

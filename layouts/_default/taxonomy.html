@@ -1,47 +1,41 @@
 {{- define "main" -}}
-{{ $parentTitle := .Title }}
-<article class="layout panes basic-single-pane">
-  <section
-    class="layout pane"
-    id="sections-page">
-    <div
-      class="set lists"
-      id="terms">
-      {{ range .Pages.ByTitle }}
+  {{ $parentTitle := .Title }}
+  <article class="layout panes basic-single-pane">
+    <section class="layout pane" id="sections-page">
+      <div class="set lists" id="terms">
+        {{ range .Pages.ByTitle }}
 
-        {{ $pageTitle := .Title }}
+          {{ $pageTitle := .Title }}
 
-        <a
-          class="component list item one"
-          href="{{ .RelPermalink }}">
-          <span class="monogram">
-            <i class="icon">
-              {{ $icon := "article" }}
-              {{ range site.Menus.main }}
-                {{ if eq .Name $parentTitle }}
-                  {{ if .HasChildren }}
-                    {{ range .Children }}
-                      {{ if eq .Name $pageTitle }}
-                        {{ $icon = .Pre }}
+
+          <a class="component list item one" href="{{ .RelPermalink }}">
+            <span class="monogram">
+              <i class="icon">
+                {{ range site.Menus.main }}
+                  {{ if eq .Name $parentTitle }}
+                    {{ if .HasChildren }}
+                      {{ range .Children }}
+                        {{ if eq .Name $pageTitle }}
+                          {{ .Pre }}
+                        {{ end }}
                       {{ end }}
                     {{ end }}
                   {{ end }}
                 {{ end }}
-              {{ end }}
-              {{ $icon }}
               </i>
-          </span>
+            </span>
 
-          <div class="content">
-            <span class="headline">{{ .Title }}</span>
-          </div>
+            <div class="content">
+              <span class="headline">{{ .Title }}</span>
+            </div>
 
-          <div class="trailing-supporting-text">{{len .Pages }} {{ $.Title }}</div>
-        </a>
-        <hr class="divider" />
-      {{ end }}
-    </div>
-
-  </section>
-</article>
+            <div class="trailing-supporting-text">
+              {{ len .Pages }} {{ $.Title }}
+            </div>
+          </a>
+          <hr class="divider" />
+        {{ end }}
+      </div>
+    </section>
+  </article>
 {{- end -}}

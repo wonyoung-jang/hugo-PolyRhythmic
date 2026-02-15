@@ -5,7 +5,7 @@
     </i>
   {{ end }}
 
-  {{ $size := .Get "size"}}
+  {{ $size := .Get "size" }}
 
   {{ if eq $size "extended" }}
     {{- with .Inner | $.Page.RenderString -}}

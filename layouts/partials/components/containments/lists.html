@@ -4,25 +4,23 @@
   {{ end }}
 
   {{ if .image }}
-    <div class="image-thumbnail">
-    </div>
+    <div class="image-thumbnail"></div>
   {{ end }}
 
   {{ if .video }}
-    <div class="video-thumbnail">
-    </div>
+    <div class="video-thumbnail"></div>
   {{ end }}
 
   {{ if .radio }}
     <label class="component radio">
-      <input type="radio"/>
+      <input type="radio" />
       <span></span>
     </label>
   {{ end }}
 
   {{ if .checkbox_leading }}
     <label class="component checkbox leading">
-      <input type="checkbox">
+      <input type="checkbox" />
       <span></span>
     </label>
   {{ end }}
@@ -30,7 +28,8 @@
   {{ if .icon_leading }}
     <i class="icon">person</i>
   {{ end }}
-  
+
+
   <div class="content">
     <span class="headline">{{ .headline }}</span>
     {{ with .supporting_text_content }}
@@ -42,18 +41,18 @@
 
   {{ if .checkbox_trailing }}
     <label class="component checkbox trailing">
-      <input type="checkbox">
+      <input type="checkbox" />
       <span></span>
     </label>
   {{ end }}
-  
+
   {{ if .icon_trailing }}
     <i class="icon">arrow_right</i>
   {{ end }}
 
   {{ if .switch }}
     <label class="component switch trailing">
-      <input type="checkbox">
+      <input type="checkbox" />
       <span></span>
     </label>
   {{ end }}
@@ -64,5 +63,5 @@
 </div>
 
 {{ if .dividers }}
-  <hr class="divider">
+  <hr class="divider" />
 {{ end }}

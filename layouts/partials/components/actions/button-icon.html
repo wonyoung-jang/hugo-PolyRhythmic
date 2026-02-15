@@ -1,17 +1,13 @@
 {{ if .href }}
-  <a 
-    class="component button icon {{ .type }} {{ .size }} {{ .shape }} {{ .width }}" 
+  <a
+    class="component button icon {{ .type }} {{ .size }} {{ .shape }} {{ .width }}"
     {{ .disabled }}
-    href="{{ .href }}">
+    href="{{ .href }}"
+  >
     {{ if .toggle }}
-      <input 
-        type="checkbox" 
-        id="{{ .id }}" />
-        
-      <label 
-        class="component button icon"
-        for="{{ .id }}">
+      <input type="checkbox" id="{{ .id }}" />
 
+      <label class="component button icon" for="{{ .id }}">
         {{ with .icon }}
           <i class="icon">
             {{ . }}
@@ -27,18 +23,14 @@
     {{ end }}
   </a>
 {{ else }}
-  <button 
-    class="component button icon {{ .type }} {{ .size }} {{ .shape }} {{ .width }}" 
-    {{ .disabled }}>
+  <button
+    class="component button icon {{ .type }} {{ .size }} {{ .shape }} {{ .width }}"
+    {{ .disabled }}
+  >
     {{ if .toggle }}
-      <input 
-        type="checkbox" 
-        id="{{ .id }}" />
-        
-      <label 
-        class="component button icon"
-        for="{{ .id }}">
+      <input type="checkbox" id="{{ .id }}" />
 
+      <label class="component button icon" for="{{ .id }}">
         {{ with .icon }}
           <i class="icon">
             {{ . }}
@@ -54,4 +46,3 @@
     {{ end }}
   </button>
 {{ end }}
-

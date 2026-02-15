@@ -1,34 +1,28 @@
 {{/* Top App Bar */}}
-<nav
-  class="component app-bar top center small"
-  aria-label="Top App Bar">
+<nav class="component app-bar top center small" aria-label="Top App Bar">
   {{/* Site Headline */}}
   <section class="start">
-    {{/* Site ID */}} 
+    {{/* Site ID */}}
     {{- partialCached "siteid-button.html" . -}}
   </section>
 
-  
   {{/* Buttons */}}
   <section class="end">
-    {{/* Search bar in header */}} 
+    {{/* Search bar in header */}}
     {{- if and (.Site.Params.features.headerSearch) (ne .Layout "search") -}}
       {{- partialCached "search_header.html" . -}}
     {{- end -}}
-    
-    {{/* Language switch */}} 
-    {{- partialCached "translation_list.html" . -}} 
-    
-    {{/* Random page */}} 
-    {{- partialCached "random-button.html" . -}} 
-    
-    {{/* Theme toggle */}} 
-    {{- partialCached "theme-button.html" . -}} 
-    
+
+    {{/* Language switch */}}
+    {{- partialCached "translation_list.html" . -}}
+    {{/* Random page */}}
+    {{- partialCached "random-button.html" . -}}
+    {{/* Theme toggle */}}
+    {{- partialCached "theme-button.html" . -}}
     {{/* Theme selector */}}
     {{- partialCached "theme-controls.html" . -}}
   </section>
 </nav>
 
-{{/* Tabs */}} 
-{{- partialCached "tab_menu.html" (dict "menuID" "main" "page" .) .Title -}} 
+{{/* Tabs */}}
+{{- partialCached "tab_menu.html" (dict "menuID" "main" "page" .) .Title -}}

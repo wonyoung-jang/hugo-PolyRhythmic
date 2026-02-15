@@ -1,23 +1,23 @@
 {{- define "main" -}}
-<article class="layout panes canon-feed">
-  <section class="layout pane">
-    {{ range $index, $page := .RegularPages.ByTitle }}        
-      <a  
-        class="component card elevated"
-        aria-label="post link to {{ .Title | plainify }}" 
-        href="{{ .Permalink }}">
-          
+  <article class="layout panes canon-feed">
+    <section class="layout pane">
+      {{ range $index, $page := .RegularPages.ByTitle }}
+        <a
+          class="component card elevated"
+          aria-label="post link to {{ .Title | plainify }}"
+          href="{{ .Permalink }}"
+        >
           <div class="card-image">
             {{ partial "first-image.html" . | safeHTML }}
-          </div> 
+          </div>
 
-        <div class="card-content">
-          <div class="card-meta">{{ partial "post-meta.html" . }}</div>
-          <span class="card-title">{{ .Title }}</span>
-          <p class="card-description">{{ .Description }}</p>
-        </div>
-      </a>
-    {{ end }}
-  </section>
-</article>
+          <div class="card-content">
+            <div class="card-meta">{{ partial "post-meta.html" . }}</div>
+            <span class="card-title">{{ .Title }}</span>
+            <p class="card-description">{{ .Description }}</p>
+          </div>
+        </a>
+      {{ end }}
+    </section>
+  </article>
 {{- end -}}

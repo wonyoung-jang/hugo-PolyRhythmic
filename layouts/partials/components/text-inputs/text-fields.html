@@ -4,14 +4,9 @@
   {{ end }}
 
   {{ with .multiline }}
-    <textarea 
-      type="text" 
-      placeholder=" "></textarea>
+    <textarea type="text" placeholder=" "></textarea>
   {{ else }}
-    <input 
-        type="text" 
-        placeholder=" {{ .placeholder }} "
-        {{ .disabled }}>
+    <input type="text" placeholder=" {{ .placeholder }} " {{ .disabled }} />
   {{ end }}
 
   {{ with .label }}
@@ -27,7 +22,7 @@
   {{ end }}
 
   {{ if eq .type "filled" }}
-    <hr class="divider">
+    <hr class="divider" />
   {{ end }}
 
   {{ with .supporting_text }}

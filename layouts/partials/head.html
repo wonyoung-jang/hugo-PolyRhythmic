@@ -1,46 +1,42 @@
-{{/*  Meta  */}}
-<meta charset="utf-8">
-<meta 
-  http-equiv="X-UA-Compatible" 
-  content="IE=edge">
+{{/* Meta */}}
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-{{/*  Viewport  */}}
-<meta 
-  name="viewport" 
-  content="width=device-width, initial-scale=1, maximum-scale=1">
+{{/* Viewport */}}
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1"
+/>
 
-{{/*  Robots  */}}
+{{/* Robots */}}
 {{- if hugo.IsProduction -}}
-  <meta 
-    name="robots" 
-    content="index, follow">
+  <meta name="robots" content="index, follow" />
 {{- else }}
-  <meta 
-    name="robots" 
-    content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow" />
 {{- end }}
 
 {{/* Description */}}
-<meta 
-  name="description" 
+<meta
+  name="description"
   content="
     {{- with site.Params.description -}}
-      {{- . -}}
-    {{- else -}}
-      {{- if or .IsPage .IsSection -}}
-        {{- .Summary | default (printf "%s - %s" .Title  site.Title) -}}
-      {{- end -}}
-    {{- end }}">
+    {{- . -}}
+  {{- else -}}
+    {{- if or .IsPage .IsSection -}}
+      {{- .Summary | default (printf "%s - %s" .Title  site.Title) -}}
+    {{- end -}}
+  {{- end }}
+  "
+/>
 
-{{/*  Author  */}}
-<meta 
-  name="author" 
-  content="{{- site.Params.author.name -}}">
+{{/* Author */}}
+<meta name="author" content="{{- site.Params.author.name -}}" />
 
 {{- if site.Config.Services.GoogleAnalytics.ID }}
-  <meta 
-    name="google-site-verification" 
-    content="{{ site.Config.Services.GoogleAnalytics.ID }}">
+  <meta
+    name="google-site-verification"
+    content="{{ site.Config.Services.GoogleAnalytics.ID }}"
+  />
 {{- end }}
 
 {{/* Title */}}
@@ -48,17 +44,19 @@
   {{ if .IsHome }}
     {{ site.Title }}
   {{ else }}
-    {{ .Title }} | {{ site.Title }}
-  {{ end }} 
+    {{ .Title }} |
+    {{ site.Title }}
+  {{ end }}
 </title>
 
-{{/*  Preload fonts  */}}
-<link 
+{{/* Preload fonts */}}
+<link
   href="/themes/PolyRhythmic/static/fonts/material-symbols-sharp.woff2"
-  rel="preload" 
-  as="font" 
+  rel="preload"
+  as="font"
   type="font/woff2"
-  crossorigin>
+  crossorigin
+/>
 
 {{/* Core CSS */}}
 {{- $cssFiles := dict
@@ -76,48 +74,48 @@
   "tokens_input"          (resources.Match "css/tokens_input/**.css")
 -}}
 
-{{/*  Stylesheets  */}}
+{{/* Stylesheets */}}
 {{- $stylesheets := dict
-  "0_tokens"    
-    (slice 
-      "tokens_static"
-      "tokens_material"
-      "tokens_keybed"
-      "tokens_input"
-    )
-  "1_base"    
-    (slice 
-      "base"
-    )
-  "2_material"         
-    (slice 
-      "material_layouts" 
-      "material_sets"
-      "material_components" 
-      "material_states"
-    )
-  "3_custom"  
-    (slice 
-      "custom"
-    )
-  "5_helpers" 
-    (slice 
-      "material_helpers"
-    )
--}}
+  "0_tokens"
+  (slice
+  "tokens_static"
+  "tokens_material"
+  "tokens_keybed"
+  "tokens_input"
+  )
+  "1_base"
+  (slice
+  "base"
+  )
+  "2_material"
+  (slice
+  "material_layouts"
+  "material_sets"
+  "material_components"
+  "material_states"
+  )
+  "3_custom"
+  (slice
+  "custom"
+  )
+  "5_helpers"
+  (slice
+  "material_helpers"
+  )
+  -}}
 
-{{/*  Debug  */}}
+{{/* Debug */}}
 {{ if and (not hugo.IsProduction) (site.Params.debug) }}
-  {{ $stylesheets = merge $stylesheets (dict 
-    "6_debug" 
-      (slice 
-        "debug"
-      )
-    ) 
-  }}
+  {{ $stylesheets = merge $stylesheets (dict
+    "6_debug"
+    (slice
+    "debug"
+    )
+    )
+    }}
 {{ end }}
 
-{{/*  Load stylesheets  */}}
+{{/* Load stylesheets */}}
 {{- range $name, $parts := $stylesheets }}
   {{- $files := slice }}
 
@@ -127,82 +125,78 @@
 
   {{- $combined := $files | resources.Concat (printf "assets/css/%s.css" $name) | resources.Minify | fingerprint }}
 
-  <link 
+
+  <link
     crossorigin="anonymous"
-    href="{{ $combined.RelPermalink }}" 
-    integrity="{{ $combined.Data.Integrity }}" 
-    rel="preload stylesheet" 
-    as="style">
+    href="{{ $combined.RelPermalink }}"
+    integrity="{{ $combined.Data.Integrity }}"
+    rel="preload stylesheet"
+    as="style"
+  />
 {{- end }}
 
 {{/* Search */}}
-{{/*  {{ if (eq .Layout `search`) }}  */}}
-  <link 
-    rel="preload" 
-    as="fetch" 
-    href="../index.json" 
-    crossorigin="anonymous">
-  {{ $fastsearch := resources.Get "js/fastsearch.js" | js.Build (dict "params" (dict "fuseOpts" site.Params.fuseOpts)) }}
-  {{ $fusejs := resources.Get "js/fuse.js" }}
-  {{ $search := (slice $fusejs $fastsearch ) | resources.Concat "assets/js/search.js" | resources.Minify | fingerprint }}
-  <script 
-    defer 
-    crossorigin="anonymous" 
-    src="{{ $search.RelPermalink }}" 
-    integrity="{{ $search.Data.Integrity }}">
-  </script>
-{{/*  {{ end }}  */}}
-
-{{/*  Theme controls  */}}
+{{/* {{ if (eq .Layout `search`) }} */}}
+<link rel="preload" as="fetch" href="../index.json" crossorigin="anonymous" />
+{{ $fastsearch := resources.Get "js/fastsearch.js" | js.Build (dict "params" (dict "fuseOpts" site.Params.fuseOpts)) }}
+{{ $fusejs := resources.Get "js/fuse.js" }}
+{{ $search := (slice $fusejs $fastsearch ) | resources.Concat "assets/js/search.js" | resources.Minify | fingerprint }}
+<script
+  defer
+  crossorigin="anonymous"
+  src="{{ $search.RelPermalink }}"
+  integrity="{{ $search.Data.Integrity }}"
+></script>
+{{/* {{ end }} */}}
+{{/* Theme controls */}}
 {{ $theme := resources.Get "js/theme.js" | resources.Minify | fingerprint }}
-<script 
-  defer 
-  crossorigin="anonymous" 
-  src="{{ $theme.RelPermalink }}" 
-  integrity="{{ $theme.Data.Integrity }}">
-</script>
+<script
+  defer
+  crossorigin="anonymous"
+  src="{{ $theme.RelPermalink }}"
+  integrity="{{ $theme.Data.Integrity }}"
+></script>
 
-{{/*  Code copy controls  */}}
+{{/* Code copy controls */}}
 {{ $codeCopy := resources.Get "js/codecopy.js.html" | resources.ExecuteAsTemplate "codecopy.js" . | resources.Minify | fingerprint }}
-<script 
-  defer 
-  crossorigin="anonymous" 
-  src="{{ $codeCopy.RelPermalink }}" 
-  integrity="{{ $codeCopy.Data.Integrity }}">
-</script>
+<script
+  defer
+  crossorigin="anonymous"
+  src="{{ $codeCopy.RelPermalink }}"
+  integrity="{{ $codeCopy.Data.Integrity }}"
+></script>
 
 {{/* Favicons */}}
-<link 
-  rel="icon" 
-  href="{{ site.Params.assets.favicon | default "sitelogo.svg" | absURL }}">
+<link
+  rel="icon"
+  href="{{ site.Params.assets.favicon | default "sitelogo.svg" | absURL }}"
+/>
 
 {{/* RSS */}}
 {{ range .AlternativeOutputFormats }}
-  <link 
-    rel="{{ .Rel }}" 
-    type="{{ .MediaType.Type | html }}" 
-    href="{{ .Permalink | safeURL }}">
+  <link
+    rel="{{ .Rel }}"
+    type="{{ .MediaType.Type | html }}"
+    href="{{ .Permalink | safeURL }}"
+  />
 {{ end }}
 
-{{/*  Translations  */}}
+{{/* Translations */}}
 {{ range .AllTranslations }}
-  <link 
-    rel="alternate" 
-    hreflang="{{ .Lang }}" 
-    href="{{ .Permalink }}">
+  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
 {{ end }}
 
-{{/*  Noscript  */}}
+{{/* Noscript */}}
 <noscript>
   <style>
     #theme-toggle,
     #top-link {
-        display: none;
+      display: none;
     }
   </style>
 </noscript>
 
-{{/*  Embedded Hugo templates  */}}
+{{/* Embedded Hugo templates */}}
 {{- template "_internal/google_analytics.html" . -}}
 {{- template "_internal/opengraph.html" . -}}
 {{- template "_internal/schema.html" . -}}

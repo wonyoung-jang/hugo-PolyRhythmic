@@ -2,19 +2,21 @@
 
 {{- if not .Date.IsZero -}}
   {{- $scratch.Add "meta" (slice (
-    printf "<p title='%s'>%s" 
-      (.Date) 
-        (.Date | 
-          time.Format 
-          (default "January 2, 2006" site.Params.dateFormat)
-        )
-      ) 
-    ) }}
+    printf "<p title='%s'>%s"
+    (.Date)
+    (.Date |
+    time.Format
+    (default "January 2, 2006" site.Params.dateFormat)
+    )
+    )
+    )
+    }}
 {{- end }}
 
 {{- with .ReadingTime -}}
-  {{- $scratch.Add "meta" (slice 
-    (i18n "read_time" .)) }}
+  {{- $scratch.Add "meta" (slice
+    (i18n "read_time" .))
+  }}
 {{- end }}
 
 {{- with ($scratch.Get "meta") }}

@@ -1,14 +1,13 @@
 {{ range $k, $v := .buttons }}
-  <div 
-    class="home-buttons" 
-    id="projects">
+  <div class="home-buttons" id="projects">
     <h3>{{ $k | humanize }}</h3>
     {{ range $v }}
       {{ partial "components/actions/button-common.html" (dict
         "type" "tonal"
         "icon" .icon
         "label" .name
-        "href" .url)}}
+        "href" .url)
+      }}
     {{ end }}
   </div>
 {{ end }}

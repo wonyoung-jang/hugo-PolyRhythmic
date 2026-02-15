@@ -1,34 +1,31 @@
 {{ $isCoverImage := not (.Page.Scratch.Get "coverImage") }}
 
 {{- if .IsBlock -}}
-  <figure
-    {{- if $isCoverImage }} 
-      id="cover-image"
-    {{- end -}}>
-    
+  <figure {{- if $isCoverImage }}id="cover-image"{{- end -}}>
     <img
       loading="lazy"
       src=" 
-        {{with (resources.GetMatch .Destination)}} 
-          {{ .Permalink }}
-        {{end}}" 
-      
+        {{ with (resources.GetMatch .Destination) }}
+        {{ .Permalink }}
+      {{ end }}
+      "
       {{- with .Text }}
         alt="{{ . }}"
-      {{- end -}}>
+      {{- end -}}
+
+    />
 
     {{- with .Title }}
       <figcaption>
         {{- . -}}
-      </figcaption> 
+      </figcaption>
     {{- end -}}
   </figure>
 {{- else -}}
-  {{/*  ![description](destination "title")  */}}
+  {{/* ![description](destination "title") */}}
   <img
     loading="lazy"
     src="{{ .Destination | safeURL }}"
-
     {{- with .Text }}
       alt="{{- . -}}"
     {{- end -}}
@@ -37,9 +34,8 @@
       title="{{- . -}}"
     {{- end -}}
 
-    {{- if $isCoverImage }} 
-      id="cover-image"
-    {{- end -}}>
+    {{- if $isCoverImage }}id="cover-image"{{- end -}}
+  />
 {{- end -}}
 
 {{ if $isCoverImage }}

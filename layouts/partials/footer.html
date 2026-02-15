@@ -12,10 +12,11 @@
               {{ .Name }}
             </a>
           {{ else if .URL }}
-            <a  
+            <a
               href="{{ .URL | safeHTMLAttr }}"
               target="_blank"
-              rel="external noopener noreferrer me">
+              rel="external noopener noreferrer me"
+            >
               {{ .Name }}
             </a>
           {{ else }}
@@ -35,10 +36,10 @@
         {{ . | markdownify }}
       </p>
     {{ end }}
-    <a  
-      id="copyright-button"
-      href="{{ "" | absLangURL }}">
-      © {{ now.Year }} {{ site.Title }}
+    <a id="copyright-button" href="{{ "" | absLangURL }}">
+      ©
+      {{ now.Year }}
+      {{ site.Title }}
     </a>
   </div>
 
@@ -50,10 +51,11 @@
             "type" "tonal"
             "icon" .icon
             "label" ""
-            "href" .url)}}
+            "href" .url)
+          }}
         {{ end }}
       </div>
-  
+
       {{ with site.Params.footerButtonsText }}
         <span class="footer-buttons-text">
           {{ . | markdownify }}
@@ -63,9 +65,6 @@
   {{ end }}
 
   {{ with site.Params.assets.footerImage }}
-    <img 
-      id="footer-image"
-      src="{{ . | absURL }}"
-      alt="Footer image">
+    <img id="footer-image" src="{{ . | absURL }}" alt="Footer image" />
   {{ end }}
 </section>

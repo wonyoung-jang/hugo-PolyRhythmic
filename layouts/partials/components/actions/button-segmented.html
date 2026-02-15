@@ -11,16 +11,18 @@
         start
       {{ else if eq $index (sub $lenButtons 1) }}
         end
-      {{ end }}">
-
+      {{ end }}
+      "
+    >
       <input
         type="{{ $type }}"
         id="{{ $button.id }}"
         name="{{ $name }}"
         value="{{ $button.value }}"
         {{ $button.disabled }}
-        {{ $button.checked }}/>
-        
+        {{ $button.checked }}
+      />
+
       {{ with .icon }}
         <i class="icon">
           {{ . }}

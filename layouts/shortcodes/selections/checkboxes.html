@@ -1,13 +1,16 @@
-<label class="component checkbox
+<label
+  class="component checkbox
   {{ .Get "disabled" }} 
   {{ if .Get "error" }}
-    error-check 
-  {{ end }}">
-  <input 
-    {{ .Get "disabled" }} 
-    {{ .Get "checked" }} 
-    type="checkbox" 
-    class="{{ .Get "indeterminate" }}">
+    error-check
+  {{ end }}"
+>
+  <input
+    {{ .Get "disabled" }}
+    {{ .Get "checked" }}
+    type="checkbox"
+    class="{{ .Get "indeterminate" }}"
+  />
   <span>
     {{ with .Inner | $.Page.RenderString }}
       {{ . }}

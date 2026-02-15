@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html   
-  lang="{{- site.Language.Lang -}}" 
-  dir="{{- site.Language.LanguageDirection | default "auto" -}}">      
-
+<!doctype html>
+<html
+  lang="{{- site.Language.Lang -}}"
+  dir="{{- site.Language.LanguageDirection | default "auto" -}}"
+>
   {{/* Head */}}
   <head>
     {{- partialCached "head.html" . .Page -}}
   </head>
 
   {{/* Body */}}
-  <body id="top">     
-
+  <body id="top">
     {{/* Header */}}
-    <header 
-      id="header" 
-      role="banner">
-
+    <header id="header" role="banner">
       {{- partialCached "header.html" . .Page -}}
     </header>
 
@@ -39,15 +35,12 @@
         {{- partialCached "page-links.html" . .Page -}}
       {{- end -}}
     </main>
-    
-    {{/* Footer */}}
-    <footer 
-      id="footer" 
-      role="contentinfo">    
 
+    {{/* Footer */}}
+    <footer id="footer" role="contentinfo">
       {{/* Links + Copyright */}}
       {{- partialCached "footer.html" . -}}
-      
+
       {{/* Component: Top-Link */}}
       {{- partialCached "top-link-fab.html" . -}}
     </footer>

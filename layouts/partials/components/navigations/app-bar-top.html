@@ -1,5 +1,4 @@
 <div class="component app-bar top {{ .center }} {{ .size }}">
-        
   <div class="start">
     <button class="component button icon">
       <i class="icon">{{ .icon_1 }}</i>
@@ -9,7 +8,8 @@
   {{ if eq .size "small" }}
     <div class="headline">{{ .headline }}</div>
   {{ end }}
-  
+
+
   <div class="end">
     {{ with .icon_2 }}
       <button class="component button icon">

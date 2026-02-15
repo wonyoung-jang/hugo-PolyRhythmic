@@ -1,6 +1,6 @@
 <details class="debug-config">
   <summary><h4>Debug</h4></summary>
-  {{/*  Page methods  */}}
+  {{/* Page methods */}}
   <details open>
     <summary><b>.Page</b></summary>
     <table>
@@ -36,7 +36,7 @@
         <td><b>.Draft</b></td>
         <td><pre>{{ debug.Dump .Draft }}</pre></td>
       </tr>
-      {{/*  TODO Eq  */}}
+      {{/* TODO Eq */}}
       <tr>
         <td><b>.ExpiryDate</b></td>
         <td><pre>{{ debug.Dump .ExpiryDate }}</pre></td>
@@ -202,11 +202,11 @@
         <td><pre>{{ debug.Dump .WordCount }}</pre></td>
       </tr>
 
-      {{/*  LONG OUTPUTS  */}}
+      {{/* LONG OUTPUTS */}}
       <tr>
         <td><b>.AllTranslations</b></td>
         <td><pre>{{ debug.Dump .AllTranslations }}</pre></td>
-      </tr>      
+      </tr>
       <tr>
         <td><b>.AlternativeOutputFormats</b></td>
         <td><pre>{{ debug.Dump .AlternativeOutputFormats }}</pre></td>
@@ -231,18 +231,18 @@
         <td><b>.Fragments</b></td>
         <td><pre>{{ debug.Dump .Fragments }}</pre></td>
       </tr>
-      {{/*  TODO GetPage  */}}
-      {{/*  TODO GetTerms  */}}
+      {{/* TODO GetPage */}}
+      {{/* TODO GetTerms */}}
       <tr>
         <td><b>.GitInfo</b></td>
         <td><pre>{{ debug.Dump .GitInfo }}</pre></td>
       </tr>
-      {{/*  TODO HasMenuCurrent  */}}
-      {{/*  TODO HasShortcode  */}}
-      {{/*  TODO InSection  */}}
-      {{/*  TODO IsAncestor  */}}
-      {{/*  TODO IsDescendant  */}}
-      {{/*  TODO IsMenuCurrent  */}}
+      {{/* TODO HasMenuCurrent */}}
+      {{/* TODO HasShortcode */}}
+      {{/* TODO InSection */}}
+      {{/* TODO IsAncestor */}}
+      {{/* TODO IsDescendant */}}
+      {{/* TODO IsMenuCurrent */}}
       <tr>
         <td><b>.Language</b></td>
         <td><pre>{{ debug.Dump .Language }}</pre></td>
@@ -259,9 +259,9 @@
         <td><b>.Pages</b></td>
         <td><pre>{{ debug.Dump .Pages }}</pre></td>
       </tr>
-      {{/*  TODO Paginate  */}}
-      {{/*  TODO Paginator  */}}
-      {{/*  TODO Param  */}}
+      {{/* TODO Paginate */}}
+      {{/* TODO Paginator */}}
+      {{/* TODO Param */}}
       <tr>
         <td><b>.Params</b></td>
         <td><pre>{{ debug.Dump .Params }}</pre></td>
@@ -274,7 +274,7 @@
         <td><b>.RawContent</b></td>
         <td><pre>{{ debug.Dump .RawContent }}</pre></td>
       </tr>
-      {{/*  TODO Ref  */}}
+      {{/* TODO Ref */}}
       <tr>
         <td><b>.RegularPages</b></td>
         <td><pre>{{ debug.Dump .RegularPages }}</pre></td>
@@ -283,9 +283,9 @@
         <td><b>.RegularPagesRecursive</b></td>
         <td><pre>{{ debug.Dump .RegularPagesRecursive }}</pre></td>
       </tr>
-      {{/*  TODO RelRef  */}}
-      {{/*  TODO Render  */}}
-      {{/*  TODO RenderString  */}}
+      {{/* TODO RelRef */}}
+      {{/* TODO Render */}}
+      {{/* TODO RenderString */}}
       <tr>
         <td><b>.Site</b></td>
         <td><pre>{{ debug.Dump .Site }}</pre></td>
@@ -305,7 +305,7 @@
     </table>
   </details>
 
-  {{/*  Hugo methods  */}}
+  {{/* Hugo methods */}}
   <details open>
     <summary><b>hugo</b></summary>
     <table>
@@ -361,7 +361,7 @@
         <td><b>hugo.WorkingDir</b></td>
         <td><pre>{{ debug.Dump hugo.WorkingDir }}</pre></td>
       </tr>
-      {{/*  Long outputs  */}}
+      {{/* Long outputs */}}
       <tr>
         <td><b>hugo.Deps</b></td>
         <td><pre>{{ debug.Dump hugo.Deps }}</pre></td>
@@ -369,7 +369,7 @@
     </table>
   </details>
 
-  {{/*  Site methods  */}}
+  {{/* Site methods */}}
   <details open>
     <summary><b>site</b></summary>
     <table>
@@ -391,11 +391,15 @@
       </tr>
       <tr>
         <td><b>site.Config.Services.Disqus.Shortname</b></td>
-        <td><pre>{{ debug.Dump site.Config.Services.Disqus.Shortname }}</pre></td>
+        <td>
+          <pre>{{ debug.Dump site.Config.Services.Disqus.Shortname }}</pre>
+        </td>
       </tr>
       <tr>
         <td><b>site.Config.Services.GoogleAnalytics.ID</b></td>
-        <td><pre>{{ debug.Dump site.Config.Services.GoogleAnalytics.ID }}</pre></td>
+        <td>
+          <pre>{{ debug.Dump site.Config.Services.GoogleAnalytics.ID }}</pre>
+        </td>
       </tr>
       <tr>
         <td><b>site.LanguagePrefix</b></td>
@@ -413,7 +417,7 @@
         <td><b>site.Sections</b></td>
         <td><pre>{{ debug.Dump site.Sections }}</pre></td>
       </tr>
-      {{/*  LONG OUTPUTS  */}}
+      {{/* LONG OUTPUTS */}}
       <tr>
         <td><b>site.AllPages</b></td>
         <td><pre>{{ debug.Dump site.AllPages }}</pre></td>
@@ -426,7 +430,7 @@
         <td><b>site.Data</b></td>
         <td><pre>{{ debug.Dump site.Data }}</pre></td>
       </tr>
-      {{/*  TODO GetPage  */}}
+      {{/* TODO GetPage */}}
       <tr>
         <td><b>site.Home</b></td>
         <td><pre>{{ debug.Dump site.Home }}</pre></td>
@@ -451,7 +455,7 @@
         <td><b>site.Pages</b></td>
         <td><pre>{{ debug.Dump site.Pages }}</pre></td>
       </tr>
-      {{/*  TODO site.Param  */}}
+      {{/* TODO site.Param */}}
       <tr>
         <td><b>site.Params</b></td>
         <td><pre>{{ debug.Dump site.Params }}</pre></td>

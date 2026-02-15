@@ -1,11 +1,12 @@
-{{ $dividers := .dividers}}
+{{ $dividers := .dividers }}
+
 
 <menu class="set menus">
   {{ range .menu_items }}
     <div class="component menu item {{ .disabled }}">{{ .label }}</div>
-    
+
     {{ if $dividers }}
-    <hr class="divider">
+      <hr class="divider" />
     {{ end }}
   {{ end }}
 </menu>
