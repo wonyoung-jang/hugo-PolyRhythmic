@@ -3,17 +3,16 @@ import * as params from "@params";
 let fuse;
 const resultsList = document.getElementById("searchResults");
 const searchInput = document.getElementById("searchInput");
-let firstResult, lastResult, currentElement = null;
 let resultsAvailable = false;
 
-window.onload = function () {
+window.onload = () => {
   const xhr = new XMLHttpRequest();
-  
-  xhr.onreadystatechange = function () {
+
+  xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
         const data = JSON.parse(xhr.responseText);
-        
+
         if (data) {
           const options = {
             isCaseSensitive: params.fuseOpts?.iscasesensitive ?? false,
@@ -28,7 +27,7 @@ window.onload = function () {
             distance: params.fuseOpts?.distance ?? 100,
             ignoreLocation: params.fuseOpts?.ignorelocation ?? false,
           };
-          
+
           fuse = new Fuse(data, options);
         }
       } else {
@@ -40,19 +39,6 @@ window.onload = function () {
   xhr.send();
 };
 
-function activeToggle(element) {
-  document.querySelectorAll(".focus").forEach(el => {
-    el.classList.remove("focus");
-  });
-
-  if (element) {
-    element.focus();
-    currentElement = element;
-    element.parentElement.classList.add("focus");
-  } else {
-    document.activeElement.parentElement.classList.add("focus");
-  }
-}
 
 function reset() {
   resultsAvailable = false;
@@ -61,17 +47,17 @@ function reset() {
   searchInput.focus();
 }
 
-searchInput.onkeyup = function (e) {
+searchInput.onkeyup = function () {
   if (!fuse) return;
 
   const searchTerm = this.value.trim();
-  const searchOptions = params.fuseOpts?.limit 
-    ? { limit: params.fuseOpts.limit } 
+  const searchOptions = params.fuseOpts?.limit
+    ? { limit: params.fuseOpts.limit }
     : {};
   const results = fuse.search(searchTerm, searchOptions);
 
   if (results.length > 0) {
-    const resultHTML = results.map(result => 
+    const resultHTML = results.map(result =>
       `<li class="post-entry">
         <span class="entry-header">${result.item.title}</span>
         <a href="${result.item.permalink}" aria-label="${result.item.title}"></a>
@@ -80,23 +66,21 @@ searchInput.onkeyup = function (e) {
 
     resultsList.innerHTML = resultHTML;
     resultsAvailable = true;
-    firstResult = resultsList.firstChild;
-    lastResult = resultsList.lastChild;
   } else {
     resultsAvailable = false;
     resultsList.innerHTML = "";
   }
 };
 
-searchInput.addEventListener("search", function (e) {
+searchInput.addEventListener("search", function () {
   if (!this.value) reset();
 });
 
 // Keyboard navigation
-document.addEventListener("keydown", function (e) {
+document.addEventListener("keydown", (e) => {
   const activeElement = document.activeElement;
   const inSearchBox = document.getElementById("searchbox")?.contains(activeElement);
-  
+
   // Handle Escape key
   if (e.key === "Escape" && inSearchBox) {
     reset();
@@ -110,7 +94,7 @@ document.addEventListener("keydown", function (e) {
 
   const key = e.key;
   const allLinks = Array.from(resultsList.querySelectorAll("a"));
-  
+
   if (allLinks.length === 0) return;
 
   const currentIndex = allLinks.indexOf(activeElement);
@@ -118,7 +102,7 @@ document.addEventListener("keydown", function (e) {
   // Arrow Down - move to next result
   if (key === "ArrowDown") {
     e.preventDefault();
-    
+
     // Remove previous focus class
     document.querySelectorAll(".focus").forEach(el => {
       el.classList.remove("focus");
@@ -134,11 +118,11 @@ document.addEventListener("keydown", function (e) {
       allLinks[currentIndex + 1].parentElement.classList.add("focus");
     }
   }
-  
+
   // Arrow Up - move to previous result
   else if (key === "ArrowUp") {
     e.preventDefault();
-    
+
     // Remove previous focus class
     document.querySelectorAll(".focus").forEach(el => {
       el.classList.remove("focus");
@@ -153,7 +137,7 @@ document.addEventListener("keydown", function (e) {
       allLinks[currentIndex - 1].parentElement.classList.add("focus");
     }
   }
-  
+
   // Enter or ArrowRight - activate link
   else if ((key === "Enter" || key === "ArrowRight") && activeElement.tagName === "A") {
     e.preventDefault();
