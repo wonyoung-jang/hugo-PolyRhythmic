@@ -1,5 +1,5 @@
 // Local storage
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const root = document.documentElement;
 
   // Theme-toggle
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Key color hue
   const hueSelector = document.getElementById("hue-selector");
   const savedHue = localStorage.getItem("theme-hue");
-  
+
   if (savedHue !== null) {
     hueSelector.value = savedHue;
   } else {
@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateHue() {
     const hue = hueSelector.value;
-    root.style.setProperty("--input-color-hue", hue + "deg");
+    root.style.setProperty("--input-color-hue", `${hue}deg`);
     localStorage.setItem("theme-hue", hue);
   }
 
   updateHue();
-  
+
   hueSelector.addEventListener("input", updateHue);
-  
+
   // Key color chroma
   const chromaSelector = document.getElementById("chroma-selector");
   const savedChroma = localStorage.getItem("theme-chroma");
@@ -62,19 +62,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateChroma() {
     const chroma = chromaSelector.value;
-    root.style.setProperty("--input-color-chroma", chroma + "%");
+    root.style.setProperty("--input-color-chroma", `${chroma}%`);
     localStorage.setItem("theme-chroma", chroma);
   }
 
   updateChroma();
 
   chromaSelector.addEventListener("input", updateChroma);
-  
+
   // Tertiary temperature direction
   const tertiarySelectorCool = document.getElementById("tertiary-selector-cool");
   const tertiarySelectorWarm = document.getElementById("tertiary-selector-warm");
   const savedTemperature = localStorage.getItem("tertiary-temperature");
-  
+
   if (savedTemperature !== null) {
     if (savedTemperature === "cool") {
       tertiarySelectorCool.checked = true;
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const temperature = document.querySelector('input[name="temperature"]:checked').value;
     localStorage.setItem("tertiary-temperature", temperature);
   }
-  
+
   updateTemperature();
 
   tertiarySelectorCool.addEventListener("change", updateTemperature);
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const contrastSelectorMedium = document.getElementById("contrast-selector-medium");
   const contrastSelectorHigh = document.getElementById("contrast-selector-high");
   const savedContrast = localStorage.getItem("contrast");
-  
+
   if (savedContrast !== null) {
     if (savedContrast === "medium") {
       contrastSelectorMedium.checked = true;
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Shapes
   const shapeSelector = document.getElementById("shape-selector");
   const savedShape = localStorage.getItem("theme-shape");
-  
+
   if (savedShape !== null) {
     shapeSelector.value = savedShape;
   } else {
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateShape() {
     const shape = shapeSelector.value;
-    root.style.setProperty("--input-shape-corner", shape + "px");
+    root.style.setProperty("--input-shape-corner", `${shape}px`);
     localStorage.setItem("theme-shape", shape);
   }
   updateShape();
@@ -172,8 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const widthSelector120 = document.getElementById("width-selector-120");
   const widthSelectorMax = document.getElementById("width-selector-max");
   const savedWidth = localStorage.getItem("max-char-width");
-  const savedMargin = localStorage.getItem("post-content-margin");
-  
+
   if (savedWidth !== null) {
     if (savedWidth === "60") {
       widthSelector60.checked = true;
@@ -209,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Font size
   const fontSizeSelector = document.getElementById("font-size-selector");
   const savedFontSize = localStorage.getItem("typography-font-size");
-  
+
   if (savedFontSize !== null) {
     fontSizeSelector.value = savedFontSize;
   } else {
@@ -233,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const savedBrandFont = localStorage.getItem("typography-brand-font");
 
   if (savedBrandFont !== null) {
-    document.querySelector('input[name="brand-font"][value="' + savedBrandFont + '"]').checked = true;
+    document.querySelector(`input[name="brand-font"][value="${savedBrandFont}"]`).checked = true;
   } else {
     document.querySelector('input[name="brand-font"][value="Raleway"]').checked = true;
     localStorage.setItem("typography-brand-font", "Raleway");
@@ -243,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const savedPlainFont = localStorage.getItem("typography-plain-font");
 
   if (savedPlainFont !== null) {
-    document.querySelector('input[name="plain-font"][value="' + savedPlainFont + '"]').checked = true;
+    document.querySelector(`input[name="plain-font"][value="${savedPlainFont}"]`).checked = true;
   } else {
     document.querySelector('input[name="plain-font"][value="Rubik"]').checked = true;
     localStorage.setItem("typography-plain-font", "Rubik");
@@ -253,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const savedCodeFont = localStorage.getItem("typography-code-font");
 
   if (savedCodeFont !== null) {
-    document.querySelector('input[name="code-font"][value="' + savedCodeFont + '"]').checked = true;
+    document.querySelector(`input[name="code-font"][value="${savedCodeFont}"]`).checked = true;
   } else {
     document.querySelector('input[name="code-font"][value="SomeType Mono"]').checked = true;
     localStorage.setItem("typography-code-font", "SomeType Mono");
@@ -266,8 +265,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const fontSize = fontSizeSelector.value;
     const lineHeight = lineHeightSelector.value;
 
-    root.style.setProperty("--input-font-size", fontSize + "px");
-    root.style.setProperty("--input-line-height", lineHeight + "rem");
+    root.style.setProperty("--input-font-size", `${fontSize}px`);
+    root.style.setProperty("--input-line-height", `${lineHeight}rem`);
 
     localStorage.setItem("typography-brand-font", brandFont);
     localStorage.setItem("typography-plain-font", plainFont);
@@ -320,7 +319,7 @@ function updateTooltipShape(value) {
 }
 
 function updateTooltipFontSize(value) {
-  tooltipFontSize.textContent = value + "px";
+  tooltipFontSize.textContent = `${value}px`;
   const thumbPositionFontSize = (value - rangeInputFontSize.min) / (rangeInputFontSize.max - rangeInputFontSize.min);
   const tooltipFontSizePosition = thumbPositionFontSize * (rangeInputFontSize.offsetWidth - 20) + 10;
   tooltipFontSize.style.left = `${tooltipFontSizePosition}px`;
@@ -431,7 +430,7 @@ function handleScroll() {
 
 window.addEventListener("scroll", handleScroll);
 
-mybutton.addEventListener("click", function() {
+mybutton.addEventListener("click", () => {
   scrollWrapper.scrollTo({
     top: 0,
     behavior: "smooth"
@@ -499,10 +498,10 @@ function randomizeHues() {
 
   // Set the new values to the sliders
   hueSelector.value = randomHue;
-  
+
   // Update CSS variables directly
-  root.style.setProperty("--input-color-hue", randomHue + "deg");
-  
+  root.style.setProperty("--input-color-hue", `${randomHue}deg`);
+
   // Save to localStorage
   localStorage.setItem("theme-hue", randomHue);
 }
@@ -522,10 +521,10 @@ function randomizeChromas() {
 
   // Set the new values to the sliders
   chromaSelector.value = randomChroma;
-  
+
   // Update CSS variables directly
-  root.style.setProperty("--input-color-chroma", randomChroma + "%");
-  
+  root.style.setProperty("--input-color-chroma", `${randomChroma}%`);
+
   // Save to localStorage
   localStorage.setItem("theme-chroma", randomChroma);
 }
@@ -615,7 +614,7 @@ lineHeightSelector.addEventListener("dblclick", resetDefaultLineHeight);
 //       {{ . }} 
 //     {{ end }}
 //   </section>
-  
+
 //  <div class="drag-handle-container">
 //      <div class="drag-handle"></div>
 //    </div>
